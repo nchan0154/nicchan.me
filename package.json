@@ -1,0 +1,59 @@
+{
+  "name": "xity-starter",
+  "version": "1.2.0",
+  "private": true,
+  "description": "A blog-ready 11ty starter based on PostCSS and Parcel, with a RSS feed and Native Elements.",
+  "author": "Mattia Astorino",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/equinusocio/xity-starter"
+  },
+  "scripts": {
+    "clean": "run-s clean:*",
+    "clean:cache": "rimraf ./.cache",
+    "clean:dist": "rimraf ./dist",
+    "clean:bundle": "rimraf ./bundle",
+    "build": "cross-env ELEVENTY_ENV=production run-s clean:* build:assets build:html",
+    "build:html": "eleventy",
+    "build:assets": "parcel build ./src/assets/css/app.scss ./src/assets/js/app.js --dist-dir ./bundle --no-source-maps",
+    "watch": "cross-env ELEVENTY_ENV=development run-s clean:* build:assets && run-p serve watch:*",
+    "serve": "eleventy --serve --port=8080",
+    "watch:assets": "parcel watch ./src/assets/css/app.scss ./src/assets/js/app.js --dist-dir ./bundle --no-source-maps --no-hmr",
+    "dev": "npm run watch",
+    "update:deps": "npm run upgrade-interactive --latest && npm run upgrade",
+    "update:cssdb": "npx browserslist@latest --update-db"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "0.11.0",
+    "@11ty/eleventy-plugin-rss": "1.0.9",
+    "@11ty/eleventy-plugin-syntaxhighlight": "3.0.1",
+    "@babel/core": "^7.12.9",
+    "@babel/preset-env": "7.11.5",
+    "@tbranyen/jsdom": "13.0.0",
+    "cssnano": "4.1.10",
+    "cssnano-preset-advanced": "4.0.7",
+    "eleventy-plugin-pwa": "1.0.8",
+    "html-minifier": "4.0.0",
+    "markdown-it": "11.0.1",
+    "postcss": "^8.1.10",
+    "postcss-preset-env": "6.7.0",
+    "postcss-reporter": "6.0.1",
+    "sass": "^1.29.0",
+    "slugify": "1.4.5"
+  },
+  "devDependencies": {
+    "cross-env": "7.0.2",
+    "npm-run-all": "4.1.5",
+    "parcel": "^2.0.0-beta.1",
+    "postcss-cli": "7.1.2",
+    "prettier": "2.1.2",
+    "rimraf": "3.0.2"
+  },
+  "browserslist": [
+    "last 1 Chrome versions",
+    "last 1 Firefox versions",
+    "last 1 Safari versions",
+    "last 1 Edge versions"
+  ]
+}
