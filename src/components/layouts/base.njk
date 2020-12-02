@@ -1,21 +1,24 @@
-<html lang="{{ config.lang }}" prefix="og: http://ogp.me/ns#">
+<html lang="{{ site.lang }}" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <link rel="alternate" type="application/rss+xml" title="{{ config.title }}" href="{{ config.url }}/feed.xml"/>
-    {% include "meta.njk" %}
+    {% include "global/meta.njk" %}
     <link rel="icon" href="/favicon.png" type="image/png"/>
-     {% block head %}{% endblock %}
-
-    {% if env.IS_DEV %}
-      <link rel="stylesheet" href="/assets/css/app.css" />
-    {% else %}
-      <style>{% include "../../../dist/assets/css/app.css" %}</style>
-    {% endif %}
-
+    {% block head %}{% endblock %}
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Playfair+Display:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/app.css" />
     <script src="/assets/js/app.js" defer></script>
   </head>
   <body>
-    {% block content %}{% endblock content %}
+    {% if hideNav != true %}
+    {% include "global/header.njk" %}
+    {% endif %}
+    <main>
+      {% block content %}{{ content | safe }}{% endblock content %}
+    </main>
+    <script>
+      document.querySelector('body').setAttribute('data-js-enabled', 'true');
+    </script>
   </body>
 </html>

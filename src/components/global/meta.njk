@@ -1,0 +1,41 @@
+{% set pageTitle = config.name %}
+{% set pageDesc = config.description %}
+{% set siteTitle = config.name %}
+{% set currentUrl = config.url + page.url %}
+
+{% if title %}
+  {% set pageTitle = title + ' - ' + config.name %}
+{% endif %}
+
+{% if metaDesc %}
+  {% set pageDesc = metaDesc %}
+{% endif %}
+
+<title>{{ pageTitle }}</title>
+<link rel="canonical" href="{{ currentUrl }}" />
+
+<meta property="og:site_name" content="{{ siteTitle }}" />
+<meta property="og:title" content="{{ pageTitle }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ currentUrl }}" />
+
+{% if config.authorHandle %}
+  <meta name="twitter:creator" content="@{{ config.authorHandle | replace('@', '') }}" />
+{% endif %}
+
+{% if pageDesc %}
+  <meta name="description" content="{{ pageDesc }}" />
+  <meta name="twitter:description" content="{{ pageDesc }}" />
+  <meta property="og:description" content="{{ pageDesc }}" />
+{% endif %}
+
+{% if socialImage %}
+  <meta property="og:image" content="{{ socialImage }}" />
+  <meta name="twitter:image" content="{{ socialImage }}" />
+  <meta property="og:image:alt" content="{{ socialImageAlt }}" />
+  <meta name="twitter:image:alt" content="{{ socialImageAlt }}" />
+{% endif %}
+
+{% if config.paymentPointer %}
+  <meta name="monetization" content="{{ config.paymentPointer }}" />
+{% endif %}

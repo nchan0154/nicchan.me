@@ -1,0 +1,125 @@
+.index-section {
+  position: relative;
+
+  &:nth-child(2) {
+    .index-section__visuals {
+      background-color: var(--color-primary);
+    }
+  }
+
+  &:nth-child(3) {
+    .index-section__visuals {
+      background-color: var(--color-tertiary);
+    }
+  }
+
+  &:nth-child(4) {
+    .index-section__visuals {
+      background-color: var(--color-secondary-dark);
+    }
+  }
+
+  &:nth-child(5) {
+    .index-section__visuals {
+      background-color: var(--color-secondary);
+    }
+  }
+}
+
+.index-section__text-wrapper {
+  padding: 2.5rem 0;
+}
+
+.index-section__container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.index-section__decorative-square {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 2.5rem;
+  background-color: var(--color-primary);
+}
+
+.index-section__visuals {
+  background-color: var(--color-dark);
+}
+
+@media (min-width: 62em) {
+  .index-section {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .index-section__text-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .index-section__container {
+    padding: 0 2.5rem;
+  }
+}
+
+@media (min-width: 72em) and (min-height: 48em) {
+  .index-section__container {
+    width: 80%;
+    max-width: 40rem;
+    padding: 0 5rem;
+  }
+
+  .index-section__decorative-square {
+    position: absolute;
+    left: 5%;
+    bottom: calc(50vh + 7rem);
+    z-index: 1;
+  }
+
+  .index-section__decorative-line {
+    position: absolute;
+    bottom: 0;
+    left: calc(5% + 1.3725rem);
+    width: 0.25rem;
+    height: calc(50vh + 10rem);
+    background-color: var(--color-tertiary-light);
+    transform-origin: top center;
+  }
+}
+
+@media (min-width: 90em) {
+  .index-section__title {
+    font-size: 3.5rem;
+  }
+}
+
+// animations
+@media (prefers-reduced-motion: no-preference) {
+  @media (min-width: 72em) and (min-height: 48em) {
+    .index-section__decorative-square[data-aos] {
+      opacity: 0;
+    }
+
+    .index-section__decorative-square[data-aos="playing"] {
+      animation: 0.3s fadeIn forwards;
+    }
+
+    .index-section__decorative-square[data-aos="ended"] {
+      opacity: 1;
+      animation: 0.5s static infinite;
+    }
+
+    .index-section__decorative-line[data-aos] {
+      transform: scaleY(0);
+    }
+
+    .index-section__decorative-line[data-aos="playing"] {
+      animation: 0.3s scaleVertically forwards 0.3s;
+    }
+
+    .index-section__decorative-line[data-aos="ended"] {
+      transform: scaleY(1);
+    }
+  }
+}

@@ -88,6 +88,15 @@ module.exports = function (eleventyConfig) {
    *
    * @link https://www.11ty.dev/docs/config/#override-browsersync-server-options
    */
+  eleventyConfig.cloudinaryCloudName = 'cloud-name-here'
+  eleventyConfig.addShortcode('cloudinaryImageUrl', function (path, alt, width, height, loading, className, transforms) {
+    return `<img class="${className}" src="https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/f_auto,q_auto${transforms}/${path}" alt="${alt}" loading="${loading} width="${width} height="${height}">`
+  })
+  /**
+   * Override BrowserSync Server options
+   *
+   * @link https://www.11ty.dev/docs/config/#override-browsersync-server-options
+   */
   eleventyConfig.setBrowserSyncConfig({
     notify: false,
     open: true,

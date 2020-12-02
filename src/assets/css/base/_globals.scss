@@ -1,0 +1,19 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  font-size: 100%;
+  line-height: 1.5;
+  background-color: var(--color-bg);
+  color: var(--color-body-text);
+}
+
+::selection {
+  background-color: var(--color-body-text);
+  color: var(--color-bg);
+}

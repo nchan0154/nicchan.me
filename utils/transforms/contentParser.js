@@ -4,7 +4,9 @@ const slugify = require('slugify')
 const eleventyConfig = require('../../src/_data/config.json')
 
 function setClass(element, list) {
-  list.map((item) => element.classList.add(item))
+  if (list) {
+    list.map((item) => element.classList.add(item))
+  }
 }
 
 module.exports = function (value, outputPath) {
