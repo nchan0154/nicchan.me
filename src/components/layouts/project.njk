@@ -1,0 +1,49 @@
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+<header
+  class="project-hero"
+  style="background-color: {{ color }}"
+>
+  <div class="project-hero__container container">
+    {{ image.path }}
+    {% cloudinaryImage image.name, image.alt, image.width, image.height, "@media (min-width: 95em) 85.375rem, 90vw", "eager", "project-hero__image" %}
+  </div>
+</header>
+
+<main>
+  <header class="row row--small">
+    {% if link %}
+    <h1 class="project__heading">
+      <a class="project__heading-link" href="{{ link }}">
+        {{title }}&nbsp;
+        <span class="project__heading-arrow">
+          &rarr;
+        </span>
+      </a>
+    </h1>
+    {% else %}
+      <h1 class="project__heading">{{ page.title }}</h1>
+    {% endif %}
+
+    <ul class="tags__wrapper">
+      {% for technology in page.technology %}
+        <li class="tags__tag">{{ technology }}</li>
+      {% endfor %}
+    </ul>
+  </header>
+
+  <section class="row row--small">
+    {% if page.brief %}
+    <h2 class="subheading">The Brief</h2>
+    <p>{{ brief | safe }}</p>
+    {% endif %}
+    <h2 class="subheading">The Solution</h2>
+    <p>
+      {{ solution | safe }}
+    </p>
+  </section>
+
+  {{ content | safe }}
+</main>
+{% endblock %}

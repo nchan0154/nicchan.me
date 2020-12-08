@@ -1,0 +1,14 @@
+:root {
+  --shadow-width: 0.5rem;
+}
+
+@media (min-width: 62em) {
+  :root {
+    --shadow-width: 1rem;
+  }
+}
+
+@mixin box-shadow {
+  box-shadow: var(--shadow-width) var(--shadow-width) 0 0
+    var(--color-dark-light);
+}

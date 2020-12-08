@@ -1,10 +1,12 @@
-@import "./mixins/_rem-calc";
+@import "./mixins/rem-calc";
+@import "./mixins/custom";
 @import "./lib/normalize";
 
-@import "./base/_variables";
-@import "./base/_globals";
-@import "./base/_containers";
-@import "./base/_typography";
-@import "./base/_animations";
+@import "./base/variables";
+@import "./base/globals";
+@import "./base/containers";
+@import "./base/typography";
+@import "./base/animations";
 
-@import "./components/_index-section";
+@import "./components/index-section";
+@import "./components/project-hero";

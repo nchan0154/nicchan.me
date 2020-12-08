@@ -3,7 +3,6 @@ const htmlMinTransform = require('./utils/transforms/htmlmin.js')
 const contentParser = require('./utils/transforms/contentParser.js')
 const htmlDate = require('./utils/filters/htmlDate.js')
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
-const pwaPlugin = require('eleventy-plugin-pwa')
 const date = require('./utils/filters/date.js')
 const fs = require('fs')
 
@@ -63,7 +62,6 @@ module.exports = function (eleventyConfig) {
    */
   eleventyConfig.addPlugin(rssPlugin)
   eleventyConfig.addPlugin(syntaxHighlightPlugin)
-  eleventyConfig.addPlugin(pwaPlugin)
 
   /**
    * Create custom data collections
@@ -88,9 +86,24 @@ module.exports = function (eleventyConfig) {
    *
    * @link https://www.11ty.dev/docs/config/#override-browsersync-server-options
    */
-  eleventyConfig.cloudinaryCloudName = 'cloud-name-here'
-  eleventyConfig.addShortcode('cloudinaryImageUrl', function (path, alt, width, height, loading, className, transforms) {
-    return `<img class="${className}" src="https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/f_auto,q_auto${transforms}/${path}" alt="${alt}" loading="${loading} width="${width} height="${height}">`
+  eleventyConfig.cloudinaryCloudName = 'nicchan'
+  eleventyConfig.addShortcode('cloudinaryImage', function (path, alt, width, height, sizes, loading, className, transforms) {
+    const multipliers = [0.25, 0.35, 0.5, 0.65, 0.75, 0.85, 1, 1.1, 1.25, 1.5, 1.75, 2];
+    let srcSetArray = []
+    multipliers.forEach(multiplier => {
+      let currentWidth = Math.round(multiplier * width);
+      srcSetArray.push(`https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/image/upload/f_auto,q_auto,w_${currentWidth}/${path} ${currentWidth}w`)
+    });
+    return `
+      <img class="${className}"
+        src="https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/image/upload/f_auto,q_auto,${transforms ? transforms : ''}/${path}"
+        srcset="${srcSetArray.join(', ')}"
+        alt="${alt}"
+        ${loading ? "loading='" + loading + "'" : ''}
+        width="${width}"
+        height="${height}"
+        sizes="${sizes}"
+        >`
   })
   /**
    * Override BrowserSync Server options
