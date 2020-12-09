@@ -11,39 +11,37 @@
   </div>
 </header>
 
-<main>
-  <header class="row row--small">
+<div class="project">
+  <div class="container container--md">
     {% if link %}
-    <h1 class="project__heading">
-      <a class="project__heading-link" href="{{ link }}">
-        {{title }}&nbsp;
-        <span class="project__heading-arrow">
-          &rarr;
-        </span>
-      </a>
-    </h1>
+      <h1 class="project__heading">
+        <a class="project__heading-link" href="{{ link }}">
+          {{title }}&nbsp;
+          <span class="project__heading-arrow">
+            &rarr;
+          </span>
+        </a>
+      </h1>
     {% else %}
       <h1 class="project__heading">{{ page.title }}</h1>
     {% endif %}
 
-    <ul class="tags__wrapper">
-      {% for technology in page.technology %}
-        <li class="tags__tag">{{ technology }}</li>
+    <ul class="tags">
+      {% for tech in technology %}
+        <li class="tags__tag">{{ tech }}</li>
       {% endfor %}
     </ul>
-  </header>
 
-  <section class="row row--small">
     {% if page.brief %}
-    <h2 class="subheading">The Brief</h2>
-    <p>{{ brief | safe }}</p>
+      <h2>The Brief</h2>
+      <p>{{ brief | safe }}</p>
     {% endif %}
-    <h2 class="subheading">The Solution</h2>
+    <h2>The Solution</h2>
     <p>
       {{ solution | safe }}
     </p>
-  </section>
+  </div>
 
   {{ content | safe }}
-</main>
+</div>
 {% endblock %}

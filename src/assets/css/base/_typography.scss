@@ -14,6 +14,27 @@ h2,
   font-size: 1.5rem;
 }
 
+h4,
+.h4 {
+  margin: 0;
+  font-family: var(--font-base);
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: var(--color-subheading);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &:not(:first-child) {
+    margin-top: 3rem;
+  }
+}
+
 .accent-text {
   text-shadow: 0 -0.125rem var(--color-tertiary-light),
     0.15rem 0.15rem var(--color-secondary);

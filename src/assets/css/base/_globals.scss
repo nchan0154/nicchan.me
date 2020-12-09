@@ -8,6 +8,7 @@ html,
 body {
   min-height: 100%;
   font-size: 100%;
+  font-family: var(--font-base);
   line-height: 1.5;
   background-color: var(--color-bg);
   color: var(--color-body-text);
@@ -22,4 +23,8 @@ img {
   max-width: 100%;
   height: auto;
   background-color: var(--color-primary);
+}
+
+p a {
+  @include highlight-link;
 }

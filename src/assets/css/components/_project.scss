@@ -1,0 +1,48 @@
+.project {
+  margin: 3rem auto;
+  font-size: 1.125rem;
+  line-height: 1.8;
+
+  h2 {
+    position: relative;
+    color: var(--color-subheading);
+    z-index: 1;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0.5rem;
+      left: -0.5rem;
+      width: 1rem;
+      height: 1rem;
+      background-color: var(--color-tertiary-light);
+      z-index: -1;
+    }
+  }
+}
+
+.project__heading {
+  font-weight: 700;
+  color: var(--color-heading);
+}
+
+.project__heading-link {
+  margin-left: -0.25rem;
+  padding: 0 0.25rem;
+  color: currentColor;
+  text-decoration: none;
+  @include highlight-link;
+}
+
+@media (min-width: 48em) {
+  .project {
+    h2 {
+      &::before {
+        left: -0.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+}

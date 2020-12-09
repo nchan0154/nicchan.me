@@ -23,8 +23,10 @@
 }
 
 .project-hero__image {
+  display: block;
   position: relative;
   max-height: 100vh;
+  margin: 0 auto;
   @include box-shadow;
   z-index: 1;
 }

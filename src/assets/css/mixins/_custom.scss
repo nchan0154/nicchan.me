@@ -12,3 +12,35 @@
   box-shadow: var(--shadow-width) var(--shadow-width) 0 0
     var(--color-dark-light);
 }
+
+@mixin highlight-link {
+  position: relative;
+  font-weight: 700;
+  color: currentColor;
+  text-decoration: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.001) 55%,
+    var(--color-link-highlight) 55%
+  );
+  box-shadow: 0 0.125rem var(--color-link-underline);
+  z-index: 1;
+  outline: 0.25rem solid transparent;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.001) 55%,
+      var(--color-link-hover-highlight) 55%
+    );
+    box-shadow: 0 0.125rem var(--color-link-hover-underline);
+  }
+
+  &:focus {
+    box-shadow: 0.125rem 0.125rem var(--color-primary);
+    background-color: var(--color-tertiary-light);
+  }
+}
