@@ -1,7 +1,7 @@
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
-<header
+<div
   class="project-hero"
   style="background-color: {{ color }}"
 >
@@ -9,7 +9,7 @@
     {{ image.path }}
     {% cloudinaryImage image.name, image.alt, image.width, image.height, "@media (min-width: 95em) 85.375rem, 90vw", "eager", "project-hero__image" %}
   </div>
-</header>
+</div>
 
 <div class="project">
   <div class="container container--md">

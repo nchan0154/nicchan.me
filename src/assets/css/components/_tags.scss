@@ -1,0 +1,27 @@
+.tags {
+  margin: 1rem 0 2rem -1.125rem;
+  padding: 0;
+  list-style: none;
+}
+
+.tags__tag {
+  display: inline-block;
+  position: relative;
+  font-size: 1rem;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  padding: 0.125rem 0.5rem 0.25rem;
+  background-color: var(--color-tertiary-light);
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -1.25rem;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: rem-calc(17) 1.25rem rem-calc(17) 0;
+    border-color: transparent var(--color-tertiary-light) transparent transparent;
+  }
+}
