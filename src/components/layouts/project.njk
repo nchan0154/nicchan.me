@@ -6,8 +6,7 @@
   style="background-color: {{ color }}"
 >
   <div class="project-hero__container container">
-    {{ image.path }}
-    {% cloudinaryImage image.name, image.alt, image.width, image.height, "@media (min-width: 95em) 85.375rem, 90vw", "eager", "project-hero__image" %}
+    {% cloudinaryImage image.name, image.alt, image.width, image.height, "(min-width: 95em) 85.375rem, 90vw", "eager", "project-hero__image" %}
   </div>
 </div>
 
@@ -26,6 +25,8 @@
       <h1 class="project__heading">{{ page.title }}</h1>
     {% endif %}
 
+    <p class="project__date h4">Project completed in {{ date | monthYear }}</p>
+
     <ul class="tags">
       {% for tech in technology %}
         <li class="tags__tag">{{ tech }}</li>
@@ -43,5 +44,6 @@
   </div>
 
   {{ content | safe }}
+
 </div>
 {% endblock %}

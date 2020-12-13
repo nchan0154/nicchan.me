@@ -1,9 +1,9 @@
 const syntaxHighlightPlugin = require('@11ty/eleventy-plugin-syntaxhighlight')
 const htmlMinTransform = require('./utils/transforms/htmlmin.js')
 const contentParser = require('./utils/transforms/contentParser.js')
-const htmlDate = require('./utils/filters/htmlDate.js')
+const dayjs = require('dayjs');
+const customParseFormat = require('dayjs/plugin/customParseFormat');
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
-const date = require('./utils/filters/date.js')
 const fs = require('fs')
 
 /**
@@ -37,10 +37,14 @@ module.exports = function (eleventyConfig) {
    *
    * @link https://www.11ty.io/docs/filters/
    */
-  // human friendly date format
-  eleventyConfig.addFilter('dateFilter', date)
+  dayjs.extend(customParseFormat)
+  eleventyConfig.addFilter('monthYear', function (date) {
+    return dayjs(date).format('MMMM YYYY')
+  })
   // robot friendly date format for crawlers
-  eleventyConfig.addFilter('htmlDate', htmlDate)
+  eleventyConfig.addFilter('htmlDate', function (date) {
+    return dayjs(date).format()
+  })
 
   /**
    * Add Transforms
@@ -82,9 +86,7 @@ module.exports = function (eleventyConfig) {
   })
 
   /**
-   * Override BrowserSync Server options
-   *
-   * @link https://www.11ty.dev/docs/config/#override-browsersync-server-options
+   * Cloudinary Shortcodes
    */
   eleventyConfig.cloudinaryCloudName = 'nicchan'
   eleventyConfig.addShortcode('cloudinaryImage', function (path, alt, width, height, sizes, loading, className, transforms) {
@@ -92,11 +94,11 @@ module.exports = function (eleventyConfig) {
     let srcSetArray = []
     multipliers.forEach(multiplier => {
       let currentWidth = Math.round(multiplier * width);
-      srcSetArray.push(`https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/image/upload/f_auto,q_auto,w_${currentWidth}/${path} ${currentWidth}w`)
+      srcSetArray.push(`https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/image/upload/f_auto,q_auto,c_limit,w_${currentWidth}/${path} ${currentWidth}w`)
     });
     return `
       <img class="${className}"
-        src="https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/image/upload/f_auto,q_auto,${transforms ? transforms : ''}/${path}"
+        src="https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/image/upload/f_auto,q_auto,c_limit,${transforms ? transforms : ''}/${path}"
         srcset="${srcSetArray.join(', ')}"
         alt="${alt}"
         ${loading ? "loading='" + loading + "'" : ''}
@@ -105,6 +107,28 @@ module.exports = function (eleventyConfig) {
         sizes="${sizes}"
         >`
   })
+  /**
+   * Templating Shortcodes
+   */
+  eleventyConfig.addPairedNunjucksShortcode("projectRow", function(content, color, caption) {
+    let tag = 'div';
+    let captionMarkup = '';
+    if (caption) {
+      tag = 'figure'
+      captionMarkup = `<figcaption class="project-media__caption">${caption}</figcaption>`
+    }
+    return `<${tag} class="project-media" style="background-color: ${color}">
+      ${content}
+      ${captionMarkup}
+      </${tag}>`;
+  });
+
+  eleventyConfig.addPairedNunjucksShortcode("projectColumn", function(content, width) {
+    return `<div class="project-media__column--${width}">
+      ${content}
+      </div>`;
+  });
+
   /**
    * Override BrowserSync Server options
    *

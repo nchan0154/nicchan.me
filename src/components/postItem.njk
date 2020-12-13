@@ -3,6 +3,6 @@
     <h3 style="--ne-vertical-leading: 1rem">
       <a href="{{ url }}" rel="bookmark">{{ title }}</a>
     </h3>
-    <time datetime="{{ date | htmlDate }}">{{ date | dateFilter }}</time>
+    <time datetime="{{ date | htmlDate }}">{{ date }}</time>
   </li>
 {% endmacro %}
