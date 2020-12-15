@@ -1,0 +1,108 @@
+---
+title: "The Key.Company"
+date: 2019-07-23
+image:
+  name: featured-tkc.png
+  width: 1366
+  height: 752
+  alt: "The Key.Company homepage"
+color: '#393952'
+link: https://thekey.company/
+technology:
+  - Shopify
+  - Liquid
+  - SCSS
+  - JavaScript
+
+blurb: A facelift for the best mechanical keyboard shop in the game.
+
+brief: |
+  The Key.Company had some ambitious plans for the next few months, but their old website was confusing and preventing customers from finding what they wanted.
+solution: |
+  With creative direction from <a href="https://bysusanlin.com/">Mintlodica</a>, I rebuilt the site with custom logic in order to handle the challenges of managing a unique purchase model, as well as giving the whole brand a more polished look and feel.
+---
+{% projectRow color, 'Before and After'%}
+  {% projectColumn 'half' %}
+    {% cloudinaryImage
+      'tkc-old',
+      "The old TKC Website",
+      1337,
+      736,
+      "(min-width: 48em) 45vw, 90vw",
+      "lazy",
+      "project-media__image" %}
+  {% endprojectColumn %}
+  {% projectColumn 'half' %}
+    {% cloudinaryImage
+      'featured-tkc.png',
+      "The current TKC Website",
+      1366,
+      752,
+      "(min-width: 48em) 45vw, 90vw",
+      "lazy",
+      "project-media__image" %}
+  {% endprojectColumn %}
+{% endprojectRow %}
+
+<h2>Highlights</h2>
+<h3>A Different Kind of Sales Model</h3>
+<p>
+Because artisanal mechanical keyboards is such a small and niche hobby,
+most vendors use a buying model called 'group buys' in order to minimize upfront costs and prevent loss.
+In a group buy, a vendor will take orders for a product that has yet to be manufactured.
+Once the buy period is over,
+the vendor will place the order with the manufacturer.
+Purchased products are shipped out when the manufacturing is complete,
+several months later.
+</p>
+<p>
+Due to this extended purchasing process,
+building trust with the customer is vital.
+The customer needs to know that the vendor won't just run off with their money,
+and they need to be able to follow along with any updates in the manufacturing process.
+To achieve this,
+we added quantity bars on the product page that updated the product's progress towards the minimum order quantity as orders came in,
+so customers could make informed decisions on whether or not a buy was likely to succeed,
+as well as a live countdown to clear up any confusion about group buy end times.
+We also added an updates page in order to gather the current status of both current and past projects.
+Since adding these features,
+TheKey.Company has seen it's revenue <strong>triple</strong>
+and many of it's competitors have added similar features to their own sites.
+</p>
+
+{% projectRow color %}
+  {% projectColumn 'half' %}
+    {% cloudinaryImage
+      'tkc-2.png',
+      "TKC product page.",
+      1337,
+      937,
+      "(min-width: 48em) 45vw, 90vw",
+      "lazy",
+      "project-media__image" %}
+  {% endprojectColumn %}
+  {% projectColumn 'half' %}
+    {% cloudinaryImage
+      'tkc-1.png',
+      "TKC Updates page.",
+      1366,
+      888,
+      "(min-width: 48em) 45vw, 90vw",
+      "lazy",
+      "project-media__image" %}
+  {% endprojectColumn %}
+{% endprojectRow %}
+
+<h2>Feedback</h2>
+<blockquote class="testimonial">
+  <p class="testimonial__text">Such a great improvement over the old site. I'm colorblind and love the increase in contrast of the colors.</p>
+  <cite class="testimonial__author">– Survey Feedback</cite>
+</blockquote>
+<blockquote class="testimonial">
+  <p class="testimonial__text">Been browsing [TheKey.Company] for a while now and I just want to compliment the individuals who do the ui design. It's one of the most pleasurable experiences for browsing and purchasing I've had not just in the mech space but in the online retailer space in general, it's pretty obvious a lot of thought and care was put into it.</p>
+  <cite class="testimonial__author">– A Discord User</cite>
+</blockquote>
+<blockquote class="testimonial">
+  <p class="testimonial__text">You’re the best. Do you know I sleep better at night knowing I can count on you?</p>
+  <cite class="testimonial__author">– Jason, The Key.Company Storeowner</cite>
+</blockquote>

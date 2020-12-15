@@ -14,7 +14,7 @@
   <div class="container container--md">
     {% if link %}
       <h1 class="project__heading">
-        <a class="project__heading-link" href="{{ link }}">
+        <a class="project__heading-link" href="{{ link }}" rel="noreferrer">
           {{title }}&nbsp;
           <span class="project__heading-arrow">
             &rarr;
@@ -22,10 +22,10 @@
         </a>
       </h1>
     {% else %}
-      <h1 class="project__heading">{{ page.title }}</h1>
+      <h1 class="project__heading">{{ title }}</h1>
     {% endif %}
 
-    <p class="project__date h4">Project completed in {{ date | monthYear }}</p>
+    <p class="project__date h4">Completed in {{ date | monthYear }}</p>
 
     <ul class="tags">
       {% for tech in technology %}
@@ -33,7 +33,7 @@
       {% endfor %}
     </ul>
 
-    {% if page.brief %}
+    {% if brief %}
       <h2>The Brief</h2>
       <p>{{ brief | safe }}</p>
     {% endif %}
@@ -43,7 +43,23 @@
     </p>
   </div>
 
-  {{ content | safe }}
+  <div class="project__rte">
+    {{ content | safe }}
+  </div>
 
+  <nav aria-label="Project Pagination" class="pagination container container--md">
+	{% set newerProject = collections.projects | getPreviousCollectionItem(page) %}
+  {% set olderProject = collections.projects | getNextCollectionItem(page) %}
+  {% if olderProject %}
+    <a class="pagination__link pagination__link--prev" href="{{ olderProject.url }}">
+      &larr; Older Project<span class="pagination__project-name">: {{ olderProject.data.title }}</span>
+    </a>
+  {% endif %}
+  {% if newerProject %}
+    <a class="pagination__link pagination__link--next" href="{{ newerProject.url }}">
+      Newer Project<span class="pagination__project-name">: {{ newerProject.data.title }}</span> &rarr;
+    </a>
+  {% endif %}
+  </nav>
 </div>
 {% endblock %}

@@ -26,5 +26,8 @@ hideNav: true
     </div>
   </div>
   <div class="index-section__visuals">
+    {% for project in collections.projects %}
+      {{ project.data.title }}
+    {% endfor %}
   </div>
 </section>

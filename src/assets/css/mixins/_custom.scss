@@ -8,9 +8,8 @@
   }
 }
 
-@mixin box-shadow {
-  box-shadow: var(--shadow-width) var(--shadow-width) 0 0
-    var(--color-dark-light);
+@mixin box-shadow($color: var(--color-dark-light)) {
+  box-shadow: var(--shadow-width) var(--shadow-width) 0 0 $color;
 }
 
 @mixin highlight-link {
@@ -40,7 +39,7 @@
   }
 
   &:focus {
-    box-shadow: 0.125rem 0.125rem var(--color-primary);
-    background-color: var(--color-tertiary-light);
+    box-shadow: 0.125rem 0.125rem var(--color-link-hover-underline);
+    background-color: var(--color-link-hover-highlight);
   }
 }

@@ -1,0 +1,92 @@
+---
+title: The Bit Factory
+date: 2017-04-16
+image:
+  name: featured-tbf.png
+  width: 1658
+  height: 1154
+  alt: Homepage for the Bit Factory
+color: '#07b3e7'
+technology:
+  - ReactJS
+  - Meteor
+  - SCSS
+  - Animation
+
+blurb: A website and portal for a startup incubator.
+
+solution: |
+  Under <a href="http://wonderkiln.com">Wonderkiln</a>, I built out the new site for The Bit Factory. The project not only contains a striking public facing site, it also includes a full featured portal for admin users to manage news posts, events, users, and more.
+---
+{% projectRow color %}
+  {% projectColumn 'half' %}
+    {% cloudinaryImage
+      'tbf-home-s.png',
+      "Full home page for The Bit Factory.",
+      1024,
+      2057,
+      "(min-width: 48em) 45vw, 90vw",
+      "lazy",
+      "project-media__image" %}
+  {% endprojectColumn %}
+  {% projectColumn 'half' %}
+    {% cloudinaryImage
+      'tbf-team-s.png',
+      "Team page for The Bit Factory.",
+      1024,
+      1687,
+      "(min-width: 48em) 45vw, 90vw",
+      "lazy",
+      "project-media__image" %}
+  {% endprojectColumn %}
+{% endprojectRow %}
+
+<h2>Highlights</h2>
+<h3>Animations</h3>
+<p>
+The public site makes heavy use of CSS animations in order to provide visual delight to the users.
+CSS3 animations are powerful and flexible,
+and are perfect in cases where jQuery would be overkill.
+</p>
+
+{% projectRow color, 'Portal views' %}
+  {% projectColumn 'half' %}
+    {% cloudinaryImage
+      'tbf-portal-application.png',
+      "Portal application page.",
+      1657,
+      888,
+      "(min-width: 48em) 45vw, 90vw",
+      "lazy",
+      "project-media__image" %}
+  {% endprojectColumn %}
+  {% projectColumn 'half' %}
+    {% cloudinaryImage
+      'tbf-portal-news.png',
+      "Portal news page.",
+      1657,
+      949,
+      "(min-width: 48em) 45vw, 90vw",
+      "lazy",
+      "project-media__image" %}
+  {% endprojectColumn %}
+{% endprojectRow %}
+
+<h2>A full featured portal</h2>
+<p>
+The portal contains views to manage incoming applications to The Bit Factory,
+as a well as a variety of media types. Each form leverages the power of Meteor's simple schema package
+with a full set of validation rules.
+</p>
+
+
+{% projectRow color, 'Edit view' %}
+  {% cloudinaryImage
+    'tbf-portal-edit.png',
+    "Edit form with validation error.",
+    1657,
+    989,
+    "90vw",
+    "lazy",
+    "project-media__image" %}
+{% endprojectRow %}

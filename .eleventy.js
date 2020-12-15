@@ -5,6 +5,8 @@ const dayjs = require('dayjs');
 const customParseFormat = require('dayjs/plugin/customParseFormat');
 const rssPlugin = require('@11ty/eleventy-plugin-rss')
 const fs = require('fs')
+const util = require('util');
+
 
 /**
  * Import site configuration
@@ -27,7 +29,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     './static': '.'
   })
-  eleventyConfig.addPassthroughCopy(`./src/assets/css/${siteConfig.syntaxTheme}`)
   eleventyConfig.addPassthroughCopy({
     bundle: 'assets'
   })
@@ -45,6 +46,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('htmlDate', function (date) {
     return dayjs(date).format()
   })
+  eleventyConfig.addFilter('console', function (value) {
+    return util.inspect(value);
+  });
 
   /**
    * Add Transforms
@@ -85,11 +89,17 @@ module.exports = function (eleventyConfig) {
     ]
   })
 
+  eleventyConfig.addCollection('projects', collection => {
+    return [
+      ...collection.getFilteredByTag("projects")
+    ].reverse();
+  });
+
   /**
    * Cloudinary Shortcodes
    */
   eleventyConfig.cloudinaryCloudName = 'nicchan'
-  eleventyConfig.addShortcode('cloudinaryImage', function (path, alt, width, height, sizes, loading, className, transforms) {
+  eleventyConfig.addShortcode('cloudinaryImage', function (path, alt, width, height, sizes, loading, className, transforms, attributes) {
     const multipliers = [0.25, 0.35, 0.5, 0.65, 0.75, 0.85, 1, 1.1, 1.25, 1.5, 1.75, 2];
     let srcSetArray = []
     multipliers.forEach(multiplier => {
@@ -97,7 +107,7 @@ module.exports = function (eleventyConfig) {
       srcSetArray.push(`https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/image/upload/f_auto,q_auto,c_limit,w_${currentWidth}/${path} ${currentWidth}w`)
     });
     return `
-      <img class="${className}"
+      <img ${className? 'class="' + className + '"' : ''}
         src="https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/image/upload/f_auto,q_auto,c_limit,${transforms ? transforms : ''}/${path}"
         srcset="${srcSetArray.join(', ')}"
         alt="${alt}"
@@ -105,6 +115,7 @@ module.exports = function (eleventyConfig) {
         width="${width}"
         height="${height}"
         sizes="${sizes}"
+        ${attributes? attributes: ''}
         >`
   })
   /**
@@ -115,7 +126,7 @@ module.exports = function (eleventyConfig) {
     let captionMarkup = '';
     if (caption) {
       tag = 'figure'
-      captionMarkup = `<figcaption class="project-media__caption">${caption}</figcaption>`
+      captionMarkup = `<figcaption class="project-media__caption h4">${caption}</figcaption>`
     }
     return `<${tag} class="project-media" style="background-color: ${color}">
       ${content}

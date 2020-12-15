@@ -1,0 +1,49 @@
+---
+title: Rooted
+date: 2019-04-30
+image:
+  name: featured-rooted.png
+  width: 1366
+  height: 768
+  alt: Rooted table builder, with a rendering of the currently designed table on the left and options to customize on the right.
+link: https://rootedfurniture.com/
+color: '#d4bfb0'
+technology:
+  - Shopify
+  - Liquid
+  - SCSS
+  - Vue.js
+
+blurb: Design your own custom table.
+
+brief: |
+  Rooted wanted to provide a whole host of customization options to their customers, but Shopify has a strict 100 variant limit for each product, as well as limited capabilities for organizing such options.
+solution: |
+  As a part of <a href="https://altanddot.com">Alt & Dot</a>, we created a custom purchasing experience that organized potential table options into logical categories. Upon selecting a table option, the viewer would generate a new image with the selected options that can be viewed from 4 angles. When a table is completed, the generated table is saved to Shopify with a unique URL, allowing customers to share and revise tables at any time.
+---
+{% projectRow color %}
+  {% projectColumn 'half' %}
+    <video class="project-media__image" controls width="100%">
+      <source src="https://res.cloudinary.com/nicchan/video/upload/v1607916397/rooted.webm" type="video/webm">
+    </video>
+  {% endprojectColumn %}
+  {% projectColumn 'half' %}
+    {% cloudinaryImage
+      'rooted-2.png',
+      "Homepage for Rooted.",
+      1366,
+      817,
+      "(min-width: 48em) 45vw, 90vw",
+      "lazy",
+      "project-media__image" %}
+  {% endprojectColumn %}
+{% endprojectRow %}
+
+<h2>Video Description</h2>
+<p>
+Video demonstrating Rooted's table builder functionality.
+Various options for color and style are toggled on the right
+and the customizations are displayed on the rendering on the left.
+The table is viewed from several angles, includingle angle, profile, head and top.
+When the table is completed, a short loading screen appears before it is added to the cart as a single line item.
+</p>

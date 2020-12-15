@@ -25,20 +25,23 @@
   max-width: 100%;
   display: block;
   margin: 0 auto;
+  @include box-shadow;
   z-index: 1;
 
   &--full {
     max-height: none;
   }
-
-  &:not(video) {
-    @include box-shadow;
-    max-height: 90vh;
-  }
 }
 
 [class^="project-media__column"] + [class^="project-media__column"] {
   margin-top: 3rem;
+}
+
+.project-media__caption {
+  position: absolute;
+  left: 5%;
+  bottom: 1rem;
+  color: var(--color-offwhite);
 }
 
 @media (min-width: 48em) {
@@ -49,7 +52,8 @@
     gap: 3rem;
     margin: 5rem 0;
 
-    & > img, & > video {
+    & > img,
+    & > video {
       grid-column: span 6;
     }
   }
@@ -68,5 +72,9 @@
 
   [class^="project-media__column"] + [class^="project-media__column"] {
     margin-top: 0;
+  }
+
+  .product-media__image {
+    max-height: 90vh;
   }
 }

@@ -1,0 +1,81 @@
+---
+title: The Giftwell
+date: 2018-11-07
+image:
+  name: featured-giftwell.png
+  width: 1629
+  height: 880
+  alt: Giftwell Homepage.
+color: '#a86a66'
+link: https://thegiftwell.com/
+technology:
+  - Shopify
+  - Liquid
+  - SCSS
+  - Vue.js
+
+blurb: A completely customized giftbox building experience.
+solution: |
+  As a part of <a href="http://www.altanddot.com/">Alt & Dot</a>, I built out a completely customized flow for Giftwell customers to assemble custom wedding gifts. Users can customize their box design, choose which items go in their boxes, and add an optional note. All of this is seamlessly presented as a single page app, and customers can return to any previous step to modify their selection.
+---
+{% projectRow color %}
+  {% projectColumn 'half' %}
+    {% cloudinaryImage
+      'giftwell-shop-1.png',
+      "Step 1: Choosing a Box.",
+      1366,
+      933,
+      "(min-width: 48em) 45vw, 90vw",
+      "lazy",
+      "project-media__image" %}
+  {% endprojectColumn %}
+  {% projectColumn 'half' %}
+    {% cloudinaryImage
+      'giftwell-shop-2.png',
+      "Step 2: Fill your gifts.",
+      1366,
+      933,
+      "(min-width: 48em) 45vw, 90vw",
+      "lazy",
+      "project-media__image" %}
+  {% endprojectColumn %}
+{% endprojectRow %}
+
+<h2>Highlights</h2>
+<p>
+Having the ability to sort potential box items is essential for customers to be able to make decisions quickly.
+Client side sorting and filtering allows for selections to be instantaneous,
+creating a frictionless shopping flow.
+I also added a custom image viewer to allow customers to sort through multiple product images and display nutritional information.
+</p>
+
+{% projectRow color %}
+  {% projectColumn 'half' %}
+    {% cloudinaryImage
+      'giftwell-shop-3.png',
+      "Step 3: Customize your box.",
+      1366,
+      933,
+      "(min-width: 48em) 45vw, 90vw",
+      "lazy",
+      "project-media__image" %}
+  {% endprojectColumn %}
+  {% projectColumn 'half' %}
+    {% cloudinaryImage
+      'giftwell-shop-5.png',
+      "Review your Giftwell Box",
+      1366,
+      933,
+      "(min-width: 48em) 45vw, 90vw",
+      "lazy",
+      "project-media__image" %}
+  {% endprojectColumn %}
+{% endprojectRow %}
+
+<h3>Shopify</h3>
+<p>
+Fitting the project within Shopify's constraints was a tricky task,
+but we were able to design the application in such a way that it would pull all details from the Shopify admin,
+allowing the client to make changes to products,
+variants and collections as desired.
+</p>

@@ -25,8 +25,19 @@
 .project-hero__image {
   display: block;
   position: relative;
-  max-height: 100vh;
   margin: 0 auto;
   @include box-shadow;
   z-index: 1;
+}
+
+@media (min-width: 48em) {
+  .project-hero {
+    padding: 5rem 0;
+  }
+}
+
+@media (min-width: 95em) {
+  .project-hero__image {
+    width: 85.375rem;
+  }
 }

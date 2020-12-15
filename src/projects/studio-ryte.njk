@@ -1,0 +1,74 @@
+---
+title: Studio RYTE
+date: 2018-05-01
+image:
+  name: featured-studio-ryte.png
+  width: 1366
+  height: 719
+  alt: Studio Ryte Homepage
+color: '#d7aca1'
+link: https://www.studio-ryte.com/
+technology:
+  - Jekyll
+  - Forestry
+  - Liquid
+  - SCSS
+  - JavaScript
+  - Animation
+
+blurb: A local design studio's big rebrand.
+
+brief: |
+  Studio RYTE (formerly known as UPSOP) was executing a big redesign. The one problem was that they wanted it to be done before the Milan Design Biennale, a mere three weeks away.
+solution: |
+  Using a prebuilt theme was not an option for Studio RYTE, who wanted to show off their own design chops with their new portfolio. We had to find other ways to save time in order to make the tight deadline. I ended up using a Jekyll, Forestry and Netlify based-stack to continually build and deploy new parts of the site, while they worked on importing content as they completed the designs. The choice of technologies allowed enough flexibility during the build out to change and extend the site in a short period of time.
+---
+{% projectRow color %}
+  {% projectColumn 'half' %}
+    {% cloudinaryImage
+      'studio-ryte-case-study.png',
+      "Project case study for Studio Ryte",
+      500,
+      1876,
+      "(min-width: 72em) 31.25em, (min-width: 48em) 45vw, 90vw",
+      "lazy",
+      "project-media__image" %}
+  {% endprojectColumn %}
+  {% projectColumn 'half' %}
+    {% cloudinaryImage
+      'studio-ryte-blog.png',
+      "Blog for Studio Ryte",
+      500,
+      1684,
+      "(min-width: 72em) 31.25em, (min-width: 48em) 45vw, 90vw",
+      "lazy",
+      "project-media__image" %}
+  {% endprojectColumn %}
+{% endprojectRow %}
+
+<h2>Highlights</h2>
+<h3>Blog and Project Pages</h3>
+<p>
+The project page was built up out of a modular system of blocks
+so Studio RYTE could customize each case study as needed.
+The blog page features an instagram integration to pull all latest posts.
+</p>
+
+{% projectRow color, "Menu Animation" %}
+  <video class="project-media__image" controls width="100%">
+    <source src="https://res.cloudinary.com/nicchan/video/upload/v1607942664/studio-ryte-menu.webm" type="video/webm">
+  </video>
+{% endprojectRow %}
+
+<h3>Video Description</h3>
+<p>
+The menu is split into two, one side with a dark theme and the other with a light theme.
+When opened, the left side slides up from the bottom and the right side slides down from the top.
+When hovering over a project name, the background changes to the project.
+</p>
+
+<h3>Menu</h3>
+<p>
+The creative nature of Studio RYTE allowed for a little more experimentation when it came to designing the site menu.
+The animations served to reinforce the RYTE/LEVT brand and offered a way for users to preview projects they were interested in.
+</p>

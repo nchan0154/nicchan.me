@@ -12,7 +12,7 @@
 {% block content %}
   <main tabindex="-1" style="--ne-vertical-leading: 3rem">
     {% if date %}
-      <small><time datetime="{{ date | htmlDate }}">{{ date | dateFilter }}</time></small>
+      <small><time datetime="{{ date | htmlDate }}">{{ date | monthYear }}</time></small>
     {% endif %}
     <h1>{{ title }}</h1>
     {% if tags.length %}

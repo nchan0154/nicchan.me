@@ -6,9 +6,11 @@
   --color-secondary-dark: #3d99a4;
   --color-tertiary: #9c7a9d;
   --color-tertiary-light: #dac7db;
+  --color-tertiary-extra-light: #f2e7f3;
   --color-tertiary-dark: #645374;
   --color-offwhite: #fafafa;
   --color-dark-light: #4f4d7e;
+  --color-dark-extra-light: #4f4d7e;
   --color-dark: #2c2b4b;
 
   --color-bg: var(--color-offwhite);
@@ -19,6 +21,9 @@
   --color-link-underline: var(--color-secondary-dark);
   --color-link-hover-highlight: var(--color-tertiary-light);
   --color-link-hover-underline: var(--color-primary);
+  --color-quote-background: var(--color-tertiary-extra-light);
+  --color-quote-shadow: var(--color-tertiary-light);
+  --color-quote-accent: var(--color-tertiary);
 
   --font-accent: "Playfair Display", serif;
   --font-base: "Lato", sans-serif;
