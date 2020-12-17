@@ -1,0 +1,44 @@
+---
+title: Hinge
+date: 2019-04-26
+image:
+  name: featured-hinge.png
+  width: 1366
+  height: 768
+  alt: "Hinge.co homepage"
+color: '#6A42ED'
+link: https://hinge.co
+technology:
+  - Nuxt
+  - Vue.js
+  - SCSS
+  - NetlifyCMS
+  - Jamstack
+
+blurb: A marketing site for one of the world's largest dating apps.
+
+solution: |
+  Under <a href="https://altanddot.com">Alt & Dot</a>, I built out a static site for Hinge in order to support their marketing efforts. The site utilized the greenhouse.io API in order to pull in the total quantity and latest job listings for the career page.
+---
+{% projectRow color %}
+  {% projectColumn 'half' %}
+    {% cloudinaryImage
+      'hinge-mission.png',
+      "Hinge Mission page.",
+      1366,
+      2605,
+      "(min-width: 48em) 45vw, 90vw",
+      "lazy",
+      "project-media__image" %}
+  {% endprojectColumn %}
+  {% projectColumn 'half' %}
+    {% cloudinaryImage
+      'hinge-our-team.png',
+      "Hinge team and careers page.",
+      1366,
+      4645,
+      "(min-width: 48em) 45vw, 90vw",
+      "lazy",
+      "project-media__image" %}
+  {% endprojectColumn %}
+{% endprojectRow %}

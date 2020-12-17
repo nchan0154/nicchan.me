@@ -108,7 +108,7 @@ module.exports = function (eleventyConfig) {
     });
     return `
       <img ${className? 'class="' + className + '"' : ''}
-        src="https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/image/upload/f_auto,q_auto,c_limit,${transforms ? transforms : ''}/${path}"
+        src="https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/image/upload/f_auto,q_auto,c_limit${transforms ? ',' + transforms : ''}/${path}"
         srcset="${srcSetArray.join(', ')}"
         alt="${alt}"
         ${loading ? "loading='" + loading + "'" : ''}

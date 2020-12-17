@@ -1,0 +1,76 @@
+---
+title: Not Pot
+date: 2020-03-02
+image:
+  name: featured-notpot.png
+  width: 1359
+  height: 837
+  alt: "Not Pot homepage"
+color: '#d2c1db'
+technology:
+  - Shopify
+  - Liquid
+  - SCSS
+  - JavaScript
+  - Animations
+
+blurb: The chillest CBD dealer around.
+
+brief: |
+  Not Pot had a stunning, unique brand, but their Shopify theme was specifically coded to work with only a single product offering.
+
+solution: |
+  In order to support their growth, I created a new Shopify theme from scratch to support newly developed flavor offerings as well as a merch line.
+  The goal for this rewrite was to empower the merchant to be able to update content and products without developer intervention.
+---
+{% projectRow color %}
+  {% projectColumn 'half' %}
+    {% cloudinaryImage
+      'notpot-pdp.png',
+      "Not Pot product page.",
+      1311,
+      2100,
+      "(min-width: 48em) 45vw, 90vw",
+      "lazy",
+      "project-media__image" %}
+  {% endprojectColumn %}
+  {% projectColumn 'half' %}
+    {% cloudinaryImage
+      'notpot-plp.png',
+      "Not Pot merch collection.",
+      1311,
+      2339,
+      "(min-width: 48em) 45vw, 90vw",
+      "lazy",
+      "project-media__image" %}
+  {% endprojectColumn %}
+{% endprojectRow %}
+
+<h2>Highlights</h2>
+
+<h3>Animations</h3>
+<p>
+The site features a ton of animation,
+from the rolling of the wave dividers to individual sticker animations.
+I made sure to respect user preferences by detecting when reduced animations were preferred,
+and took care to optimize for perfomrnace by pausing all animations that are out of the viewport.
+</p>
+
+<h3>Integrations</h3>
+<p>
+The site included a custom ReCharge integration in order to support a custom UI
+while allowing the customer to purchase the prooduct on a reocurring basis.
+I also integrated both the Klaviyo and PostScript APIs for all of Not Pot's marketing efforts.
+</p>
+
+
+{% projectRow color %}
+  {% cloudinaryImage
+    'notpot-cart.png',
+    "Not Pot shopping cart.",
+    1311,
+    9878,
+    "(min-width: 92em) 81.938em, 90vw",
+    "lazy",
+    "project-media__image" %}
+{% endprojectRow %}

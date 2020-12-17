@@ -7,7 +7,9 @@
   {% set pageTitle = title + ' - ' + config.name %}
 {% endif %}
 
-{% if metaDesc %}
+{% if brief %}
+  {% set pageDesc = blurb %}
+{% elif metaDesc %}
   {% set pageDesc = metaDesc %}
 {% endif %}
 
@@ -29,11 +31,11 @@
   <meta property="og:description" content="{{ pageDesc }}" />
 {% endif %}
 
-{% if socialImage %}
-  <meta property="og:image" content="{{ socialImage }}" />
-  <meta name="twitter:image" content="{{ socialImage }}" />
-  <meta property="og:image:alt" content="{{ socialImageAlt }}" />
-  <meta name="twitter:image:alt" content="{{ socialImageAlt }}" />
+{% if image %}
+  <meta property="og:image" content="https://res.cloudinary.com/nicchan/image/upload/f_auto,q_auto,c_limit,w_1200,h_630/{{ image.name }}" />
+  <meta name="twitter:image" content="https://res.cloudinary.com/nicchan/image/upload/f_auto,q_auto,c_limit,w_1200,h_630/{{ image.name }}" />
+  <meta property="og:image:alt" content="{{ image.alt  }}" />
+  <meta name="twitter:image:alt" content="{{ image.alt }}" />
 {% endif %}
 
 {% if config.paymentPointer %}
