@@ -3,7 +3,9 @@
 {% set siteTitle = config.name %}
 {% set currentUrl = config.url + page.url %}
 
-{% if title %}
+{% if renderData.title %}
+  {% set pageTitle = renderData.title + ' - ' + config.name %}
+{% elif title %}
   {% set pageTitle = title + ' - ' + config.name %}
 {% endif %}
 
