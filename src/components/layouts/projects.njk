@@ -1,0 +1,37 @@
+{% extends 'layouts/base.njk' %}
+
+{% block content %}
+<div class="projects container container--xl">
+  <div class="staggered-heading">
+    <h1 class="staggered-heading__title">Projects</h1>
+    {% if tech %}
+      <p class="staggered-heading__tagged">Tagged with {{ tech }}</p>
+    {% endif %}
+    <nav class="staggered-heading__nav" aria-label="Technology tags">
+      <ul class="staggered-heading__linklist">
+        <li>
+          <a {% if page.url == '/projects/' %}aria-current="page"{% endif %} href="/projects/">All Projects</a>
+        </li>
+        {%- for tag in collections.projectTags -%}
+          {% set tag_url -%}/projects/tagged/{{ tag | slug}}/{% endset %}
+          <li>
+            <a {% if page.url == tag_url %}aria-current="page"{% endif %} href="{{ tag_url }}">{{ tag }}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+  </div>
+  <ul class="project-list">
+    {% if tech %}
+      {% set list = collections.projectTagsCollections[tech] %}
+    {% else %}
+      {% set list = collections.projects %}
+    {% endif %}
+    {% for project in list %}
+      <li class="project-list__item">
+        <a href="{{ project.url }}">{{ project.data.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

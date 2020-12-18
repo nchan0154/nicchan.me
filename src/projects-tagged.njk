@@ -1,0 +1,10 @@
+---
+renderData:
+  title: Projects tagged with “{{ tech }} ”
+layout: 'projects'
+permalink: /projects/tagged/{{ tech | slug }}/
+pagination:
+  data: collections.projectTags
+  size: 1
+  alias: tech
+---
