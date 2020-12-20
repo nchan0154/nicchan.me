@@ -1,6 +1,7 @@
 :root {
   --color-primary: #a75293;
   --color-primary-light: #c181b1;
+  --color-primary-dark: #822f6e;
   --color-secondary: #9ddacb;
   --color-secondary-light: #d4ede7;
   --color-secondary-dark: #3d99a4;
@@ -17,6 +18,7 @@
   --color-body-text: var(--color-dark);
   --color-heading: var(--color-dark);
   --color-subheading: var(--color-dark-light);
+  --color-heading-accent: var(--color-tertiary-light);
   --color-link-highlight: var(--color-secondary-light);
   --color-link-underline: var(--color-secondary-dark);
   --color-link-hover-highlight: var(--color-tertiary-light);
@@ -24,6 +26,13 @@
   --color-quote-background: var(--color-tertiary-extra-light);
   --color-quote-shadow: var(--color-tertiary-light);
   --color-quote-accent: var(--color-tertiary);
+  --color-icon: var(--color-primary);
+  --color-border: var(--color-tertiary-light);
+  --color-filter-link: var(--color-primary);
+  --color-project-item-background: var(--color-tertiary-extra-light);
+  --color-project-item-shadow: var(--color-dark-extra-light);
+  --color-tag: var(--color-tertiary-light);
+  --color-tag-text: var(--color-dark);
 
   --font-accent: "Playfair Display", serif;
   --font-base: "Lato", sans-serif;

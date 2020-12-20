@@ -11,6 +11,7 @@ body {
   line-height: 1.5;
   background-color: var(--color-bg);
   color: var(--color-body-text);
+  font-smoothing: antialiased;
 }
 
 ::selection {
@@ -26,4 +27,8 @@ img {
 
 p a {
   @include highlight-link;
+}
+
+button * {
+  pointer-events: none;
 }

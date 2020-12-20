@@ -43,3 +43,20 @@
     background-color: var(--color-link-hover-highlight);
   }
 }
+
+@mixin accent-box {
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0.25em;
+    left: -0.25em;
+    width: 0.75em;
+    height: 0.75em;
+    background-color: var(--color-tertiary-light);
+    z-index: -1;
+  }
+}

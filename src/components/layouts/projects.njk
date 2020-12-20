@@ -1,25 +1,33 @@
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
-<div class="projects container container--xl">
-  <div class="staggered-heading">
-    <h1 class="staggered-heading__title">Projects</h1>
-    {% if tech %}
-      <p class="staggered-heading__tagged">Tagged with {{ tech }}</p>
-    {% endif %}
-    <nav class="staggered-heading__nav" aria-label="Technology tags">
-      <ul class="staggered-heading__linklist">
-        <li>
-          <a {% if page.url == '/projects/' %}aria-current="page"{% endif %} href="/projects/">All Projects</a>
-        </li>
-        {%- for tag in collections.projectTags -%}
-          {% set tag_url -%}/projects/tagged/{{ tag | slug}}/{% endset %}
-          <li>
-            <a {% if page.url == tag_url %}aria-current="page"{% endif %} href="{{ tag_url }}">{{ tag }}</a>
+<div class="page container container--xl">
+  <div class="staggered-header">
+    <div class="staggered-header__main">
+      <h1 class="staggered-header__title">Projects</h1>
+      {% if tech %}
+        <p class="staggered-header__tagged h4">Tagged with {{ tech }}</p>
+      {% endif %}
+    </div>
+    <div class="staggered-header__filters">
+      <button class="staggered-header__nav-toggle h3" aria-expanded="false">
+        Show Project Filters
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
+      </button>
+      <nav class="staggered-header__nav" aria-label="Technology tags">
+        <ul class="staggered-header__linklist">
+          <li class="staggered-header__item">
+            <a class="staggered-header__link staggered-header__link--all" {% if page.url == '/projects/' %}aria-current="page"{% endif %} href="/projects/">All Projects</a>
           </li>
-        {%- endfor -%}
-      </ul>
-    </nav>
+          {%- for tag in collections.projectTags -%}
+            {% set tag_url -%}/projects/tagged/{{ tag | slug}}/{% endset %}
+            <li class="staggered-header__item">
+              <a class="staggered-header__link" {% if page.url == tag_url %}aria-current="page"{% endif %} href="{{ tag_url }}">{{ tag }}</a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+    </div>
   </div>
   <ul class="project-list">
     {% if tech %}
@@ -28,8 +36,19 @@
       {% set list = collections.projects %}
     {% endif %}
     {% for project in list %}
-      <li class="project-list__item">
-        <a href="{{ project.url }}">{{ project.data.title }}</a>
+      <li class="project-list__item project-item" style="background-color: {{ project.data.color }}">
+        <a class="project-item__link" href="{{ project.url }}"><span class="screenreader">{{ project.data.title }}</span></a>
+        {% set image = project.data.image %}
+        {% cloudinaryImage image.name, image.alt, image.width, image.height, "(min-width: 95em) 85.375rem, 90vw", "eager", "project-item__image" %}
+        <div class="project-item__content project-item__content--{{ project.data.color | getColorTheme }}" style="background-color: {{ project.data.color }}">
+          <p class="project-item__title h2" aria-hidden="true">{{ project.data.title }}</p>
+          <p class="project-item__blurb">{{ project.data.blurb }}</p>
+          <ul class="project-item__tags tags tags--small">
+            {% for tag in project.data.technology %}
+              <li class="tags__tag">{{ tag }}</li>
+            {% endfor %}
+          </ul>
+        </div>
       </li>
     {% endfor %}
   </ul>

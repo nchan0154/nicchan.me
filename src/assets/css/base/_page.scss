@@ -1,0 +1,9 @@
+.page {
+  margin: 3rem auto;
+}
+
+@media (min-width: 48em) {
+  .page {
+    margin: 5rem auto;
+  }
+}

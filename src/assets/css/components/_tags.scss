@@ -1,20 +1,35 @@
 .tags {
-  margin: 1rem 0 2rem -1.125rem;
+  margin: 1rem 0 2rem -0.75rem;
   padding: 0;
   list-style: none;
+
+  &--small {
+    margin-left: -1rem;
+
+    .tags__tag {
+      font-size: 0.875rem;
+
+      &::before {
+        left: -1rem;
+        border-width: rem-calc(15.5) 1rem rem-calc(15.5) 0;
+      }
+    }
+  }
 }
 
 .tags__tag {
   display: inline-block;
   position: relative;
+  line-height: 1.8;
   font-size: 1rem;
   margin-left: 2rem;
   margin-top: 1rem;
   padding: 0.125rem 0.5rem 0.25rem;
-  background-color: var(--color-tertiary-light);
+  background-color: var(--color-tag);
+  color: var(--color-tag-text);
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     left: -1.25rem;
     top: 0;
@@ -22,6 +37,6 @@
     height: 0;
     border-style: solid;
     border-width: rem-calc(17) 1.25rem rem-calc(17) 0;
-    border-color: transparent var(--color-tertiary-light) transparent transparent;
+    border-color: transparent var(--color-tag) transparent transparent;
   }
 }
