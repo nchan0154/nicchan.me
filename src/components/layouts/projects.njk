@@ -1,6 +1,7 @@
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
+<<<<<<< HEAD
 <div class="page container container--xl">
   <div class="staggered-header">
     <div class="staggered-header__main">
@@ -28,6 +29,27 @@
         </ul>
       </nav>
     </div>
+=======
+<div class="projects container container--xl">
+  <div class="staggered-heading">
+    <h1 class="staggered-heading__title">Projects</h1>
+    {% if tech %}
+      <p class="staggered-heading__tagged">Tagged with {{ tech }}</p>
+    {% endif %}
+    <nav class="staggered-heading__nav" aria-label="Technology tags">
+      <ul class="staggered-heading__linklist">
+        <li>
+          <a {% if page.url == '/projects/' %}aria-current="page"{% endif %} href="/projects/">All Projects</a>
+        </li>
+        {%- for tag in collections.projectTags -%}
+          {% set tag_url -%}/projects/tagged/{{ tag | slug}}/{% endset %}
+          <li>
+            <a {% if page.url == tag_url %}aria-current="page"{% endif %} href="{{ tag_url }}">{{ tag }}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+>>>>>>> 35f8b5da998a1a92b89001c359f8dfb9598de934
   </div>
   <ul class="project-list">
     {% if tech %}
@@ -36,6 +58,7 @@
       {% set list = collections.projects %}
     {% endif %}
     {% for project in list %}
+<<<<<<< HEAD
       <li class="project-list__item project-item" style="background-color: {{ project.data.color }}">
         <a class="project-item__link" href="{{ project.url }}"><span class="screenreader">{{ project.data.title }}</span></a>
         {% set image = project.data.image %}
@@ -49,6 +72,10 @@
             {% endfor %}
           </ul>
         </div>
+=======
+      <li class="project-list__item">
+        <a href="{{ project.url }}">{{ project.data.title }}</a>
+>>>>>>> 35f8b5da998a1a92b89001c359f8dfb9598de934
       </li>
     {% endfor %}
   </ul>
