@@ -153,6 +153,10 @@ module.exports = function (eleventyConfig) {
     return resultArrays;
   });
 
+  eleventyConfig.addNunjucksFilter("limit", (arr, limit) =>
+    arr.slice(0, limit)
+  );
+
   /**
    * Cloudinary Shortcodes
    */

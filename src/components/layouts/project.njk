@@ -29,7 +29,10 @@
 
     <ul class="tags">
       {% for tech in technology %}
-        <li class="tags__tag">{{ tech }}</li>
+        {% set tag_url -%}/projects/tagged/{{ tech | slug}}/{% endset %}
+        <li class="tags__item">
+          <a href="{{ tag_url }}" class="tags__tag tags__tag--link">{{ tech }}</a>
+        </li>
       {% endfor %}
     </ul>
 

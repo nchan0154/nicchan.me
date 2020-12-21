@@ -1,0 +1,116 @@
+.index-projects {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.index-project__item {
+  display: block;
+  position: relative;
+  width: 70%;
+
+  &:first-child {
+    margin-left: 5%;
+  }
+
+  &:nth-child(2) {
+    margin-right: 5%;
+    margin-left: auto;
+    margin-top: -10%;
+  }
+
+  &:nth-child(3) {
+    margin-left: 15%;
+    margin-top: -10%;
+  }
+
+  &:hover,
+  &:focus-within {
+    z-index: 3;
+  }
+}
+
+.index-project__link {
+  display: block;
+  position: relative;
+  @include box-shadow();
+  overflow: hidden;
+  transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
+
+  &:hover {
+    transform: translate(0.25rem, 0.25rem);
+    box-shadow: 0.5rem 0.5rem 0 0 rgba(130, 47, 110, 0.6),
+      -0.25rem 0.25rem 0 0 rgba(61, 153, 164, 0.8);
+    .index-project__image--shift {
+      transform: translate(0.125rem, 0.125rem);
+      opacity: 1;
+    }
+  }
+
+  &:focus {
+    outline: 0.25rem dashed var(--color-tertiary-light);
+    outline-offset: 0.5rem;
+  }
+}
+
+.index-project__image {
+  display: block;
+}
+
+.index-project__image--shift {
+  position: absolute;
+  top: 0;
+  filter: sepia(1) brightness(1.8) hue-rotate(-75deg);
+  mix-blend-mode: multiply;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 72em) {
+  .index-project__item {
+    width: 55%;
+  }
+}
+
+// animations
+@media (prefers-reduced-motion: no-preference) {
+  [data-js-enabled="true"] {
+    [data-aos].index-project__item {
+      opacity: 0;
+
+      &:nth-child(1) {
+        transform: translate(2rem, 2rem);
+      }
+
+      &:nth-child(2) {
+        transform: translate(0, -1rem);
+      }
+
+      &:nth-child(3) {
+        transform: translate(1rem, -1.5rem);
+      }
+    }
+
+    [data-aos="playing"].index-project__item {
+      animation: 0.7s fadeIntoPlace forwards;
+
+      &:nth-child(2) {
+        animation-delay: 0.3s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+    }
+
+    [data-aos="ended"].index-project__item {
+      opacity: 1;
+
+      &:nth-child(n) {
+        transform: none;
+      }
+    }
+  }
+}

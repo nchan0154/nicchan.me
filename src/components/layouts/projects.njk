@@ -41,7 +41,7 @@
         {% set image = project.data.image %}
         <div class="project-item__images">
           {% cloudinaryImage image.name, image.alt, image.width, image.height, "(min-width: 85em) 35rem, (min-width: 48em) 45vw, 90vw", "eager", "project-item__image" %}
-          {% cloudinaryImage image.name, image.alt, image.width, image.height, "(min-width: 85em) 35rem, (min-width: 48em) 45vw, 90vw", "eager", "project-item__image--shift" %}
+          {% cloudinaryImage image.name, "", image.width, image.height, "(min-width: 85em) 35rem, (min-width: 48em) 45vw, 90vw", "eager", "project-item__image--shift" %}
         </div>
         <div class="project-item__content project-item__content--{{ project.data.color | getColorTheme }}" style="background-color: {{ project.data.color }}">
           <p class="project-item__title h2" aria-hidden="true">{{ project.data.title }}</p>

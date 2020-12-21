@@ -17,6 +17,11 @@
   }
 }
 
+.tags__item {
+  display: inline-block;
+  position: relative;
+}
+
 .tags__tag {
   display: inline-block;
   position: relative;
@@ -38,5 +43,23 @@
     border-style: solid;
     border-width: rem-calc(17) 1.25rem rem-calc(17) 0;
     border-color: transparent var(--color-tag) transparent transparent;
+    transition: border 0.3s ease;
+  }
+}
+
+.tags__tag--link {
+  color: var(--color-tag-text);
+  box-shadow: 0.125rem 0.125rem 0 0 var(--color-tag-underline);
+  text-decoration: none;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+
+  &:hover {
+    --color-tag: var(--color-secondary-light);
+    --color-tag-underline: var(--color-secondary-dark);
+  }
+
+  &:focus {
+    outline: 0.25rem solid transparent;
+    box-shadow: 0.25rem 0.25rem 0 0 var(--color-tag-underline);
   }
 }

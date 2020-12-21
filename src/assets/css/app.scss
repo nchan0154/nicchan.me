@@ -10,14 +10,15 @@
 @import "./base/animations";
 @import "./base/page";
 
+@import "./components/index-project";
 @import "./components/index-section";
-@import "./components/project-hero";
-@import "./components/project";
-@import "./components/tags";
-@import "./components/project-media";
 @import "./components/pagination";
-@import "./components/staggered-header";
+@import "./components/project";
+@import "./components/project-media";
+@import "./components/project-hero";
 @import "./components/project-list";
 @import "./components/project-item";
+@import "./components/staggered-header";
+@import "./components/tags";
 
 @import "./base/utility";

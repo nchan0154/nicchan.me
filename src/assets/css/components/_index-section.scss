@@ -67,7 +67,7 @@
   .index-section__container {
     width: 80%;
     max-width: 40rem;
-    padding: 0 5rem;
+    padding: 0 3rem;
   }
 
   .index-section__decorative-square {
@@ -85,6 +85,17 @@
     height: calc(50vh + 10rem);
     background-color: var(--color-tertiary-light);
     transform-origin: top center;
+
+    &--full {
+      top: 0;
+      height: 100%;
+    }
+  }
+}
+
+@media (min-width: 80em) {
+  .index-section__container {
+    padding: 0 5rem;
   }
 }
 
@@ -97,29 +108,46 @@
 // animations
 @media (prefers-reduced-motion: no-preference) {
   @media (min-width: 72em) and (min-height: 48em) {
-    .index-section__decorative-square[data-aos] {
-      opacity: 0;
+    [data-aos] {
+      &.index-section__decorative-square {
+        opacity: 0;
+      }
+
+      &.index-section__decorative-line {
+        transform: scaleY(0);
+      }
+
+      .index-section__decorative-line {
+        transform: scaleY(0);
+      }
     }
 
-    .index-section__decorative-square[data-aos="playing"] {
-      animation: 0.3s fadeIn forwards;
+    [data-aos="playing"] {
+      &.index-section__decorative-square {
+        animation: 0.5s fadeIn forwards;
+      }
+
+      &.index-section__decorative-line {
+        animation: 0.6s scaleVertically forwards 0.5s;
+      }
+
+      .index-section__decorative-line--full {
+        animation: 0.8s scaleVertically forwards;
+      }
     }
 
-    .index-section__decorative-square[data-aos="ended"] {
-      opacity: 1;
-      animation: 0.5s static infinite;
-    }
+    [data-aos="ended"] {
+      &.index-section__decorative-square {
+        opacity: 1;
+      }
 
-    .index-section__decorative-line[data-aos] {
-      transform: scaleY(0);
-    }
+      &.index-section__decorative-line {
+        transform: scaleY(1);
+      }
 
-    .index-section__decorative-line[data-aos="playing"] {
-      animation: 0.3s scaleVertically forwards 0.3s;
-    }
-
-    .index-section__decorative-line[data-aos="ended"] {
-      transform: scaleY(1);
+      .index-section__decorative-line--full {
+        transform: scaleY(1);
+      }
     }
   }
 }

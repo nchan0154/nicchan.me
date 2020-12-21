@@ -3,7 +3,7 @@ layout: 'base'
 title: null
 hideNav: true
 ---
-<section class="index-section index-section--first">
+<section class="index-section index-section--first" data-aos>
   <div class="index-section__text-wrapper">
     <div class="index-section__container">
       <div class="index-section__decorative-square" data-aos></div>
@@ -17,17 +17,28 @@ hideNav: true
   <div class="index-section__visuals">
   </div>
 </section>
-<section class="index-section ">
-  <div class="index-section__text-wrapper">
+<section class="index-section">
+  <div class="index-section__text-wrapper" data-aos data-aos-threshold="0.5">
     <div class="index-section__container">
+      <div class="index-section__decorative-line index-section__decorative-line--full"></div>
       <p class="index-section__text h2">
-        I work on client sites using a variety of technologies, including Shopify, Vue.js and the Jamstack
+        I work on <a href="/projects/">projects</a>
+        using a variety of technologies, including <a href="/projects/tagged/shopify/">Shopify</a>,
+        <a href="/projects/tagged/vue.js/">Vue.js</a> and the <a href="/projects/tagged/jamstack">Jamstack</a>
       </p>
     </div>
   </div>
-  <div class="index-section__visuals">
-    {% for project in collections.projects %}
-      {{ project.data.title }}
-    {% endfor %}
+  <div class="index-section__visuals index-projects">
+    <div class="index-projects__wrapper">
+      {% for project in collections.projects | limit(3) | reverse %}
+        {% set image = project.data.image %}
+        <div class="index-project__item" data-aos data-aos-threshold="0.5">
+          <a class="index-project__link" href="{{ project.url }}">
+            {% cloudinaryImage image.name, image.alt, image.width, image.height, "(min-width: 72em) 27.5vw, (min-width: 62em) 35vw, 70vw", "eager", "index-project__image" %}
+            {% cloudinaryImage image.name, "", image.width, image.height, "(min-width: 72em) 27.5vw, (min-width: 62em) 35vw, 70vw", "eager", "index-project__image--shift" %}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </section>

@@ -15,6 +15,7 @@ export function animateOnScroll(container) {
             const target = entry.target;
             const ratio =
               parseFloat(target.getAttribute("data-aos-threshold")) || 1;
+            console.log(ratio);
             if (
               entry.intersectionRatio >= ratio &&
               target.getAttribute("data-aos") == "initialized"
