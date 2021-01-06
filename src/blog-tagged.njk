@@ -1,0 +1,11 @@
+---
+renderData:
+  title: Blog Posts tagged with “{{ tag }} ”
+layout: blog
+description: Categories page description
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+permalink: /blog/tagged/{{ tag | slug }}/
+---

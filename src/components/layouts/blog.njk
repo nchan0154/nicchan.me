@@ -1,0 +1,49 @@
+
+{% extends 'layouts/base.njk' %}
+
+{% block content %}<div class="page container container--xl">
+  <div class="staggered-header">
+    <div class="staggered-header__main">
+      <h1 class="staggered-header__title accent-text">Blog</h1>
+      {% if tag %}
+        <p class="staggered-header__tagged h4">Tagged with {{ tag }}</p>
+      {% endif %}
+    </div>
+    <div class="staggered-header__filters">
+      <button class="staggered-header__nav-toggle h3" aria-expanded="false">
+        Show Blog Tags
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
+      </button>
+      <nav class="staggered-header__nav" aria-label="Technology tags">
+        <ul class="staggered-header__linklist">
+          <li class="staggered-header__item">
+            <a class="staggered-header__link staggered-header__link--all" {% if page.url == '/blog/' %}aria-current="page"{% endif %} href="/blog/">all posts</a>
+          </li>
+          {%- for tag in collections.tagList -%}
+            {% set tag_url -%}/blog/tagged/{{ tag | slug }}/{% endset %}
+            <li class="staggered-header__item">
+              <a class="staggered-header__link" {% if page.url == tag_url %}aria-current="page"{% endif %} href="{{ tag_url }}">{{ tag }}</a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+{% from "postItem.njk" import postItem %}
+
+{% set postList = collections.posts %}
+{% if collections.posts.length %}
+  <section>
+    <ol reversed>
+      {% for item in postList | reverse %}
+        {% if not loop.first %}
+          <hr/>
+        {% endif %}
+        {{ postItem(item.url, item.data.title, item.date) }}
+      {% endfor %}
+    </ol>
+  </section>
+{% endif %}
+{% endblock %}

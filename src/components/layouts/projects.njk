@@ -29,7 +29,7 @@
       </nav>
     </div>
   </div>
-  <ul class="project-list">
+  <ol class="project-list">
     {% if tech %}
       {% set list = collections.projectTagsCollections[tech] %}
     {% else %}
@@ -54,6 +54,6 @@
         </div>
       </li>
     {% endfor %}
-  </ul>
+  </ol>
 </div>
 {% endblock %}

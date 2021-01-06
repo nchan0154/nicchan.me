@@ -1,19 +1,6 @@
 ---
-layout: base
-title: Blog
+title: 'Blog Posts'
+permalink: /blog/
+layout: 'blog'
+description: A list of blog posts and other assorted published material by Nic Chan
 ---
-{% from "postItem.njk" import postItem %}
-
-{% set postList = collections.posts %}
-{% if collections.posts.length %}
-  <section>
-    <ol reversed>
-      {% for item in postList | reverse %}
-        {% if not loop.first %}
-          <hr/>
-        {% endif %}
-        {{ postItem(item.url, item.data.title, item.date) }}
-      {% endfor %}
-    </ol>
-  </section>
-{% endif %}

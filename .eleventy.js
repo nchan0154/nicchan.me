@@ -153,6 +153,22 @@ module.exports = function (eleventyConfig) {
     return resultArrays;
   });
 
+  // Tags
+
+  eleventyConfig.addCollection("tagList", (collection) => {
+    let tagSet = new Set();
+    collection.getAll().forEach(function (item) {
+      if ("tags" in item.data) {
+        let tags = item.data.tags;
+
+        for (const tag of tags) {
+          tagSet.add(tag);
+        }
+      }
+    });
+    return [...tagSet].sort();
+  });
+
   eleventyConfig.addNunjucksFilter("limit", (arr, limit) =>
     arr.slice(0, limit)
   );
