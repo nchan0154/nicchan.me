@@ -1,0 +1,49 @@
+.post-item {
+  position: relative;
+  margin-left: 1.5rem;
+  padding: 1.25rem;
+  background-color: var(--color-post-background);
+  border-left: 1.5rem solid var(--color-post-shadow);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translate(0.25rem, 0.25rem);
+  }
+}
+
+.post-item__date {
+  text-transform: uppercase;
+  position: absolute;
+  writing-mode: vertical-rl;
+  height: 100%;
+  top: 0;
+  left: -3.5rem;
+}
+
+.post-item__link {
+  color: var(--color-heading);
+  text-decoration: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &:focus {
+    outline: 0.25rem dashed var(--color-project-outline);
+  }
+}
+
+.post-item__tags {
+  margin-bottom: 0;
+}
+
+@media (min-width: 48em) {
+  .post-item__title {
+    font-size: 1.75rem;
+  }
+}

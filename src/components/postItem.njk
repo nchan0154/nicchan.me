@@ -1,8 +1,15 @@
-{% macro postItem(url, title, date) %}
-  <li>
-    <h3 style="--ne-vertical-leading: 1rem">
-      <a href="{{ url }}" rel="bookmark">{{ title }}</a>
-    </h3>
-    <time datetime="{{ date | htmlDate }}">{{ date }}</time>
+{% macro postItem(item) %}
+  <li class="posts__item">
+    <div class="post-item">
+      <h2 class="post-item__title">
+        <a href="{{ item.url }}" class="post-item__link">{{ item.data.title }}</a>
+      </h2>
+      <time class="post-item__date" datetime="{{ item.data.date | htmlDate }}">{{ item.data.date | monthYear }}</time>
+      <ul class="post-item__tags tags tags--small">
+        {% for tag in item.data.tags %}
+          <li class="tags__tag">{{ tag }}</li>
+        {% endfor %}
+      </ul>
+    </div>
   </li>
 {% endmacro %}

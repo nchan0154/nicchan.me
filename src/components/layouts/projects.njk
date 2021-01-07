@@ -10,6 +10,7 @@
       {% endif %}
     </div>
     <div class="staggered-header__filters">
+      <a class="staggered-header__skip-nav" href="#projects-list">Skip Project Technologies</a>
       <button class="staggered-header__nav-toggle h3" aria-expanded="false">
         Show Project Filters
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z"/></svg>
@@ -29,7 +30,7 @@
       </nav>
     </div>
   </div>
-  <ol class="project-list">
+  <ol class="project-list" id="projects-list">
     {% if tech %}
       {% set list = collections.projectTagsCollections[tech] %}
     {% else %}

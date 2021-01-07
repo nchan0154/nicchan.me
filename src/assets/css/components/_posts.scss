@@ -1,0 +1,51 @@
+.posts {
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+.posts__item {
+  list-style: none;
+
+  & + & {
+    margin-top: 3rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .posts {
+    display: grid;
+    margin-top: 5rem;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5rem;
+    gap: 5rem;
+  }
+
+  .posts__item {
+    & + & {
+      margin-top: 0;
+    }
+
+    &:nth-child(even) {
+      transform: translateY(5rem);
+    }
+  }
+}
+
+@media (min-width: 72em) {
+  .posts {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .posts__item {
+    &:nth-child(even) {
+      transform: none;
+    }
+    &:nth-child(3n + 2) {
+      transform: translateY(5rem);
+    }
+    &:nth-child(3n + 3) {
+      transform: translateY(10rem);
+    }
+  }
+}

@@ -11,7 +11,6 @@
   --color-tertiary-dark: #645374;
   --color-offwhite: #fafafa;
   --color-dark-light: #4f4d7e;
-  --color-dark-extra-light: #4f4d7e;
   --color-dark: #2c2b4b;
 
   --color-bg: var(--color-offwhite);
@@ -28,13 +27,17 @@
   --color-quote-accent: var(--color-tertiary);
   --color-icon: var(--color-primary);
   --color-border: var(--color-tertiary-light);
+  --color-staggered-stripe-main: var(--color-tertiary-extra-light);
+  --color-staggered-stripe-accent: var(--color-secondary-light);
   --color-filter-link: var(--color-primary);
   --color-project-item-background: var(--color-tertiary-extra-light);
-  --color-project-item-shadow: var(--color-dark-extra-light);
+  --color-project-item-shadow: var(--color-dark-light);
   --color-tag: var(--color-tertiary-light);
   --color-tag-text: var(--color-dark);
   --color-tag-underline: var(--color-tertiary);
   --color-project-outline: var(--color-primary);
+  --color-post-background: var(--color-tertiary-extra-light);
+  --color-post-shadow: var(--color-dark-light);
 
   --font-accent: "Playfair Display", serif;
   --font-base: "Lato", sans-serif;
