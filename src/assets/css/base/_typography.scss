@@ -28,7 +28,7 @@ h4,
   margin: 0;
   font-family: var(--font-base);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--color-subheading);
@@ -55,7 +55,6 @@ blockquote {
   margin: 3rem auto 0;
   padding: 1.5rem;
   font-size: 1rem;
-  border: 0.0625rem solid var(--color-quote-shadow);
   @include box-shadow(var(--color-quote-shadow));
 
   &::before {

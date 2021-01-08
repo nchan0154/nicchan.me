@@ -1,34 +1,29 @@
 {% extends 'layouts/base.njk' %}
-{% from "../post-navigation.njk" import postNavigation %}
-
-{# Populate <head> with post-related assets #}
-{% block head %}
-  {% if config.syntaxTheme %}
-    <link rel="preload" as="style" href="/assets/css/{{ config.syntaxTheme }}"/>
-    <link rel="stylesheet" href="/assets/css/{{ config.syntaxTheme }}"/>
-  {% endif %}
-{% endblock %}
-
 {% block content %}
-  <main tabindex="-1" style="--ne-vertical-leading: 3rem">
-    {% if date %}
-      <small><time datetime="{{ date | htmlDate }}">{{ date | monthYear }}</time></small>
-    {% endif %}
-    <h1>{{ title }}</h1>
-    {% if tags.length %}
-      <ul style="all: unset; display: inline-flex; list-style: none;">
-      {% for tag in tags %}
-        <li style="margin-right: 16px"><a href="/blog/tag/{{tag}}/">#{{tag}}</a></li>
-      {% endfor %}
-      </ul>
-    {% endif %}
-    <hr />
-    <article>
-      {{ content | safe }}
+<div class="post__wrapper">
+  <div class="page container container--lg">
+    <article class="post">
+      <h1 class="post__title">{{ title }}</h1>
+      {% if date %}
+        <time class="post__date h4" datetime="{{ date | htmlDate }}">{{ date | monthDayYear }}</time>
+      {% endif %}
+      <div class="post__layout">
+        <nav class="post__tags" aria-label="Tags">
+          {% if tags.length %}
+            <ul class="post__tags-list">
+            {% for tag in tags %}
+              <li class="post__tags-item">
+                <a class="post__tags-link" href="/blog/tagged/{{tag}}/">{{tag}}</a>
+              </li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        </nav>
+        <div class="post__content rte">
+          {{ content | safe }}
+        </div>
+      </div>
     </article>
-    <hr />
-    {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
-    {% set nextPost = collections.posts | getNextCollectionItem(page) %}
-    {{ postNavigation(previousPost, nextPost) }}
-  </main>
-{% endblock %}
+  </div>
+  {% endblock %}
+</div>

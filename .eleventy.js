@@ -198,8 +198,7 @@ module.exports = function (eleventyConfig) {
         `https://res.cloudinary.com/${eleventyConfig.cloudinaryCloudName}/image/upload/f_auto,q_auto,c_limit,w_${currentWidth}/${path} ${currentWidth}w`
       );
     });
-    return `
-      <img ${className ? 'class="' + className + '"' : ""}
+    return `<img ${className ? 'class="' + className + '"' : ""}
         src="https://res.cloudinary.com/${
           eleventyConfig.cloudinaryCloudName
         }/image/upload/f_auto,q_auto,c_limit${
@@ -211,8 +210,7 @@ module.exports = function (eleventyConfig) {
         width="${width}"
         height="${height}"
         sizes="${sizes}"
-        ${attributes ? attributes : ""}
-        >`;
+        ${attributes ? attributes : ""}>`;
   });
   /**
    * Templating Shortcodes

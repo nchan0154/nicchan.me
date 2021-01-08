@@ -15,7 +15,7 @@ Admittedly, I feared this day not because I felt I lacked the knowledge to imple
 
 Right off the bat, I knew the color scheme was probably going to fail. While the body text, a deep navy, would definitely pass, I had some places where I knew the color contrast was too low, and my project pages had small transparent white text against a brand color that may or may not have been chosen with contrast in mind. Using [this fabulous tool, aremycolorsaccessible.com](http://www.aremycoloursaccessible.com/), I was able to input colors from my color scheme, and play with the toggles to find accessible alternatives and combinations. This tool is great because it not only tells you if your chosen colors are accessible, it also lets you go and tweak the color scheme directly on the same page, so you don't have to go back and forth between your graphics software and the browser.
 
-![aremycolorsaccessible.com screenshot showing a failed color scheme]({{site.imgurl}}a11y-2.PNG)
+{% cloudinaryImage 'a11y-2.PNG', 'aremycolorsaccessible.com screenshot showing a failed color scheme', 448, 558, "(min-width: 32em) 28em, 90vw", "lazy", ""%}
 
 **Take Home Message**: Color schemes and contrast play a significant role in determining whether or not a site is accessible. Tooling can be extremely helpful for determining appropriate color schemes.
 
@@ -27,7 +27,7 @@ I ended up giving a solid background to my navigation on all pages (as opposed t
 In addition, the existing hover and focus state of my navigation items needed improvement, as the current focus state relied solely on a color change. It is best not to rely exclusively on changing color in order to convey important information to the user, as certain types of color blindness can prevent people from easily detecting the change. I added an underline to the ensure that the currently highlighted nav item would not be missed.
 
 <figure>
-  <img src="{{site.imgurl}}a11y-3.PNG" alt="Before and After screenshots of the old and new navigation">
+  {% cloudinaryImage 'a11y-3.PNG', 'Before and After screenshots of the old and new navigation', 526, 136, "(min-width: 38em) 32.875rem, 90vw", "lazy", ""%}
   <figcaption>
     Before: Low opacity white on light background? What was I thinking! <br />
     After: Increased contrast, consistent appearance on all pages.

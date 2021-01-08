@@ -32,7 +32,7 @@ Muting mechanisms and preference controls are vital tools for accessibility. Pla
 Third-party Tumblr apps once provided a number of other features that allow disabled users to overcome Tumblr’s shortcomings. Missing E and XKit (both of the original apps are now defunct, though [XKit lives on with a new team behind it, they're always looking for contributors](https://github.com/new-xkit/XKit)) were two of the most popular more full-featured extensions. In addition to providing muting and advanced blocking implementations for better content filtering and harassment prevention, these apps contained features such as one click reblogging and auto-tagging. One-click reblogging allowed for users to share a post to their own blog very quickly, and auto-tagging would allow users to apply appropriate tags to a post with minimal hassle. In her thesis, Maddy argued that because users with chronic illnesses often experience fatigue issues, features like one-click reblogging enabled people who may be too exhausted to leave the house to engage in some form of social interaction, however small, while still accommodating for their followers' triggers by automatically tagging posts when necessary. As abled people, we often regard features like this as a convenience for most users, but they can be necessary for disabled users to experience the app at all.
 
 <figure>
-  <img src="{{site.imgurl}}tumblr-missing-e.png" alt="Popup that begins with the text: Hello! We've noticed you're using a browser hack, Missing-E, that can cause serious problems for you and for Tumblr. It contains a long scrollable list of the potential 'problems' that Missing-E creates.">
+  {% cloudinaryImage 'tumblr-missing-e.png', "Popup that begins with the text: Hello! We've noticed you're using a browser hack, Missing-E, that can cause serious problems for you and for Tumblr. It contains a long scrollable list of the potential 'problems' that Missing-E creates", 716, 675, "(min-width: 70em) 45rem, (min-width: 62em) calc(90vw - 15rem), 90vw", "lazy", "" %}
   <figcaption>
     Screenshot of the pop-up presented to Missing-E users
   </figcaption>
@@ -47,7 +47,7 @@ In 2017, half a decade later, Tumblr finally released a post filtering feature. 
 Generally speaking, platforms like Tumblr are often hostile to third-party developers, and by proxy, disabled users. This can manifest in ways that are overt, as with Tumblr's active attempts to block third party extensions, or in more subtle ways, such as when a platform makes engineering decisions in order to achieve some goal like improving developer convenience or thwarting adblockers, but with negative consequences for accessibility.
 
 <figure>
-  <img src="{{site.imgurl}}tumblr-facebook.png" alt="Facebook's awful awful code. You do not want me to transcribe it.">
+  {% cloudinaryImage 'tumblr-facebook.png', "Facebook's awful awful code. You do not want me to transcribe it.", 612, 909, "(min-width: 62em) 38.25rem, 90vw", "lazy", "" %}
   <figcaption>
     Screenshot of the code used for Facebook's 'Sponsored' link
   </figcaption>

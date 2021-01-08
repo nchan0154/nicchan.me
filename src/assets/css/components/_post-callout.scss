@@ -1,0 +1,21 @@
+.post-callout {
+  position: relative;
+  margin: 5rem 0 3rem;
+  background-color: var(--color-quote-background);
+  padding: 1.5rem;
+  font-size: 1rem;
+  @include box-shadow(var(--color-quote-shadow));
+}
+
+.post-callout__title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+}
+
+.post-callout__text {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

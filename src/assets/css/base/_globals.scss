@@ -22,7 +22,15 @@ body {
 img {
   max-width: 100%;
   height: auto;
-  background-color: var(--color-primary);
+  background-color: var(--color-image-fallback);
+}
+
+p {
+  margin-top: 0;
+
+  & + & {
+    margin-top: 1rem;
+  }
 }
 
 p a {
@@ -31,4 +39,44 @@ p a {
 
 button * {
   pointer-events: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  @include box-shadow(var(--color-table-shadow));
+
+  th {
+    background-color: var(--color-table-header);
+  }
+
+  th,
+  td {
+    line-height: 1.2;
+    text-align: left;
+    padding: 0.5rem;
+  }
+
+  .row--success td {
+    background-color: var(--color-table-success);
+  }
+}
+
+pre,
+code {
+  background-color: var(--color-code-bg);
+  color: var(--color-code-text);
+}
+
+code {
+  padding: 0.25rem;
+}
+
+pre code {
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+dt {
+  font-weight: 700;
 }

@@ -22,7 +22,7 @@ In addition to rolling out sections for all pages, it would be fantastic to be a
 
 While I'm on the topic of the the customizer, I think the image picker could use a redesign. I understand the desire to show the content being edited next to the images, but whenever I need to reuse an older image, the small image panel isn't much help. A search bar would go a long way in helping to track down existing images, and it would be even better if there was an option to look through past images in an expandable window, as seems a bit ridiculous to me that on my large external monitor, I can only see 9 thumbnails at a time. I often see editors re-upload the same image to save themselves the trouble of trying to find an older image, which means customers don't get the performance benefits of things like caching.
 
-![Shopify's Image picker UI, there is a tiny sidebar for images and the page UI takes the rest of the ginormous amount of space.]({{site.imgurl}}shopify-customizer.png)
+{% cloudinaryImage 'shopify-customizer.PNG', "Shopify's Image picker UI, there is a tiny sidebar for images and the page UI takes the rest of the ginormous amount of space.", 1920, 937, "(min-width: 70em) 45rem, (min-width: 62em) calc(90vw - 15rem), 90vw", "lazy", "" %}
 
 ## SVG Uploads
 
