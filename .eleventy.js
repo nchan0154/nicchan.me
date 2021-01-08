@@ -14,24 +14,10 @@ const siteConfig = require("./src/_data/config.json");
 
 module.exports = function (eleventyConfig) {
   /**
-   * Add custom watch targets
-   *
-   * @link https://www.11ty.dev/docs/config/#add-your-own-watch-targets
+   * Removed Passthrough file copy due to issues with incremental
+   * https://github.com/11ty/eleventy/issues/1299
    */
-  eleventyConfig.addWatchTarget("./bundle/");
-
-  /**
-   * Passthrough file copy
-   *
-   * @link https://www.11ty.io/docs/copy/
-   */
-  eleventyConfig.addPassthroughCopy({
-    "./static": ".",
-  });
-  eleventyConfig.addPassthroughCopy({
-    bundle: "assets",
-  });
-
+  eleventyConfig.addPassthroughCopy({ assets: "assets" });
   /**
    * Add filters
    *
@@ -40,6 +26,9 @@ module.exports = function (eleventyConfig) {
   dayjs.extend(customParseFormat);
   eleventyConfig.addFilter("monthYear", function (date) {
     return dayjs(date).format("MMMM YYYY");
+  });
+  eleventyConfig.addFilter("monthDayYear", function (date) {
+    return dayjs(date).format("MMMM DD, YYYY");
   });
   // robot friendly date format for crawlers
   eleventyConfig.addFilter("htmlDate", function (date) {
