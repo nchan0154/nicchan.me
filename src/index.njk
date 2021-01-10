@@ -14,11 +14,15 @@ hideNav: true
       </h1>
     </div>
   </div>
-  <div class="index-section__visuals">
-    {% cloudinaryImage 'portrait-unfiltered.png', 'self portrait of Nic Chan painted in purples, pinks and teals', 1869, 2110, "(min-width: 62em) 50rem, (min-width: 48em) 50vw, 10vw", "eager", "index-section__portrait" %}
+  <div class="index-section__visuals index-section__visuals--stuck index-section__visuals--portrait">
+    <div class="index-section__portrait-wrapper">
+      <div class="index-section__portraits">
+        {% cloudinaryImage 'portrait-unfiltered.png', 'self portrait of Nic Chan painted in purples, pinks and teals', 1869, 2110, "(min-width: 62em) 62rem, (min-width: 48em) calc(50vw + 2rem), calc(100vw + 2rem)", "eager", "index-section__portrait" %}
+      </div>
+    </div>
   </div>
 </section>
-<section class="index-section">
+<section class="index-section" id="s2">
   <div class="index-section__text-wrapper" data-aos data-aos-threshold="0.5">
     <div class="index-section__container">
       <div class="index-section__decorative-line index-section__decorative-line--full"></div>

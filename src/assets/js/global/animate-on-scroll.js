@@ -8,7 +8,6 @@ export function animateOnScroll(container) {
       "IntersectionObserver" in window &&
       window.requestAnimationFrame
     ) {
-      elements;
       const callback = (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {

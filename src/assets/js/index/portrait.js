@@ -13,11 +13,13 @@ export function portrait() {
         "--portrait-offset",
         (document.body.scrollTop || document.documentElement.scrollTop) *
           speed +
-          3
+          5
       );
     }
     window.requestAnimationFrame(setScrollParallax);
   }
 
-  window.requestAnimationFrame(setScrollParallax);
+  if (section) {
+    window.requestAnimationFrame(setScrollParallax);
+  }
 }

@@ -1,6 +1,6 @@
 .index-section {
   position: relative;
-  --portrait-offset: 0.125rem;
+  --portrait-offset: 3;
   --portrait-constant: -0.2px;
 
   &:nth-child(2) {
@@ -49,42 +49,61 @@
 .index-section__visuals {
   position: relative;
   background-color: var(--color-dark);
-  overflow: hidden;
+
+  &--portrait {
+    padding-top: 112.9%;
+    overflow: hidden;
+  }
 }
 
-.index-section--first {
-  .index-section__visuals {
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background-image: url("https://res.cloudinary.com/nicchan/image/upload/f_auto,q_auto,c_limit,w_935/portrait-unfiltered.png");
-      background-color: var(--color-portrait-filter-1);
-      background-size: cover;
-      background-position: center;
-      background-blend-mode: lighten;
-      filter: saturate(1);
-      z-index: 1;
-      transform: translate(
-        calc(var(--portrait-offset) * var(--portrait-constant) * -1),
-        calc(var(--portrait-offset) * var(--portrait-constant))
-      );
-    }
+.index-section__portrait-wrapper {
+  position: absolute;
+  width: calc(100% + 2rem);
+  height: calc(100% + 2rem);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
 
-    &::after {
-      transform: translate(
-        calc(var(--portrait-offset) * var(--portrait-constant)),
-        calc(var(--portrait-offset) * var(--portrait-constant) * -1)
-      );
-      background-color: var(--color-portrait-filter-2);
-      mix-blend-mode: darken;
-    }
+.index-section__portrait {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: lighten;
+  transform: translate(
+    calc(var(--portrait-offset) * var(--portrait-constant)),
+    calc(var(--portrait-offset) * var(--portrait-constant))
+  );
+}
+
+.index-section__portraits {
+  &::before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  &::before {
+    background-color: var(--color-portrait-filter-1);
+  }
+
+  &::after {
+    content: "";
+    background-image: url("https://res.cloudinary.com/nicchan/image/upload/f_auto,q_auto,c_limit,w_1215/portrait-unfiltered.png");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: lighten;
+    background-color: var(--color-portrait-filter-2);
+    mix-blend-mode: darken;
+    filter: saturate(1);
+    z-index: 1;
   }
 }
 
@@ -93,15 +112,16 @@
     display: flex;
   }
 
-  .index-section__visuals {
+  .index-section__visuals--portrait {
     flex: 0 0 50%;
+    padding-top: 56.5%;
   }
 }
 
 @media (min-width: 62em) {
   .index-section {
-    --portrait-offset: 0.25rem;
-    --portrait-constant: -0.3px;
+    --portrait-offset: 3;
+    --portrait-constant: -0.5px;
     min-height: 100vh;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -118,15 +138,8 @@
     padding: 0 2.5rem;
   }
 
-  .index-section__portrait {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    object-fit: cover;
+  .index-section__visuals--portrait {
+    padding-top: 0;
   }
 }
 
@@ -174,6 +187,25 @@
 
 // animations
 @media (prefers-reduced-motion: no-preference) {
+  @media (min-width: 62em) {
+    .index-section__visuals {
+      [data-js-enabled="true"] & {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: 0.3s ease;
+
+        &--stuck {
+          opacity: 1;
+          z-index: 2;
+        }
+      }
+    }
+  }
+
   @media (min-width: 72em) and (min-height: 48em) {
     [data-aos] {
       &.index-section__decorative-square {
