@@ -14,10 +14,11 @@ const siteConfig = require("./src/_data/config.json");
 
 module.exports = function (eleventyConfig) {
   /**
-   * Removed Passthrough file copy due to issues with incremental
+   * Removed renaming Passthrough file copy due to issues with incremental
    * https://github.com/11ty/eleventy/issues/1299
    */
   eleventyConfig.addPassthroughCopy({ assets: "assets" });
+  eleventyConfig.addPassthroughCopy({ static: "static" });
   /**
    * Add filters
    *
