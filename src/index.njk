@@ -3,6 +3,7 @@ layout: 'base'
 title: null
 hideNav: true
 ---
+{% from "postItem.njk" import postItem %}
 <section class="index-section index-section--first" data-aos>
   <div class="index-section__text-wrapper">
     <div class="index-section__container">
@@ -14,11 +15,11 @@ hideNav: true
       </h1>
     </div>
   </div>
-  <div class="index-section__visuals index-section__visuals--stuck index-section__visuals--portrait">
+  <div class="index-section__visuals index-section__visuals--portrait">
     {% cloudinaryImage 'portrait-filtered.png', 'self portrait of Nic Chan painted in purples, pinks and teals', 934, 1055, "(min-width: 62em) 60rem, (min-width: 48em) 50vw, 100vw", "eager", "index-section__portrait" %}
   </div>
 </section>
-<section class="index-section" id="s2">
+<section class="index-section">
   <div class="index-section__text-wrapper" data-aos data-aos-threshold="0.5">
     <div class="index-section__container">
       <div class="index-section__decorative-line index-section__decorative-line--full"></div>
@@ -43,3 +44,24 @@ hideNav: true
     </div>
   </div>
 </section>
+<section class="index-section">
+  <div class="index-section__text-wrapper" data-aos data-aos-threshold="0.5">
+    <div class="index-section__container">
+      <div class="index-section__decorative-line index-section__decorative-line--full"></div>
+      <p class="index-section__text h2">
+        I <a href="/blog">blog</a> about various topics including <a href="/blog/tagged/accessibility">accessibility</a> and
+        <a href="/blog/tagged/animation">animation</a>.
+      </p>
+    </div>
+  </div>
+  <div class="index-section__visuals index-blog">
+    <ul class="index-blog__list">
+      {% for item in collections.posts | reverse | limit(3) %}
+        <li class="index-blog__item" data-aos data-aos-threshold="0.5">
+          {{ postItem(item) }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+<div class="index-section__static-fade"></div>

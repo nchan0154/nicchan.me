@@ -1,5 +1,5 @@
 export function indexSection() {
-  const elements = document.querySelectorAll(".index-section");
+  const elements = document.querySelectorAll(".index-section__text-wrapper");
 
   function init() {
     let previousY = 0;
@@ -15,11 +15,12 @@ export function indexSection() {
             console.log(entry);
             const currentY = entry.boundingClientRect.y;
             const target = entry.target;
-            let toStick = target.querySelector(".index-section__visuals");
-            let toUnstick = target.previousElementSibling;
+            const parent = entry.target.parentNode;
+            let toStick = target.nextElementSibling;
+            let toUnstick = parent.previousElementSibling;
             if (currentY < previousY) {
               if (target.nextElementSibling) {
-                toUnstick = target.nextElementSibling;
+                toUnstick = parent.nextElementSibling;
               }
             }
             if (toUnstick) {
@@ -33,7 +34,7 @@ export function indexSection() {
       };
 
       const observer = new IntersectionObserver(callback, {
-        threshold: [0.75],
+        threshold: [0.55],
       });
 
       [].forEach.call(elements, (element) => {

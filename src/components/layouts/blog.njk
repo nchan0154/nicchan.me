@@ -38,7 +38,9 @@
       {% set list = collections.posts %}
     {% endif %}
     {% for item in list | reverse %}
-      {{ postItem(item) }}
+      <li class="posts__item">
+        {{ postItem(item, 'post-item--vertical-date') }}
+      </li>
     {% endfor %}
   </ol>
 </div>
