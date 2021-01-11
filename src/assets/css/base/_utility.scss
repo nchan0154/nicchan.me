@@ -6,3 +6,18 @@
   white-space: nowrap;
   width: 1px;
 }
+
+.skip-link {
+  position: absolute;
+  padding: 0.5rem;
+  background-color: var(--color-dark-light);
+  color: var(--color-offwhite);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+
+  &:focus {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
