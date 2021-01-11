@@ -2,8 +2,9 @@
 title: "Usability Testing Popular Shopify Themes"
 date: "2020-01-20"
 tags:
-  - shopify
   - accessibility
+  - featured
+  - shopify
 ---
 
 In recent years, there has been a [sharp increase in the number of lawsuits filed in response to inaccessible websites.](https://www.essentialaccessibility.com/blog/web-accessibility-lawsuits/) As a developer who works primarily with Shopify, I have seen an increase in questions from merchants related to accessibility, some of them from merchants who were facing lawsuits themselves.

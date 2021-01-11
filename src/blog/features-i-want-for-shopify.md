@@ -2,8 +2,9 @@
 title: "Features I Want for Shopify"
 date: "2019-05-08"
 tags:
-  - shopify
   - accessibility
+  - featured
+  - shopify
 ---
 
 In my role as a developer for [Alt and Dot](https://www.altanddot.com/), I work on both building custom themes from scratch as well as improving existing stores. As an agency, we often have long term relationships with merchants, maintaining and scaling their site as they grow. This list of Shopify features that I find myself wishing for on a regular basis is informed by that experience of working with many merchants over a long period of time, and the shared pain points we have observed as a Shopify-focused agency.

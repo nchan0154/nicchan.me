@@ -28,6 +28,7 @@
 
   .index-blog__item {
     position: relative;
+    flex: 0 1 calc(33.3% - 1.5rem);
 
     & + & {
       margin-top: 0;

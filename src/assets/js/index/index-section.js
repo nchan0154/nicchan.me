@@ -1,4 +1,5 @@
 export function indexSection() {
+  // binding this to the text as this is fixed as opposed to the parent or image container, bc it can cause weird jank
   const elements = document.querySelectorAll(".index-section__text-wrapper");
 
   function init() {
@@ -12,7 +13,6 @@ export function indexSection() {
       const callback = (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log(entry);
             const currentY = entry.boundingClientRect.y;
             const target = entry.target;
             const parent = entry.target.parentNode;

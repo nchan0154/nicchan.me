@@ -8,9 +8,8 @@
 
   &:hover {
     @media (prefers-reduced-motion: no-preference) {
-      transform: translate(0.25rem, 0.25rem);
-      box-shadow: 0.5rem 0.5rem 0 0 rgba(167, 82, 147, 0.6),
-        -0.25rem 0.25rem 0 0 rgba(157, 218, 203, 0.8);
+      @include box-shadow-hover;
+
       .project-item__image--shift {
         transform: translate(0.125rem, 0.125rem);
         opacity: 1;

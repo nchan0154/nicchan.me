@@ -2,8 +2,8 @@
 title: Animated CSS Dividers
 date: "2016-10-02"
 tags:
-  - css
   - animation
+  - css
 ---
 
 Having grown up in the age of blinkies, I have a special fondness for animated elements. However, there is undoubtedly a certain level of restraint required when implementing animation today, too much and the page feels overwhelming very quickly. I'm particularly fond of this simple divider animation that I implemented for the <a href="/projects/hexxel">Hexxel landing page</a>.

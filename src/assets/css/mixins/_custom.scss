@@ -12,6 +12,12 @@
   box-shadow: var(--shadow-width) var(--shadow-width) 0 0 $color;
 }
 
+@mixin box-shadow-hover {
+  transform: translate(0.25rem, 0.25rem);
+  box-shadow: 0.5rem 0.5rem 0 0 rgba(130, 47, 110, 0.6),
+    -0.25rem 0.25rem 0 0 rgba(61, 153, 164, 0.8);
+}
+
 @mixin highlight-link {
   position: relative;
   font-weight: 700;

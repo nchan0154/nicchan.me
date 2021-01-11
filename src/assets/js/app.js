@@ -1,6 +1,5 @@
 import { accordions } from "./global/accordions";
 import { animateOnScroll } from "./global/animate-on-scroll";
-import { portrait } from "./index/portrait";
 import { indexSection } from "./index/index-section";
 
 document.addEventListener(
@@ -10,7 +9,6 @@ document.addEventListener(
       document.querySelector("body").setAttribute("data-scrolled", "true");
     }
     indexSection();
-    portrait();
     animateOnScroll();
     accordions();
   },

@@ -84,7 +84,7 @@
   }
 }
 
-@media (min-width: 62em) and (min-height: 50em) {
+@media (min-width: 62em) and (min-height: 48em) {
   .index-section {
     --portrait-offset: 3;
     --portrait-constant: -0.5px;
@@ -148,8 +148,9 @@
 }
 
 // animations
+// stick the sections
 @media (prefers-reduced-motion: no-preference) {
-  @media (min-width: 62em) {
+  @media (min-width: 62em) and (min-height: 48em) {
     [data-js-enabled="true"] {
       .index-section__static-fade {
         position: fixed;
@@ -178,6 +179,7 @@
     }
   }
 
+  // draw the lines
   @media (min-width: 72em) and (min-height: 48em) {
     body:not([data-scrolled="true"]) {
       [data-aos] {

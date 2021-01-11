@@ -6,7 +6,9 @@
     <time class="post-item__date" datetime="{{ item.data.date | htmlDate }}">{{ item.data.date | monthYear }}</time>
     <ul class="post-item__tags tags tags--small">
       {% for tag in item.data.tags %}
-        <li class="tags__tag">{{ tag }}</li>
+        {% if tag != 'featured' %}
+          <li class="tags__tag">{{ tag }}</li>
+        {% endif %}
       {% endfor %}
     </ul>
   </div>

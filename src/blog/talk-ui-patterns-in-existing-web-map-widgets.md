@@ -2,8 +2,8 @@
 title: "Talk: UI patterns in existing web map widgets"
 date: "2020-10-09"
 tags:
-  - maps
   - accessibility
+  - maps
   - talk
 ---
 

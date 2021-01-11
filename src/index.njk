@@ -56,12 +56,37 @@ hideNav: true
   </div>
   <div class="index-section__visuals index-blog">
     <ul class="index-blog__list">
-      {% for item in collections.posts | reverse | limit(3) %}
+      {% for item in collections['featured'] | reverse %}
         <li class="index-blog__item" data-aos data-aos-threshold="0.5">
           {{ postItem(item) }}
         </li>
       {% endfor %}
     </ul>
+  </div>
+</section>
+<section class="index-section">
+  <div class="index-section__text-wrapper" data-aos data-aos-threshold="0.5">
+    <div class="index-section__container">
+      <div class="index-section__decorative-line index-section__decorative-line--full"></div>
+      <p class="index-section__text h2">
+        Most recently I've been contributing to the <a href="https://www.w3.org/community/maps4html/">W3C Maps 4 HTML Community Group</a>,
+        spoken at a W3C/OGC Joint Workshop and achieved my Web Accessibility Specialist certification.
+      </p>
+    </div>
+  </div>
+  <div class="index-section__visuals index-misc">
+    <div class="container container--md">
+      <div class="index-misc__item" data-aos data-aos-threshold="0.5">
+        <a class="index-misc__link" href="https://maps4html.github.io/HTML-Map-Element-UseCases-Requirements/"  data-aos data-aos-threshold="0.5">
+          {% cloudinaryImage 'usecases.png', "Use Cases and Requirements for Standardizing Web Maps, Nic Chan is listed as a co-author", 724, 403, "sizes", "lazy", "index-misc__image" %}
+        </a>
+      </div>
+      <div class="index-misc__item" data-aos data-aos-threshold="0.5">
+        <a class="index-misc__link" href="/blog/talk-ui-patterns-in-existing-web-map-widgets/">
+          {% cloudinaryImage 'map-presentation.png' , "UI Patterns in existing web maps widget presentation slides cover page", 2400, 1350, "sizes", "lazy", "index-misc__image" %}
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 <div class="index-section__static-fade"></div>
