@@ -12,7 +12,7 @@
   </head>
   <body data-js-enabled="false">
     {% if hideNav != true %}
-    {% include "global/header.njk" %}
+    {% include "global/nav.njk" %}
     {% endif %}
     <main>
       {% block content %}{{ content | safe }}{% endblock content %}

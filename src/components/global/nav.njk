@@ -2,6 +2,11 @@
   {% if navigation.items %}
     <nav aria-label="Primary" class="nav container">
       <ul class="nav__list">
+        <li class="nav__item">
+          <a class="nav__home-link" href="/" {% if page.url == '/' %}aria-current="page"{% endif %}>
+            <span class="screenreader">Home</span>
+          </a>
+        </li>
         {% for item in navigation.items %}
           <li class="nav__item">
             {% set relExternal = '' %}

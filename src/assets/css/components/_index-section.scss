@@ -55,7 +55,7 @@
   width: 3rem;
   height: 3rem;
   margin-bottom: 2.5rem;
-  background-color: var(--color-primary);
+  background-color: var(--color-decorative-square);
 }
 
 .index-section__visuals {
@@ -125,7 +125,7 @@
     left: calc(5% + 1.3725rem);
     width: 0.25rem;
     height: calc(50vh + 10rem);
-    background-color: var(--color-tertiary-light);
+    background-color: var(--color-decorative-line);
     transform-origin: top center;
 
     &--full {
