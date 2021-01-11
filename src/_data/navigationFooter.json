@@ -1,0 +1,47 @@
+
+{
+  "Links": [
+    {
+      "text": "Home",
+      "url": "/",
+      "external": false
+    },
+    {
+      "text": "Projects",
+      "url": "/projects/",
+      "external": false
+    },
+    {
+      "text": "Blog",
+      "url": "/blog/",
+      "external": false
+    },
+    {
+      "text": "About",
+      "url": "/about/",
+      "external": false
+    },
+    {
+      "text": "Contact",
+      "url": "/contact/",
+      "external": false
+    }
+  ],
+  "Follow my work": [
+    {
+      "text": "Github",
+      "url": "https://github.com/nchan0154",
+      "external": true
+    },
+    {
+      "text": "Codepen",
+      "url": "https://codepen.io/nchan0154/",
+      "external": true
+    },
+    {
+      "text": "RSS",
+      "url": "/feed.xml",
+      "external": false
+    }
+  ]
+}

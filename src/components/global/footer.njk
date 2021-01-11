@@ -1,0 +1,25 @@
+<footer class="footer" id="footer">
+  <nav class="container" aria-label="Footer">
+    {% for name, list in navigationFooter %}
+      <h2 class="footer__heading">{{ name }}</h2>
+      <ul class="footer__list">
+        {% for item in list %}
+          <li class="footer__item">
+            {% set relExternal = '' %}
+            {% set isCurrent = '' %}
+            {% if item.external %}
+              {% set relExternal = ' rel="nofollow"' %}
+            {% endif %}
+            {% if page.url == item.url %}
+              {% set isCurrent = ' aria-current="page"' %}
+            {% endif %}
+            <a class="footer__link" href="{{ item.url }}"{{ relExternal | safe }}{{ isCurrent | safe }}>
+              {{ item.text }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+    <p class="footer__copyright">© 2015 - {% currentYear %} Nic Chan
+  </nav>
+</footer>

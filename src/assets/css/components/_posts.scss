@@ -19,6 +19,7 @@
     grid-template-columns: 1fr 1fr;
     grid-gap: 5rem;
     gap: 5rem;
+    padding-bottom: 5rem;
   }
 
   .posts__item {
@@ -35,6 +36,7 @@
 @media (min-width: 72em) {
   .posts {
     grid-template-columns: 1fr 1fr 1fr;
+    padding-bottom: 10rem;
   }
 
   .posts__item {

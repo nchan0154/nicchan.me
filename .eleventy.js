@@ -107,7 +107,7 @@ module.exports = function (eleventyConfig) {
           `./${siteConfig.paths.src}/${siteConfig.paths.blogdir}/**/*`
         )
         .filter(livePosts),
-    ];
+    ].reverse();
   });
 
   // Project Collection
@@ -166,6 +166,9 @@ module.exports = function (eleventyConfig) {
    * Cloudinary Shortcodes
    */
   eleventyConfig.cloudinaryCloudName = "nicchan";
+  eleventyConfig.addShortcode("currentYear", () => {
+    return now.getFullYear().toString();
+  });
   eleventyConfig.addShortcode("cloudinaryImage", function (
     path,
     alt,

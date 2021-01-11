@@ -50,9 +50,13 @@
   --color-decorative-line: var(--color-tertiary-light);
   --color-nav-highlight: var(--color-secondary);
   --color-nav-outline: var(--color-dark-light);
+  --color-footer-bg: var(--color-tertiary-light);
+  --color-footer-highlight: var(--color-tertiary-extra-light);
 
   --font-accent: "Playfair Display", serif;
   --font-base: "Lato", sans-serif;
+
+  --fade-color: var(--color-dark);
 }
 
 @mixin dark-colors {

@@ -6,17 +6,22 @@
     {% include "global/meta.njk" %}
     <link rel="icon" href="/static/favicon.png" type="image/png"/>
     {% block head %}{% endblock %}
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700|Playfair+Display:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Playfair+Display:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/app.css" />
     <script src="/assets/js/app.js" defer></script>
   </head>
   <body data-js-enabled="false">
     {% if hideNav != true %}
-    {% include "global/nav.njk" %}
+      <a href="#main">
+        Skip to main content
+      </a>
+      {% include "global/nav.njk" %}
     {% endif %}
-    <main>
+    <main id="main">
       {% block content %}{{ content | safe }}{% endblock content %}
     </main>
+    {% include "global/footer.njk" %}
+    {% block footer %}{{ footer | safe }}{% endblock footer %}
     <script>
       document.querySelector('body').setAttribute('data-js-enabled', 'true');
     </script>

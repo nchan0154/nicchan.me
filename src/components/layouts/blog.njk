@@ -33,11 +33,11 @@
   </div>
   <ol class="posts" id="posts-list">
     {% if tag %}
-      {% set list = collections[tag] %}
+      {% set list = collections[tag] | reverse %}
     {% else %}
       {% set list = collections.posts %}
     {% endif %}
-    {% for item in list | reverse %}
+    {% for item in list %}
       <li class="posts__item">
         {{ postItem(item, 'post-item--vertical-date') }}
       </li>
