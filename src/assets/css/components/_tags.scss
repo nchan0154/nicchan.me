@@ -7,10 +7,11 @@
     margin-left: -1rem;
 
     .tags__tag {
+      margin-left: 1.5rem;
       font-size: 0.875rem;
 
       &::before {
-        left: -1rem;
+        left: -0.99rem;
         border-width: rem-calc(15.5) 1rem rem-calc(15.5) 0;
       }
     }
@@ -36,7 +37,7 @@
   &::before {
     content: "";
     position: absolute;
-    left: -1.25rem;
+    left: -1.249rem;
     top: 0;
     width: 0;
     height: 0;
