@@ -58,6 +58,7 @@
   font-weight: 700;
   color: var(--color-heading-anchor);
   text-decoration: none;
+  font-family: var(--font-base);
 
   &:hover {
     color: var(--color-body-text);
@@ -107,9 +108,12 @@
 
   .post__content {
     flex: 1 1 auto;
+    // fix weird bug with code snippets
+    min-width: 0;
   }
 
   .post__heading-anchor {
+    top: 0.05em;
     left: -2.5rem;
     right: auto;
   }

@@ -1,6 +1,7 @@
 ---
 title: "Auditing My Own Site For Accessibility"
 date: "2019-04-12"
+description: "How I retrofitted my portfolio to be more accessible."
 tags:
   - accessibility
 ---

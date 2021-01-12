@@ -1,6 +1,7 @@
 ---
 title: "Features I Want for Shopify"
 date: "2019-05-08"
+description: "The features I think Shopify needs the most to improve developer experience."
 tags:
   - accessibility
   - featured

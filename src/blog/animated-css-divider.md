@@ -1,6 +1,7 @@
 ---
 title: Animated CSS Dividers
 date: "2016-10-02"
+description: "Using CSS to create simple gradient animations."
 tags:
   - animation
   - css

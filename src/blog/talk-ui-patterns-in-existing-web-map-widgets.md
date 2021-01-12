@@ -1,6 +1,7 @@
 ---
 title: "Talk: UI patterns in existing web map widgets"
 date: "2020-10-09"
+description: "A talk I gave at the W3C/OGC Maps for the Web Workshop on map accessibility."
 tags:
   - accessibility
   - maps

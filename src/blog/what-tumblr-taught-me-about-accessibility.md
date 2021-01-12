@@ -1,6 +1,7 @@
 ---
 title: "What Tumblr Taught Me About Accessibility"
 date: "2019-08-15"
+description: "Things I've learned about accessibility from my many years on Tumblr."
 tags:
   - accessibility
   - featured

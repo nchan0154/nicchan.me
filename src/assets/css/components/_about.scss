@@ -6,7 +6,7 @@
     content: "";
     display: none;
     position: absolute;
-    top: 5rem;
+    top: 2rem;
     left: auto;
     right: 0;
     width: 5rem;
@@ -32,7 +32,6 @@
 .about__callout {
   position: sticky;
   top: 2rem;
-  margin-bottom: 1.5rem;
   padding: 1rem;
   font-size: 1rem;
   background-color: var(--color-about-callout-bg);

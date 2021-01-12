@@ -97,15 +97,19 @@
     --portrait-offset: 3;
     --portrait-constant: -0.5px;
     min-height: 100vh;
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: flex;
   }
 
   .index-section__text-wrapper {
     display: flex;
+    flex: 0 1 50%;
     align-items: center;
     background-color: var(--color-bg);
     z-index: 2;
+  }
+
+  .index-section__visuals {
+    flex: 0 1 50%;
   }
 
   .index-section__container {

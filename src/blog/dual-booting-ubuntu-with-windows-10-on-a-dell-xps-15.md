@@ -1,9 +1,11 @@
 ---
 title: Dual booting Ubuntu with Windows 10 on a Dell XPS 15 (9560)
 date: "2017-02-06"
+description: "A tutorial on how to run both Linux and Windows on a Dell XPS."
 tags:
   - linux
   - tooling
+  - tutorial
   - windows
 ---
 

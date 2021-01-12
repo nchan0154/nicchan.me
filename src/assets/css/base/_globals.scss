@@ -67,6 +67,11 @@ code {
   color: var(--color-code-text);
 }
 
+pre {
+  width: 100%;
+  overflow: auto;
+}
+
 code {
   padding: 0.25rem;
 }
@@ -78,4 +83,17 @@ pre code {
 
 dt {
   font-weight: 700;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-scrollbar-thumb);
+  border-radius: 0;
 }

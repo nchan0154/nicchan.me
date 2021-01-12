@@ -1,6 +1,7 @@
 ---
 title: "Usability Testing Popular Shopify Themes"
 date: "2020-01-20"
+description: "A deep dive into the accessibility of the Shopify theme landscape."
 tags:
   - accessibility
   - featured
