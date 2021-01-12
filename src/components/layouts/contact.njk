@@ -1,0 +1,38 @@
+{% extends 'layouts/base.njk' %}
+{% block content %}
+<div class="page contact container container--md">
+  <h1 class="contact__title page__title accent-text">Contact</h1>
+  <div class="contact__main">
+    <p>
+      I'm currently looking for opportunities where I will have the chance to do good work for good people. I'm especially interested in roles where I get to mentor junior developers, work on design systems/web standards and/or implement accessibility best practices. I may take some time to carefully count out a socially-appropriate number of exclamation point for my reply, but I will respond to all (non-spam) inquiries.
+    </p>
+    <form
+      class="contact__form contact-form"
+      action="https://formspree.io/f/nic@nicchan.me"
+      method="POST"
+    >
+      <div class="contact-form__row">
+        <label class="contact-form__label" for="name">
+          Name
+        </label>
+        <input class="contact-form__input" type="name" name="_replyto" id="name" autocomplete="name">
+      </div>
+      <div class="contact-form__row">
+        <label class="contact-form__label" for="email">
+          Email
+        </label>
+        <input class="contact-form__input" type="email" name="_replyto" id="email" autocomplete="email">
+      </div>
+      <div class="contact-form__row">
+        <label class="contact-form__label" for="message">
+          Message
+        </label>
+        <textarea class="contact-form__input contact-form__input--textarea" name="message" id="message"></textarea>
+      </div>
+      <label for="gotcha" class="screenreader">Humans will ignore this</label>
+      <input class="contact-form__hp" id="gotcha" type="text" name="_gotcha" />
+      <button class="contact-form__submit" type="submit">Send</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
