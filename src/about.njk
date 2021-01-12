@@ -1,0 +1,32 @@
+---
+layout: 'base'
+title: 'About'
+---
+<div class="page about container container--lg">
+  <h1 class="page__title accent-text">About</h1>
+  <div class="about__layout">
+    <div class="about__main">
+      <p>
+        Hi! I'm Nic. I build websites, draw pictures and eat lots of sushi, and would love to do any of those things for you. I'm based in Hong Kong and work with people across the world to build cool things!
+      </p>
+      <h2 class="about__subheading">Testimonials</h2>
+      <p>Here is a collection of very kind words people have said about me.</p>
+      {% for testimonial in testimonials.list %}
+        <blockquote class="about__testimonial testimonial">
+          <p class="testimonial__text">{{ testimonial.content }}</p>
+          <cite class="testimonial__author">– {{ testimonial.source }}</cite>
+        </blockquote>
+      {% endfor %}
+    </div>
+    <aside class="about__aside">
+      <div class="about__callout">
+        <p>
+          I'm currently looking for opportunities where I will have the chance to do good work for good people. I'm especially interested in roles where I get to mentor junior developers, work on design systems/web standards and implement accessibility best practices.
+        </p>
+        <p>
+          Does that sound like you? <a href="/contact/">Reach out to me</a>.
+        </p>
+      </div>
+    </aside>
+  </div>
+</div>

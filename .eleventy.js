@@ -150,7 +150,7 @@ module.exports = function (eleventyConfig) {
     collection.getAll().forEach(function (item) {
       if ("tags" in item.data) {
         item.data.tags
-          .filter((tag) => !["featured"].includes(tag))
+          .filter((tag) => !["featured", "projects"].includes(tag))
           .forEach((tag) => tagSet.add(tag));
       }
     });

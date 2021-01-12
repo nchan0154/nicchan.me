@@ -1,9 +1,25 @@
 .page {
-  margin: 3rem auto;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+
+.page__title {
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 @media (min-width: 48em) {
   .page {
-    margin: 5rem auto;
+    padding: 5rem 0;
+  }
+
+  .page__title {
+    font-size: 4rem;
+  }
+}
+
+@media (min-width: 62em) {
+  .page__title {
+    font-size: 7rem;
   }
 }

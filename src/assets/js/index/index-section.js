@@ -62,7 +62,7 @@ export function indexSection() {
             const lastSection = document.querySelector(
               ".index-section:last-child .index-section__visuals"
             );
-            if (entry.isIntersecting) {
+            if (entry.isIntersecting && lastSection) {
               const sections = document.querySelectorAll(
                 ".index-section__visuals"
               );
@@ -71,7 +71,7 @@ export function indexSection() {
               });
               lastSection.style.opacity = 1;
               lastSection.style.zIndex = 3;
-            } else {
+            } else if (lastSection) {
               // we should be on the last section if we can see more than half of it
               if (getElementRatio(lastSection.parentNode) > 0.5)
                 lastSection.classList.add("index-section__visuals--stuck");
