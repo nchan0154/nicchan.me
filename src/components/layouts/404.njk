@@ -1,0 +1,237 @@
+{% extends 'layouts/base.njk' %}
+
+
+{% block footer %}
+<script src="https://unpkg.com/zdog@1.1.2/dist/zdog.dist.min.js"></script>
+<script>
+let brown = "#E4B883";
+let cream = "#ffe7c2";
+let creamShadow = "#f7dbae";
+let orange = '#E3945B';
+let green = '#668476';
+let black = '#333';
+let TAU = Zdog.TAU;
+
+let isSpinning = true;
+
+let illo = new Zdog.Illustration({
+  element: ".not-found__canvas",
+  rotate: { x: -Zdog.TAU/16 },
+});
+
+let tail = new Zdog.Ellipse({
+  addTo: illo,
+  width: 60,
+  height: 120,
+  stroke: 10,
+  fill: true,
+  color: green,
+  translate: { y: 40, z: -80 },
+  rotate: { x: -TAU / 25 }
+});
+
+let body = new Zdog.Shape({
+  addTo: illo,
+  stroke: 200,
+  color: brown
+});
+
+let bodyGroup = new Zdog.Group({
+  addTo: body
+});
+
+let legAnchor = new Zdog.Anchor({
+  addTo: bodyGroup,
+  translate: { x: -30, y: 50, z: 0 }
+});
+
+let leg = new Zdog.Hemisphere({
+  addTo: legAnchor,
+  diameter: 125,
+  color: cream,
+  backface: false,
+  rotate: { x: -TAU / 4 }
+});
+
+leg.copy({
+  translate: { x: 60 }
+});
+
+let toe = new Zdog.Cone({
+  addTo: legAnchor,
+  diameter: 5,
+  length: 20,
+  stroke: 10,
+  color: orange,
+  translate: { y: 65 },
+  rotate: { x: -TAU / 32, y: TAU / 8}
+});
+
+toe.copy({
+  translate: { x: 5, y: 65 },
+  rotate: { x: -TAU / 32, y: -TAU / 32 }
+});
+
+toe.copy({
+  translate: { x: 70, y: 65 },
+  rotate: { x: -TAU / 16, y: -TAU / 8 }
+});
+
+toe.copy({
+  translate: { x: 65, y: 65 },
+  rotate: { x: -TAU / 32, y: TAU / 32 }
+});
+
+let wingAnchor = new Zdog.Anchor({
+  addTo: bodyGroup,
+  translate: { x: 0, y: 30, z: 100 }
+});
+
+let feather = new Zdog.Ellipse({
+  addTo: wingAnchor,
+  width: 20,
+  height: 80,
+  stroke: 10,
+  fill: true,
+  color: brown,
+  backface: false,
+  translate: { x: -50, z: -40 },
+  rotate: { x: -TAU / 16 }
+});
+
+feather.copy({
+  translate: { x: 50, z: -40 },
+});
+
+feather.copy({
+  scale: { x: 1.2 },
+  translate: { x: -75, y: 10, z: -65 },
+  rotate: { x: -TAU / 18, y:  0.9 }
+});
+
+feather.copy({
+  scale: { x: 1.2 },
+  translate: { x: 75, y: 10, z: -65 },
+  rotate: { x: -TAU / 18, y:  -0.9 }
+});
+
+let wing = new Zdog.Ellipse({
+  addTo: wingAnchor,
+  width: 80,
+  height: 120,
+  stroke: 10,
+  fill: true,
+  color: brown,
+  translate: { x: -95, y: 10, z: -110 },
+  rotate: { x: -TAU / 18, y: TAU / 3.6 }
+});
+
+wing.copy({
+  translate: { x: 95, y: 10, z: -110 },
+  rotate: { x: -TAU / 18, y: -TAU / 3.6 }
+});
+
+let tailFeather = new Zdog.Ellipse({
+  addTo: illo,
+  width: 60,
+  height: 80,
+  stroke: 10,
+  fill: true,
+  color: brown,
+  backface: true,
+  translate: { x: -30, y: -5, z: -80 },
+  rotate: { x: -TAU / 30, y: -TAU / 1.9 }
+});
+
+tailFeather.copy({
+  translate: { x: 30, y: -5, z: -80 },
+  rotate: { x: -TAU / 30, y: TAU / 1.9 }
+});
+
+let faceGroup = new Zdog.Group({
+  addTo: body,
+  translate: { x: 0, y: -10, z: 85 },
+  rotate: { }
+});
+
+let mask = new Zdog.Ellipse({
+  addTo: faceGroup,
+  diameter: 75,
+  translate: { x: -30 },
+  stroke: 15,
+  rotate: { y: TAU/70 },
+  fill: true,
+  color: cream,
+  backface: false,
+});
+
+mask.copy({
+  translate: { x: 30 },
+  rotate: { y: -TAU/70 },
+});
+
+let eye = new Zdog.Ellipse({
+  addTo: faceGroup,
+  width: 15,
+  height: 25,
+  translate: { x: -40 },
+  stroke: 10,
+  rotate: { y: TAU/70 },
+  fill: true,
+  color: black,
+  backface: false,
+});
+
+eye.copy({
+  translate: { x: 40 },
+  rotate: { y: -TAU/70 },
+});
+
+let mouth = new Zdog.Ellipse({
+  addTo: faceGroup,
+  width: 15,
+  height: 25,
+  translate: { y: 20, z: 10},
+  stroke: 15,
+  fill: true,
+  color: orange,
+  backface: false,
+});
+
+let beak = new Zdog.Ellipse({
+  addTo: faceGroup,
+  width: 15,
+  height: 20,
+  translate: { y: 10, z: 10},
+  stroke: 25,
+  fill: true,
+  color: creamShadow,
+  backface: false,
+});
+
+let bow = new Zdog.Ellipse({
+  addTo: faceGroup,
+  width: 40,
+  height: 18,
+  translate: { x: -23, y: 60, },
+  stroke: 8,
+  rotate: { y: TAU/70 },
+  fill: true,
+  color: green,
+  backface: false,
+});
+
+bow.copy({
+  translate: { x: 23, y: 60, },
+  rotate: { y: -TAU/70 },
+});
+
+function animate() {
+  illo.rotate.y += isSpinning ? 0.02 : 0;
+  illo.updateRenderGraph();
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+{% endblock %}
