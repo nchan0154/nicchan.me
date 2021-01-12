@@ -3,6 +3,13 @@ import { getElementRatio } from "../utils/get-element-ratio";
 export function indexSection() {
   // binding this to the text as this is fixed as opposed to the parent or image container, bc it can cause weird jank
   const elements = document.querySelectorAll(".index-section__text-wrapper");
+  function getSiblings(elem) {
+    return Array.prototype.filter.call(elem.parentNode.children, function (
+      sibling
+    ) {
+      return sibling !== elem;
+    });
+  }
 
   function init() {
     let previousY = 0;
@@ -15,29 +22,21 @@ export function indexSection() {
       const callback = (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const currentY = entry.boundingClientRect.y;
             const target = entry.target;
-            const parent = entry.target.parentNode;
             let toStick = target.nextElementSibling;
-            let toUnstick = parent.previousElementSibling;
+            let toUnstick = getSiblings(toStick.parentNode);
             // setting a fade color prevents obnoxious flashing
             // old site used all visuals as fixed position but will not work in conjunction with animating on scroll intersection pbservers
             let color = getComputedStyle(toStick).getPropertyValue(
               "--fade-color"
             );
-            // we're scrolling up
-            if (currentY < previousY) {
-              if (target.nextElementSibling) {
-                toUnstick = parent.nextElementSibling;
-              }
-            }
-            if (toUnstick) {
-              toUnstick
-                .querySelector(".index-section__visuals")
-                .classList.remove("index-section__visuals--stuck");
-            }
             if (toStick) {
               toStick.classList.add("index-section__visuals--stuck");
+              [].forEach.call(toUnstick, (sibling) => {
+                sibling
+                  .querySelector(".index-section__visuals")
+                  .classList.remove("index-section__visuals--stuck");
+              });
               document.documentElement.style.setProperty("--fade-color", color);
             }
           }
