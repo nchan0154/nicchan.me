@@ -22,7 +22,6 @@ export function indexSection() {
       const callback = (entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log(entry);
             const target = entry.target;
             let toStick = target.nextElementSibling;
             let toUnstick = getSiblings(toStick.parentNode);

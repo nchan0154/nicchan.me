@@ -87,6 +87,7 @@
 @media (min-width: 40em) {
   .index-section--first {
     display: flex;
+    align-items: center;
   }
 
   .index-section__visuals--portrait {
@@ -94,6 +95,7 @@
   }
 
   .index-section__scheme-toggle {
+    top: 3rem;
     right: 55%;
   }
 }
@@ -105,7 +107,7 @@
   }
 }
 
-@media (min-width: 62em) and (min-height: 40em) {
+@media (min-width: 62em) and (min-height: 46em) {
   .index-section {
     min-height: 100vh;
     display: flex;
@@ -183,7 +185,7 @@
 // animations
 // stick the sections
 @media (prefers-reduced-motion: no-preference) {
-  @media (min-width: 62em) and (min-height: 40em) {
+  @media (min-width: 62em) and (min-height: 46em) {
     [data-js-enabled="true"] {
       .index-section__static-fade {
         position: fixed;
@@ -196,6 +198,7 @@
       }
 
       .index-section__visuals {
+        max-height: 100vh;
         opacity: 0;
         transition: opacity 0.3s ease-in;
 
