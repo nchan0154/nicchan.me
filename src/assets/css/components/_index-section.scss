@@ -128,6 +128,11 @@
     flex: 0 1 50%;
   }
 
+  // DONT REMOVE THIS THIS PREVENTS SEIZURE INDUCING FLASH ON LARGE SCREENS
+  .index-section__portrait {
+    max-height: 100vh;
+  }
+
   .index-section__container {
     padding: 0 2.5rem;
   }
