@@ -6,6 +6,7 @@
   position: relative;
   margin-bottom: 1.5rem;
   font-weight: 700;
+  color: var(--color-accent-text-base);
 }
 
 .post__layout {
@@ -76,8 +77,8 @@
   .post__title {
     line-height: 1.2;
     font-size: 4rem;
-    text-shadow: 0 -0.125rem var(--color-tertiary-light),
-      0.15rem 0.15rem var(--color-secondary);
+    text-shadow: 0 -0.125rem var(--color-accent-text-1),
+      0.15rem 0.15rem var(--color-accent-text-2);
 
     &::before {
       content: "";

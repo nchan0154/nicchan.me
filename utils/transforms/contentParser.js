@@ -33,7 +33,7 @@ module.exports = function (value, outputPath) {
         const headingSlug = slugify(heading.textContent.toLowerCase());
         // Set the anchor href based on the generated slug
         anchor.setAttribute("href", `#${headingSlug}`);
-        anchor.setAttribute("aria-describedby", `#${headingSlug}`);
+        anchor.setAttribute("aria-describedby", `${headingSlug}`);
         // Add class and content to the anchor
         setClass(anchor, ["post__heading-anchor"]);
         anchor.innerHTML =

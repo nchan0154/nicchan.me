@@ -18,6 +18,11 @@ body {
   color: var(--color-bg);
 }
 
+input,
+textarea {
+  color: var(--color-input-color);
+}
+
 img {
   max-width: 100%;
   height: auto;

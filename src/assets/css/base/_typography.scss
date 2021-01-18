@@ -77,8 +77,9 @@ blockquote {
 }
 
 .accent-text {
-  text-shadow: 0 -0.125rem var(--color-tertiary-light),
-    0.15rem 0.15rem var(--color-secondary);
+  color: var(--color-accent-text-base);
+  text-shadow: 0 -0.125rem var(--color-accent-text-1),
+    0.15rem 0.15rem var(--color-accent-text-2);
 }
 
 @media (min-width: 48em) {

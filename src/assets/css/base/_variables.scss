@@ -1,10 +1,12 @@
 :root {
   --color-primary: #a75293;
   --color-primary-light: #c181b1;
+  --color-primary-extra-light: #f0bee3;
   --color-primary-dark: #822f6e;
   --color-secondary: #9ddacb;
   --color-secondary-light: #d4ede7;
   --color-secondary-dark: #3d99a4;
+  --color-secondary-extra-dark: #18656e;
   --color-tertiary: #9c7a9d;
   --color-tertiary-light: #dac7db;
   --color-tertiary-extra-light: #f2e7f3;
@@ -12,6 +14,7 @@
   --color-offwhite: #fafafa;
   --color-dark-light: #4f4d7e;
   --color-dark: #2c2b4b;
+  --color-dark-dark: #17162b;
 
   --color-bg: var(--color-offwhite);
   --color-body-text: var(--color-dark);
@@ -30,8 +33,9 @@
   --color-staggered-stripe-main: var(--color-tertiary-extra-light);
   --color-staggered-stripe-accent: var(--color-secondary-light);
   --color-filter-link: var(--color-primary);
-  --color-project-item-background: var(--color-tertiary-extra-light);
-  --color-project-item-shadow: var(--color-dark-light);
+  --color-filter-link-active: var(--color-dark);
+  --color-filter-link-background: var(--color-secondary-light);
+  --color-filter-link-shadow: var(--color-secondary-dark);
   --color-tag: var(--color-tertiary-light);
   --color-tag-text: var(--color-dark);
   --color-tag-underline: var(--color-tertiary);
@@ -55,6 +59,7 @@
   --color-about-callout-bg: var(--color-secondary-light);
   --color-about-callout-shadow: var(--color-secondary-dark);
   --color-input-border: var(--color-primary);
+  --color-input-color: var(--color-dark);
   --color-input-background: var(--color-offwhite);
   --color-input-focus: var(--color-primary);
   --color-button-background: var(--color-dark-light);
@@ -62,6 +67,10 @@
   --color-button-text: var(--color-offwhite);
   --color-scrollbar-thumb: var(--color-dark);
   --color-scrollbar-track: var(--color-tertiary);
+  --color-accent-text-base: var(--color-body-text);
+  --color-accent-text-1: var(--color-tertiary-light);
+  --color-accent-text-2: var(--color-secondary);
+  --color-boxshadow: var(--color-dark-light);
 
   --font-accent: "Playfair Display", serif;
   --font-base: "Lato", sans-serif;
@@ -70,11 +79,72 @@
 }
 
 @mixin dark-colors {
+  ::selection {
+    background-color: var(--color-tertiary-light);
+    color: var(--color-dark-dark);
+  }
+
+  --color-bg: var(--color-dark-dark);
+  --color-body-text: var(--color-offwhite);
+  --color-heading: var(--color-tertiary-light);
+  --color-subheading: var(--color-tertiary-extra-light);
+  --color-heading-accent: var(--color-dark-light);
+  --color-link-highlight: var(--color-secondary-extra-dark);
+  --color-link-underline: var(--color-secondary);
+  --color-link-hover-highlight: var(--color-primary);
+  --color-link-hover-underline: var(--color-dark-light);
+  --color-quote-background: var(--color-dark-light);
+  --color-quote-shadow: var(--color-dark);
+  --color-quote-accent: var(--color-tertiary);
+  // --color-icon: var(--color-primary);
+  --color-border: var(--color-dark-light);
+  --color-staggered-stripe-main: var(--color-dark-light);
+  --color-staggered-stripe-accent: var(--color-secondary-extra-dark);
+  --color-filter-link: var(--color-tertiary-light);
+  --color-filter-link-active: var(--color-offwhite);
+  --color-filter-link-background: var(--color-secondary-extra-dark);
+  --color-filter-link-shadow: var(--color-dark);
+  --color-tag: var(--color-tertiary-light);
+  --color-tag-text: var(--color-dark);
+  --color-tag-underline: var(--color-tertiary);
+  --color-project-outline: var(--color-primary-light);
+  --color-post-background: var(--color-dark);
+  --color-post-shadow: var(--color-dark-light);
+  --color-post-tag: var(--color-primary-light);
+  // --color-table-header: var(--color-tertiary-extra-light);
+  // --color-table-success: var(--color-secondary-light);
+  // --color-table-shadow: var(--color-tertiary-light);
+  // --color-heading-anchor: var(--color-primary);
+  // --color-code-bg: var(--color-dark-light);
+  // --color-code-text: var(--color-offwhite);
+  // --color-image-fallback: var(--color-tertiary-light);
+  --color-decorative-square: var(--color-primary-light);
+  --color-decorative-line: var(--color-dark-light);
+  --color-nav-highlight: var(--color-secondary-dark);
+  --color-nav-outline: var(--color-primary-light);
+  --color-footer-bg: var(--color-dark);
+  --color-footer-highlight: var(--color-tertiary);
+  --color-about-callout-bg: var(--color-secondary-extra-dark);
+  --color-about-callout-shadow: var(--color-dark);
+  // --color-input-border: var(--color-primary);
+  // --color-input-background: var(--color-offwhite);
+  // --color-input-focus: var(--color-primary);
+  --color-button-background: var(--color-primary);
+  --color-button-shadow: var(--color-primary-dark);
+  --color-button-text: var(--color-offwhite);
+  --color-scrollbar-thumb: var(--color-secondary-extra-dark);
+  --color-scrollbar-track: var(--color-secondary);
+  --color-accent-text-base: var(--color-primary-extra-light);
+  --color-accent-text-1: var(--color-tertiary-dark);
+  --color-accent-text-2: var(--color-secondary-dark);
+  --color-boxshadow: var(--color-dark);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-user-color-scheme]) {
+    @include dark-colors;
   }
 }
 [data-user-color-scheme="dark"] {
+  @include dark-colors;
 }

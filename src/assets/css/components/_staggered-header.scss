@@ -44,8 +44,8 @@
   padding: 0.25rem;
   transform: translateY(-100%);
   color: var(--color-body-text);
-  background-color: var(--color-link-highlight);
-  box-shadow: 0.125rem 0.125rem 0 0 var(--color-link-underline);
+  background-color: var(--color-filter-link-background);
+  box-shadow: 0.125rem 0.125rem 0 0 var(--color-filter-link-shadow);
   text-decoration: none;
   font-size: 0.875rem;
   opacity: 0;
@@ -137,7 +137,7 @@
     bottom: 0.0625rem;
     left: 0;
     right: 0;
-    background-color: var(--color-link-highlight);
+    background-color: var(--color-filter-link-background);
     z-index: -1;
     transform: scaleX(0);
     transform-origin: left center;
@@ -147,7 +147,7 @@
   &:hover,
   &:focus,
   &[aria-current] {
-    color: var(--color-body-text);
+    color: var(--color-filter-link-active);
 
     &::after {
       transform: scaleX(1);
@@ -156,8 +156,8 @@
 
   &:focus {
     outline: 0.25rem solid transparent;
-    background-color: var(--color-link-highlight);
-    box-shadow: 0.125rem 0.125rem 0 0 var(--color-link-underline);
+    background-color: var(--color-filter-link-background);
+    box-shadow: 0.125rem 0.125rem 0 0 var(--color-filter-link-shadow);
   }
 
   &--all {

@@ -54,6 +54,11 @@
   z-index: 1;
 }
 
+.index-section__scheme-toggle {
+  position: absolute;
+  right: 5%;
+}
+
 .index-section__container {
   width: 90%;
   margin: 0 auto;
@@ -87,6 +92,10 @@
   .index-section__visuals--portrait {
     flex: 0 0 50%;
   }
+
+  .index-section__scheme-toggle {
+    right: 55%;
+  }
 }
 
 @media (min-width: 48em) {
@@ -98,10 +107,13 @@
 
 @media (min-width: 62em) and (min-height: 40em) {
   .index-section {
-    --portrait-offset: 3;
-    --portrait-constant: -0.5px;
     min-height: 100vh;
     display: flex;
+  }
+
+  .index-section__scheme-toggle {
+    top: 3rem;
+    right: auto;
   }
 
   .index-section__text-wrapper {
