@@ -59,7 +59,7 @@ footer: '<div class="index-section__static-fade index-section__static-fade--acti
   </div>
   <div class="index-section__visuals index-blog">
     <ul class="index-blog__list">
-      {% for item in collections['featured'] | reverse %}
+      {% for item in collections['featured'] | reverse | limit(3) %}
         <li class="index-blog__item" data-aos data-aos-threshold="0.5">
           {{ postItem(item) }}
         </li>
