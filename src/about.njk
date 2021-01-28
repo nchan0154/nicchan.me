@@ -13,7 +13,7 @@ title: 'About'
       <p>Here is a collection of very kind words people have said about me.</p>
       {% for testimonial in testimonials.list %}
         <blockquote class="about__testimonial testimonial">
-          <p class="testimonial__text">{{ testimonial.content }}</p>
+          <div class="testimonial__text">{{ testimonial.content | safe }}</div>
           <cite class="testimonial__author">– {{ testimonial.source }}</cite>
         </blockquote>
       {% endfor %}
