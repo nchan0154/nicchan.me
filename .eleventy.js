@@ -130,7 +130,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addCollection("projectTagsCollections", function (collection) {
     let resultArrays = {};
-    collection.getAll().forEach(function (item) {
+    collection.getFilteredByTag("projects").reverse().forEach(function (item) {
       if (Array.isArray(item.data.technology)) {
         for (let tech of item.data.technology) {
           if (!resultArrays[tech]) {
@@ -140,6 +140,7 @@ module.exports = function (eleventyConfig) {
         }
       }
     });
+
     return resultArrays;
   });
 
