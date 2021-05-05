@@ -17,6 +17,7 @@ module.exports = function (eleventyConfig) {
    * Removed renaming Passthrough file copy due to issues with incremental
    * https://github.com/11ty/eleventy/issues/1299
    */
+  eleventyConfig.addPassthroughCopy("redirects");
   eleventyConfig.addPassthroughCopy({ assets: "assets" });
   eleventyConfig.addPassthroughCopy({ static: "static" });
   /**
@@ -130,16 +131,19 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addCollection("projectTagsCollections", function (collection) {
     let resultArrays = {};
-    collection.getFilteredByTag("projects").reverse().forEach(function (item) {
-      if (Array.isArray(item.data.technology)) {
-        for (let tech of item.data.technology) {
-          if (!resultArrays[tech]) {
-            resultArrays[tech] = [];
+    collection
+      .getFilteredByTag("projects")
+      .reverse()
+      .forEach(function (item) {
+        if (Array.isArray(item.data.technology)) {
+          for (let tech of item.data.technology) {
+            if (!resultArrays[tech]) {
+              resultArrays[tech] = [];
+            }
+            resultArrays[tech].push(item);
           }
-          resultArrays[tech].push(item);
         }
-      }
-    });
+      });
 
     return resultArrays;
   });
@@ -163,6 +167,10 @@ module.exports = function (eleventyConfig) {
     arr.slice(0, limit)
   );
 
+  eleventyConfig.addFilter("getAuthor", (authors, name) => {
+    let author = authors.filter((a) => a.name === name)[0];
+    return author;
+  });
   /**
    * Cloudinary Shortcodes
    */
