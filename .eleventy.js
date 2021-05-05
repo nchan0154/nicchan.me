@@ -17,7 +17,7 @@ module.exports = function (eleventyConfig) {
    * Removed renaming Passthrough file copy due to issues with incremental
    * https://github.com/11ty/eleventy/issues/1299
    */
-  eleventyConfig.addPassthroughCopy("redirects");
+  eleventyConfig.addPassthroughCopy("_redirects");
   eleventyConfig.addPassthroughCopy({ assets: "assets" });
   eleventyConfig.addPassthroughCopy({ static: "static" });
   /**
