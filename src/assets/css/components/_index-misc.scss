@@ -6,7 +6,7 @@
 }
 
 .index-misc__item {
-  max-width: 30rem;
+  max-width: 25rem;
 
   & + & {
     margin-top: 3rem;
@@ -14,6 +14,10 @@
 
   &:nth-child(even) {
     margin-left: auto;
+  }
+
+  @media (min-width: 72em) and (min-height: 48em) {
+    max-width: 30rem;
   }
 }
 

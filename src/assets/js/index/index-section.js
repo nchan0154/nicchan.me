@@ -25,6 +25,9 @@ export function indexSection() {
         // setting a fade color prevents obnoxious flashing
         // old site used all visuals as fixed position but will not work in conjunction with animating on scroll intersection pbservers
         let color = getComputedStyle(toStick).getPropertyValue("--fade-color");
+        if (getElementRatio(footer) > 0) {
+          return;
+        }
         if (toStick) {
           toStick.classList.add("index-section__visuals--stuck");
           [].forEach.call(toUnstick, (sibling) => {
@@ -40,27 +43,24 @@ export function indexSection() {
 
   const footerCallback = (entries, observer) => {
     entries.forEach((entry) => {
-      // hack: force onto next paint after the other observer to fix bug where footer overlaps last section
-      setTimeout(function () {
-        const lastSection = document.querySelector(
-          ".index-section:last-child .index-section__visuals"
-        );
-        if (entry.isIntersecting && lastSection) {
-          const sections = document.querySelectorAll(".index-section__visuals");
-          [].forEach.call(sections, (section) => {
-            section.classList.remove("index-section__visuals--stuck");
-          });
-          lastSection.style.opacity = 1;
-          lastSection.style.zIndex = 3;
-        } else if (lastSection) {
-          // we should be on the last section if we can see more than half of it
-          if (getElementRatio(lastSection.parentNode) > 0.3)
-            lastSection.classList.add("index-section__visuals--stuck");
+      const lastSection = document.querySelector(
+        ".index-section:last-child .index-section__visuals"
+      );
+      if (entry.isIntersecting && lastSection) {
+        const sections = document.querySelectorAll(".index-section__visuals");
+        [].forEach.call(sections, (section) => {
+          section.classList.remove("index-section__visuals--stuck");
+        });
+        lastSection.style.opacity = 1;
+        lastSection.style.zIndex = 3;
+      } else if (lastSection) {
+        // we should be on the last section if we can see more than half of it
+        if (getElementRatio(lastSection.parentNode) > 0.3)
+          lastSection.classList.add("index-section__visuals--stuck");
 
-          lastSection.style.removeProperty("opacity");
-          lastSection.style.removeProperty("z-index");
-        }
-      });
+        lastSection.style.removeProperty("opacity");
+        lastSection.style.removeProperty("z-index");
+      }
     });
   };
 
@@ -72,12 +72,12 @@ export function indexSection() {
     ) {
       if (
         isObserving === false &&
-        window.matchMedia("(min-width: 62em) and (min-height: 46em)").matches
+        window.matchMedia("(min-width: 62em) and (min-height: 42em)").matches
       ) {
         isObserving = true;
         observer = new IntersectionObserver(scrollCallback, {
           // don't make this .5 or you may hit weird edge case where it causes seizure inducing flash
-          threshold: [0.501],
+          threshold: [0.51],
         });
 
         [].forEach.call(elements, (element) => {
@@ -88,7 +88,7 @@ export function indexSection() {
         footerObserver.observe(footer);
       } else if (
         isObserving &&
-        !window.matchMedia("(min-width: 62em) and (min-height: 46em)").matches
+        !window.matchMedia("(min-width: 62em) and (min-height: 42em)").matches
       ) {
         isObserving = false;
         [].forEach.call(elements, (element) => {
