@@ -1,28 +1,25 @@
 {
-  "name": "xity-starter",
-  "version": "1.2.0",
+  "name": "nicchan.me",
+  "version": "1.1.0",
   "private": true,
-  "description": "A blog-ready 11ty starter based on PostCSS and Parcel, with a RSS feed and Native Elements.",
-  "author": "Mattia Astorino",
+  "description": "Personal site for Nic Chan",
+  "author": "Nic Chan",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/equinusocio/xity-starter"
+    "url": "https://github.com/nchan0154/nicchan.me"
   },
   "scripts": {
-    "clean": "run-s clean:*",
-    "clean:cache": "rimraf ./.cache",
-    "clean:dist": "rimraf ./dist",
-    "clean:bundle": "rimraf ./assets",
-    "build": "cross-env ELEVENTY_ENV=production run-s clean:* build:assets build:html",
+    "build": "cross-env ELEVENTY_ENV=production run-s build:sass build:js build:html",
     "build:html": "eleventy",
-    "build:assets": "parcel build ./src/assets/css/app.scss ./src/assets/js/app.js --dist-dir ./assets --no-source-maps",
-    "watch": "cross-env UV_THREADPOOL_SIZE=64 PARCEL_MAX_CONCURRENT_CALLS=3 ELEVENTY_ENV=development run-s clean:* build:assets && run-p serve watch:assets",
-    "serve": "eleventy --serve --port=8080 --quiet --incremental",
-    "watch:assets": "parcel watch ./src/assets/css/app.scss ./src/assets/js/app.js --dist-dir ./assets --no-source-maps --no-hmr",
-    "dev": "npm run watch",
-    "update:deps": "npm run upgrade-interactive --latest && npm run upgrade",
-    "update:cssdb": "npx browserslist@latest --update-db"
+    "build:js": "rollup --config",
+    "build:sass": "sass src/assets/css/app.scss ./assets/css/app.css --style=compressed",
+    "debug": "DEBUG=Eleventy* eleventy",
+    "js": "rollup --config --watch",
+    "watch": "cross-env ELEVENTY_ENV=development && run-p sass js serve",
+    "sass": "sass src/assets/css/app.scss ./assets/css/app.css --style=compressed --watch",
+    "serve": "eleventy --serve --port=8080 --quiet",
+    "dev": "npm run watch"
   },
   "dependencies": {
     "@11ty/eleventy": "0.11.0",
@@ -35,9 +32,6 @@
     "cssnano-preset-advanced": "4.0.7",
     "html-minifier": "4.0.0",
     "markdown-it": "11.0.1",
-    "postcss": "^8.1.10",
-    "postcss-preset-env": "6.7.0",
-    "postcss-reporter": "6.0.1",
     "sass": "^1.29.0",
     "slugify": "1.4.5"
   },
@@ -45,10 +39,12 @@
     "cross-env": "7.0.2",
     "dayjs": "^1.9.7",
     "npm-run-all": "4.1.5",
-    "parcel": "^2.0.0-beta.1",
     "postcss-cli": "7.1.2",
     "prettier": "2.1.2",
-    "rimraf": "3.0.2"
+    "rollup": "^2.52.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^7.0.2"
   },
   "browserslist": [
     "last 1 Chrome versions",
