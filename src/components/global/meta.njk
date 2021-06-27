@@ -43,3 +43,5 @@
 {% if config.paymentPointer %}
   <meta name="monetization" content="{{ config.paymentPointer }}" />
 {% endif %}
+
+<meta name="theme-color" content="{% if color %}{{ color }}{% else %}#a75293{% endif %}">
