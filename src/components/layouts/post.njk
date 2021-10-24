@@ -8,19 +8,19 @@
         <time class="post__date h4" datetime="{{ date | htmlDate }}">{{ date | monthDayYear }}</time>
       {% endif %}
       <div class="post__layout">
-        <nav class="post__tags" aria-label="Tags">
-          {% if tags.length %}
-            <ul class="post__tags-list">
-            {% for tag in tags %}
-              {% if tag != 'featured' %}
-                <li class="post__tags-item">
-                  <a class="post__tags-link" href="/blog/tagged/{{tag}}/">{{tag}}</a>
-                </li>
-              {% endif %}
-            {% endfor %}
-            </ul>
-          {% endif %}
-        </nav>
+        {% if tags.length %}
+          <nav class="post__tags" aria-label="Tags">
+              <ul class="post__tags-list">
+              {% for tag in tags %}
+                {% if tag != 'featured' %}
+                  <li class="post__tags-item">
+                    <a class="post__tags-link" href="/blog/tagged/{{tag}}/">{{tag}}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+              </ul>
+          </nav>
+        {% endif %}
         <div class="post__content rte">
           {{ content | safe }}
 
