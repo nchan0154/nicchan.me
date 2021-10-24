@@ -2,7 +2,7 @@
 title: A Complete Guide to Accessibility Tooling
 link: https://www.smashingmagazine.com/2021/06/complete-guide-accessibility-tooling/
 publisher: Smashing Magazine
-date: "2021-06-16"
+date: "2021-10-24"
 description: "From code snippets to testing suites, this article rounds up a bunch of accessibility tooling"
 tags:
   - accessibility
