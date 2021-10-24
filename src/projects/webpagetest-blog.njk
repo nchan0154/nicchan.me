@@ -1,0 +1,43 @@
+---
+title: WebPageTest Blog
+date: 2021-04-07
+image:
+  name: featured-wpt.png
+  width: 1002
+  height: 651
+  alt: WebPageTest Blog Homepage
+color: '#1151BB'
+link: https://blog.webpagetest.org/
+technology:
+  - 11ty
+  - SCSS
+  - JavaScript
+  - Jamstack
+  - NetlifyCMS
+blurb: WebPageTest needed a blog to accompany their major redesign.
+solution: |
+  WebPageTest needed a configurable, blazing fast blog in order to prove that they know their stuff. Jamstack to the rescue!
+---
+<p>
+Being a blog for web developers, we got to use all the latest hot tech tips 🔥 for improving performance.
+Amongst other things, the WebPageTest blog uses responsive images powered by Cloudinary,
+with fixed aspect ratios for a jank-free loading experience and perfect CLS score,
+paginated categories, tags and authors (a feature not present in 11ty by default).
+</p>
+
+{% projectRow color %}
+  {% cloudinaryImage
+    'wpt-blog.png',
+    "Blog post from WPT Blog",
+    599,
+    708,
+    "(min-width: 42em) 37.438rem, 90vw",
+    "lazy",
+    "project-media__image" %}
+{% endprojectRow %}
+
+<p>
+It's not every day you get a project that teaches you as much as this one,
+and I'm grateful to have picked up a few tips and tricks on performance from working with the incredibly talented WebPageTest team at Catchpoint!
+Be sure to visit the blog for the latest in web performance news.
+</p>

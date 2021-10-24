@@ -21,8 +21,21 @@ permalink: '/feed.xml'
       <id>{{ absolutePostUrl }}</id>
       <content type="html">
         <![CDATA[
-      {{ post.templateContent | safe }}
-    ]]>
+          {{ post.templateContent | safe }}
+          {% if post.data.link %}
+            <p>
+              <a class="post__permalink" href="{{ post.data.link }}">Read “{{ post.data.title }}” on {{ post.data.publisher }} &rarr;</a>
+            </p>
+          {% endif %}
+          {% if post.data.translations %}
+            <h2>Translations</h2>
+            <ul>
+              {% for translation in post.data.translations %}
+                <li><a href="{{ translation.link }}">{{ translation.language }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        ]]>
       </content>
     </entry>
   {% endfor %}

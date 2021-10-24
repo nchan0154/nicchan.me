@@ -31,6 +31,6 @@ I spent a lot of time trying to come up with the perfect formulas for calculatin
 
 {% cloudinaryImage 'canvas-lines.PNG', 'Canvas Lines', 1129, 476, "(min-width: 70em) 45rem, (min-width: 62em) calc(90vw - 15rem), 90vw", "lazy", ""%}
 
-I admit I'm a little ashamed to post this, but above is my first attempt at trying to generate a pattern of network lines with Javascript. It wasn't even in the same ballpark as what we needed, and I used exactly none of the code in the final product. Regardless, it's an important reminder that experimentation is neccessary - you will probably fail your first few attempts when attempting a new thing, and that's perfectly normal.
+I admit I'm a little ashamed to post this, but above is my first attempt at trying to generate a pattern of network lines with Javascript. It wasn't even in the same ballpark as what we needed, and I used exactly none of the code in the final product. Regardless, it's an important reminder that experimentation is necessary - you will probably fail your first few attempts when attempting a new thing, and that's perfectly normal.
 
 If you want to see it in action, you can check out the final animation out on the <a href="http://darkshore.website/">Darkshore Website</a>.

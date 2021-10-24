@@ -23,6 +23,21 @@
         </nav>
         <div class="post__content rte">
           {{ content | safe }}
+
+          {% if link %}
+            <p>
+              <a class="post__permalink" href="{{ link }}">Read “{{ title }}” on {{ publisher }} &rarr;</a>
+            </p>
+          {% endif %}
+
+          {% if translations %}
+            <h2>Translations</h2>
+            <ul>
+              {% for translation in translations %}
+                <li><a href="{{ translation.link }}">{{ translation.language }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
         </div>
       </div>
     </article>
