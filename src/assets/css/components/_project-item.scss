@@ -22,6 +22,10 @@
       }
     }
   }
+
+  [data-js-enabled="false"] & {
+    transition: none;
+  }
 }
 
 .project-item__link {

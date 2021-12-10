@@ -52,7 +52,7 @@
   color: var(--color-tag-text);
   box-shadow: 0.125rem 0.125rem 0 0 var(--color-tag-underline);
   text-decoration: none;
-  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  transition: filter 0.3s ease, background-color 0.3s ease;
 
   &:hover {
     --color-tag: var(--color-secondary-light);
@@ -60,7 +60,7 @@
   }
 
   &:focus {
-    outline: 0.25rem solid transparent;
-    box-shadow: 0.25rem 0.25rem 0 0 var(--color-tag-underline);
+    outline: 0.25rem dashed var(--color-input-focus);
+    outline-offset: 0.5rem;
   }
 }

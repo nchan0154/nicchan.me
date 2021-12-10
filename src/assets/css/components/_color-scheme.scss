@@ -17,6 +17,11 @@
   span {
     vertical-align: middle;
   }
+
+  &:focus {
+    outline: 0.25rem dashed var(--color-nav-outline);
+    outline-offset: 0.25rem;
+  }
 }
 
 .color-scheme__button--dark {
