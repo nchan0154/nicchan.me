@@ -1,28 +1,53 @@
-<header>
+<header class="nav {{ navClass }}" id="nav">
   {% if navigation.items %}
-    <nav aria-label="Primary" class="nav container">
-      <ul class="nav__list">
-        <li class="nav__item">
-          <a class="nav__home-link" href="/" {% if page.url == '/' %}aria-current="page"{% endif %}>
-            <span class="screenreader">Home</span>
-          </a>
-        </li>
-        {% for item in navigation.items %}
-          <li class="nav__item">
-            {% set relExternal = '' %}
-            {% set isCurrent = '' %}
-            {% if item.external %}
-              {% set relExternal = ' rel="external" target="_blank"' %}
-            {% endif %}
-            {% if page.url == item.url %}
-              {% set isCurrent = ' aria-current="page"' %}
-            {% endif %}
-            <a class="nav__link" href="{{ item.url }}"{{ relExternal | safe }}{{ isCurrent | safe }}>
-              {{ item.text }}
+    <div class="container">
+      <nav aria-label="Primary" class="nav__content">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--home">
+            <a class="nav__home-link" href="/" {% if page.url == '/' %}aria-current="page"{% endif %}>
+              <span class="screenreader">Home</span>
             </a>
           </li>
-        {% endfor %}
-      </ul>
-    </nav>
+          {% for item in navigation.items %}
+            <li class="nav__item">
+              {% set relExternal = '' %}
+              {% set isCurrent = '' %}
+              {% if item.external %}
+                {% set relExternal = ' rel="external" target="_blank"' %}
+              {% endif %}
+              {% if page.url == item.url %}
+                {% set isCurrent = ' aria-current="page"' %}
+              {% endif %}
+              <a class="nav__link" href="{{ item.url }}"{{ relExternal | safe }}{{ isCurrent | safe }}>
+                {{ item.text }}
+              </a>
+            </li>
+          {% endfor %}
+          <li class="nav__item js-enabled" data-dropdown-wrapper>
+            <button class="nav__link nav__toggle" aria-expanded="false" data-dropdown-toggle="preferences">
+              <span class="nav__link-icon">{% include "icons/gear.njk" %}</span>
+              <span class="nav__link-text">Settings<span>
+            </button>
+            <div class="nav__dropdown" data-dropdown id="preferences">
+              <div class="nav__dropdown-group">
+                {% set toggle_class = 'nav__color-toggle' %}
+                {% include "global/color-scheme-toggle.njk" %}
+              </div>
+              <div class="nav__dropdown-group">
+                <div class="preference {{ toggle_class }}" role="group" aria-labelledby="{{ toggle_class }}-label">
+                  <span class="preference__label" id="{{ toggle_class }}-label">Motion</span>
+                  <button class="preference__button" type="button" aria-pressed="false" data-preference="enabled" data-preference-namespace="motion">
+                    Enabled
+                  </button>
+                  <button class="preference__button" type="button" aria-pressed="false" data-preference="reduce" data-preference-namespace="motion">
+                    Reduced
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
   {% endif %}
 </header>

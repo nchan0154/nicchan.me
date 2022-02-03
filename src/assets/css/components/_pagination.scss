@@ -28,20 +28,10 @@
     transition: transform 0.3s ease;
     transform-origin: bottom center;
     z-index: -1;
-
-    @media (prefers-reduced-motion: reduce) {
-      opacity: 0;
-      transform: scaleY(1);
-      transition: opacity 0.3s ease;
-    }
   }
 
   &:hover::after {
     transform: scaleY(1);
-
-    @media (prefers-reduced-motion: reduce) {
-      opacity: 1;
-    }
   }
 
   &:focus {

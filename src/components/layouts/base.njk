@@ -1,4 +1,4 @@
-<html lang="{{ config.lang }}" prefix="og: http://ogp.me/ns#">
+<html lang="{{ config.lang }}" prefix="og: http://ogp.me/ns#" data-js-enabled="false">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -7,28 +7,24 @@
     <link rel="icon" href="/static/favicon.png" type="image/png"/>
     {% block head %}{% endblock %}
     <script>
-      var scheme = localStorage.getItem("nc-color-scheme");
-      if (scheme) {
-        document.documentElement.setAttribute("data-user-color-scheme", scheme);
-      }
+      const scheme = localStorage.getItem("color-scheme");
+      if (scheme) document.documentElement.setAttribute("data-user-color-scheme", scheme);
     </script>
     <link rel="stylesheet" href="/assets/css/app.css" />
     <script src="/assets/js/app.js" defer></script>
   </head>
-  <body data-js-enabled="false">
-    {% if hideNav != true %}
-      <a class="skip-link" href="#main">
-        Skip to main content
-      </a>
-      {% include "global/nav.njk" %}
-    {% endif %}
+  <body>
+    <a class="skip-link" href="#main">
+      Skip to main content
+    </a>
+    {% include "global/nav.njk" %}
     <main id="main">
       {% block content %}{{ content | safe }}{% endblock content %}
     </main>
     {% include "global/footer.njk" %}
     {% block footer %}{{ footer | safe }}{% endblock footer %}
     <script>
-      document.querySelector('body').setAttribute('data-js-enabled', 'true');
+      document.documentElement.setAttribute('data-js-enabled', 'true');
     </script>
   </body>
 </html>

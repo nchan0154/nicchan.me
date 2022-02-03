@@ -39,17 +39,21 @@
   transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
 
   &:hover {
-    @media (prefers-reduced-motion: no-preference) {
-      @include box-shadow-hover;
-      .index-project__image--shift {
-        transform: translate(0.125rem, 0.125rem);
-        opacity: 1;
-      }
+    .index-project__image {
+      opacity: 0.7;
     }
 
-    @media (prefers-reduced-motion: reduced) {
-      .index-project__image {
-        opacity: 0.7;
+    @media (prefers-reduced-motion: no-preference) {
+      html:not([data-user-motion="reduce"]) & {
+        @include box-shadow-hover;
+        .index-project__image--shift {
+          transform: translate(0.125rem, 0.125rem);
+          opacity: 1;
+        }
+
+        .index-project__image {
+          opacity: 1;
+        }
       }
     }
   }
@@ -83,7 +87,7 @@
 
 // animations
 @media (prefers-reduced-motion: no-preference) {
-  [data-js-enabled="true"] {
+  [data-js-enabled="true"]:not([data-user-motion="reduce"]) {
     [data-aos].index-project__item {
       opacity: 0;
 
