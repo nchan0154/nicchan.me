@@ -1,8 +1,7 @@
 .project-item {
   position: relative;
   @include box-shadow();
-  transition: all 0.3s ease-in;
-  will-change: auto;
+  transition: transform 0.3s ease-in, box-shadow 0.3s ease;
   backface-visibility: hidden;
   z-index: 1;
 
