@@ -1,8 +1,6 @@
 export function colorScheme() {
   function init() {
     bindEvents();
-
-    getColorScheme();
   }
 
   function bindEvents() {
@@ -15,12 +13,6 @@ export function colorScheme() {
         setSchemeAttribute(scheme);
       });
     });
-  }
-
-  function getColorScheme() {
-    const scheme = localStorage.getItem("nc-color-scheme");
-
-    setSchemeAttribute(scheme);
   }
 
   function setSchemeAttribute(scheme) {
