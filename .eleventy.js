@@ -18,6 +18,7 @@ module.exports = function (eleventyConfig) {
    * https://github.com/11ty/eleventy/issues/1299
    */
   eleventyConfig.addPassthroughCopy("_redirects");
+  eleventyConfig.addPassthroughCopy("_headers");
   eleventyConfig.addPassthroughCopy({ assets: "assets" });
   eleventyConfig.addPassthroughCopy({ static: "static" });
   /**
