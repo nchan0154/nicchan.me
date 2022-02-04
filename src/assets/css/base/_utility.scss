@@ -21,3 +21,7 @@
     pointer-events: auto;
   }
 }
+
+[data-js-enabled="false"] .js-enabled {
+  display: none;
+}

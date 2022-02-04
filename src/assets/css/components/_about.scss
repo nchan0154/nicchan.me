@@ -6,7 +6,7 @@
     content: "";
     display: none;
     position: absolute;
-    top: 2rem;
+    top: 0;
     left: auto;
     right: 1rem;
     width: 5rem;
@@ -14,8 +14,10 @@
     background-color: var(--color-staggered-stripe-main);
     z-index: -1;
 
-    @media (prefers-reduced-motion: reduce) {
-      top: 0;
+    @media (prefers-reduced-motion: no-preference) {
+      html:not([data-user-motion="reduce"]) & {
+        top: 0;
+      }
     }
   }
 }

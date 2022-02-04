@@ -1,6 +1,7 @@
 import { accordions } from "./global/accordions";
 import { animateOnScroll } from "./global/animate-on-scroll";
-import { colorScheme } from "./global/color-scheme-toggle";
+import { preference } from "./global/preference";
+import { nav } from "./global/nav";
 import { indexSection } from "./index/index-section";
 
 document.addEventListener(
@@ -9,10 +10,11 @@ document.addEventListener(
     if (window.scrollY > 0) {
       document.querySelector("body").setAttribute("data-scrolled", "true");
     }
-    colorScheme();
+    preference();
     indexSection();
     animateOnScroll();
     accordions();
+    nav();
   },
   false
 );

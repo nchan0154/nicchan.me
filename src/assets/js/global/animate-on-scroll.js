@@ -3,8 +3,10 @@ export function animateOnScroll(container) {
   const elements = parent.querySelectorAll("[data-aos]");
 
   function init() {
+    observeMutations();
+
     if (
-      !window.matchMedia("(prefers-reduced-motion: reduce)").matches &&
+      document.documentElement.getAttribute("data-user-motion") !== "reduce" &&
       "IntersectionObserver" in window &&
       window.requestAnimationFrame
     ) {
@@ -35,6 +37,25 @@ export function animateOnScroll(container) {
         });
       });
     }
+  }
+
+  function observeMutations() {
+    const observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        if (mutation.attributeName === "data-user-motion") {
+          if (
+            document.documentElement.getAttribute("data-user-motion") !==
+            "reduce"
+          ) {
+            init();
+          }
+        }
+      });
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true, //configure it to listen to attribute changes
+    });
   }
 
   function playAnimation(target) {

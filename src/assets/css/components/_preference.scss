@@ -1,0 +1,28 @@
+.preference__label {
+  margin-right: 1rem;
+  font-weight: 700;
+  font-family: var(--font-base);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.preference__button {
+  padding: 0.5rem;
+  border: none;
+  background-color: transparent;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: currentColor;
+
+  &:focus {
+    outline: 0.25rem dashed var(--color-nav-outline);
+    outline-offset: 0.25rem;
+  }
+
+  &[aria-pressed="true"] {
+    background-color: var(--color-button-background);
+    color: var(--color-button-text);
+    box-shadow: 0.25rem 0.25rem 0 0 var(--color-button-shadow);
+  }
+}

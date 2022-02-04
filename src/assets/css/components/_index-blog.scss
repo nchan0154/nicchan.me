@@ -53,7 +53,7 @@
 
 // animations
 @media (prefers-reduced-motion: no-preference) {
-  [data-js-enabled="true"] {
+  [data-js-enabled="true"]:not([data-user-motion="reduce"]) {
     [data-aos].index-blog__item {
       opacity: 0;
       transform: translateY(2.5rem);

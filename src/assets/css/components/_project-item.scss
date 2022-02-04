@@ -6,18 +6,22 @@
   z-index: 1;
 
   &:hover {
-    @media (prefers-reduced-motion: no-preference) {
-      @include box-shadow-hover;
-
-      .project-item__image--shift {
-        transform: translate(0.125rem, 0.125rem);
-        opacity: 1;
-      }
+    .project-item__image {
+      opacity: 0.5;
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .project-item__image {
-        opacity: 0.5;
+    @media (prefers-reduced-motion: no-preference) {
+      html:not([data-user-motion="reduce"]) & {
+        @include box-shadow-hover;
+
+        .project-item__image {
+          opacity: 1;
+        }
+
+        .project-item__image--shift {
+          transform: translate(0.125rem, 0.125rem);
+          opacity: 1;
+        }
       }
     }
   }

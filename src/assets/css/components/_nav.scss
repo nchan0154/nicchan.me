@@ -1,4 +1,31 @@
 .nav {
+  --text-link-spacing: 0.5rem;
+  --text-link-padding: 0.5rem;
+
+  &--index {
+    .nav__list {
+      margin-left: calc(
+        (var(--text-link-padding) + var(--text-link-spacing)) * -1
+      );
+    }
+
+    .nav__item--home {
+      display: none;
+    }
+
+    @media (min-width: 62em) and (min-height: 42em) {
+      position: absolute;
+      left: 0;
+      width: 100%;
+
+      .nav__dropdown {
+        max-width: 50%;
+      }
+    }
+  }
+}
+
+.nav__content {
   padding: 0.5rem 0;
 }
 
@@ -15,7 +42,7 @@
   display: inline-block;
 
   & + & {
-    margin-left: 0.5rem;
+    margin-left: var(--text-link-spacing);
   }
 }
 
@@ -23,9 +50,10 @@
   display: inline-block;
   position: relative;
   vertical-align: middle;
-  padding: 0.5rem;
+  padding: var(--text-link-padding);
   font-size: 0.875rem;
   font-weight: 700;
+  line-height: 1.5;
   color: currentColor;
   text-decoration: none;
   z-index: 1;
@@ -54,6 +82,16 @@
 
   &:focus {
     outline: 0.25rem dashed var(--color-nav-outline);
+    z-index: 2;
+  }
+
+  svg {
+    display: inline-block;
+    margin-right: 0.25rem;
+    width: 0.75em;
+    height: 0.75em;
+    vertical-align: baseline;
+    fill: currentColor;
   }
 }
 
@@ -76,16 +114,59 @@
   }
 }
 
-@media (min-width: 48em) {
-  .nav {
-    padding: 0.75rem 0;
+.nav__toggle {
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+
+  &[aria-expanded="true"] {
+    & + .nav__dropdown {
+      max-height: 15rem;
+      overflow: visible;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.nav__dropdown {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  padding: 1rem 5%;
+  background-color: var(--color-bg);
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  border-bottom: rem-calc(1) solid var(--color-border);
+  visibility: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1;
+
+  .nav--index & {
+    padding: 1rem 5%;
   }
 
-  .nav__item {
-    display: inline-block;
+  @media (min-width: 48em) {
+    padding-left: calc(
+      5% + var(--text-link-padding) + var(--text-link-spacing) + 2.25rem
+    );
+  }
+}
 
-    & + & {
-      margin-left: 1.5rem;
-    }
+.nav__dropdown-group {
+  & + & {
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 48em) {
+  .nav {
+    --text-link-spacing: 1.5rem;
+  }
+
+  .nav__content {
+    padding: 0.75rem 0;
   }
 }
