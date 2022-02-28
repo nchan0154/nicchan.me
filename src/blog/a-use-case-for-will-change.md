@@ -60,3 +60,11 @@ But wait, there's more! I know I can't leave you all without the juicy details. 
 In a pre-pandemic life, I might have tried harder to get the bottom of this mystery, but alas, it was everything I had in me to type up this blog post, which I've uncharacteristically hammered out in a single sitting. Perhaps I will never know why `will-change` was able to save me in this case. I'd be extremely eager to hear if other folks have had experience with the `will-change` property smoothing any rendering issues, my inbox is open!
 
 PS: Happy new year of the tiger. May 2022 be kinder to us all.
+
+## Further examples (Last updated February 27, 2022)
+
+Since publishing this article, I've found some other folks who have had luck with will-change resolving rendering issues. Thanks to the folks below who allowed me to share their discoveries here.
+
+Alex Riviere noticed that when using Chrome 98 with a Macbook Pro, the last cloned item in [this infinite scrolling section](https://codepen.io/fimion/pen/jOamJaE?editors=0010) would cause the last element not to render. Adding `will-change: transform` fixes this.
+
+Brian Cross noticed a recent issue with Safari 15 where GSAP transform animations that had worked correctly in previous versions were now [leaving behind artifacts](https://codepen.io/BrianCross/pen/wvqZPEq). [The official GSAP team's response](https://greensock.com/forums/topic/30156-safari-v15-rendering-bug/) was to add `will-change: transform` to the problematic element.
