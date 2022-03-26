@@ -68,3 +68,5 @@ Since publishing this article, I've found some other folks who have had luck wit
 Alex Riviere noticed that when using Chrome 98 with a Macbook Pro, the last cloned item in [this infinite scrolling section](https://codepen.io/fimion/pen/jOamJaE?editors=0010) would cause the last element not to render. Adding `will-change: transform` fixes this.
 
 Brian Cross noticed a recent issue with Safari 15 where GSAP transform animations that had worked correctly in previous versions were now [leaving behind artifacts](https://codepen.io/BrianCross/pen/wvqZPEq). [The official GSAP team's response](https://greensock.com/forums/topic/30156-safari-v15-rendering-bug/) was to add `will-change: transform` to the problematic element.
+
+Justin Viega came across [an issue with Chrome on MacOS](https://codepen.io/jvwrx/pen/KKZNLeZ/07caad5021a72b787ea3e8567b9d7d30), where a photo enlarging animation done with `transform: scale()` would display with noticeable jank. Adding `will-change: transform` resolves this.
