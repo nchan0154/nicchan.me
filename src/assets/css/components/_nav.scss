@@ -1,6 +1,7 @@
 .nav {
   --text-link-spacing: 0.5rem;
   --text-link-padding: 0.5rem;
+  color: var(--color-nav-link);
 
   &--index {
     .nav__list {

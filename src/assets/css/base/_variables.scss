@@ -12,6 +12,7 @@
   --color-tertiary-extra-light: #f2e7f3;
   --color-tertiary-dark: #645374;
   --color-offwhite: #fafafa;
+  --color-gray-light: #DEDEDE;
   --color-dark-light: #4f4d7e;
   --color-dark: #2c2b4b;
   --color-dark-dark: #17162b;
@@ -53,8 +54,10 @@
   --color-decorative-square: var(--color-primary);
   --color-decorative-line: var(--color-tertiary-light);
   --color-nav-highlight: var(--color-secondary);
+  --color-nav-link: var(--color-dark);
   --color-nav-outline: var(--color-dark-light);
   --color-footer-bg: var(--color-tertiary-light);
+  --color-footer-link: var(--color-dark);
   --color-footer-highlight: var(--color-tertiary-extra-light);
   --color-about-callout-bg: var(--color-secondary-light);
   --color-about-callout-shadow: var(--color-secondary-dark);
@@ -85,7 +88,7 @@
   }
 
   --color-bg: var(--color-dark-dark);
-  --color-body-text: var(--color-offwhite);
+  --color-body-text: var(--color-gray-light);
   --color-heading: var(--color-tertiary-light);
   --color-subheading: var(--color-tertiary-extra-light);
   --color-heading-accent: var(--color-dark-light);
@@ -117,12 +120,14 @@
   // --color-heading-anchor: var(--color-primary);
   // --color-code-bg: var(--color-dark-light);
   // --color-code-text: var(--color-offwhite);
-  // --color-image-fallback: var(--color-tertiary-light);
+  --color-image-fallback: var(--color-dark-light);
   --color-decorative-square: var(--color-primary-light);
   --color-decorative-line: var(--color-dark-light);
   --color-nav-highlight: var(--color-secondary-dark);
+  --color-nav-link: var(--color-offwhite);
   --color-nav-outline: var(--color-primary-light);
   --color-footer-bg: var(--color-dark);
+  --color-footer-link: var(--color-offwhite);
   --color-footer-highlight: var(--color-tertiary);
   --color-about-callout-bg: var(--color-secondary-extra-dark);
   --color-about-callout-shadow: var(--color-dark);

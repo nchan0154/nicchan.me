@@ -2,7 +2,7 @@
   h2,
   h3:not([class]),
   h4 {
-    margin-top: 2.5rem;
+    margin-top: 4rem;
 
     a:not([class]) {
       text-decoration: none;
@@ -26,8 +26,16 @@
     color: var(--color-subheading);
   }
 
-  figure {
+  figure, blockquote {
     margin: 3rem auto;
+  }
+
+  img {
+    margin: 1.5rem auto;
+  }
+
+  figure img {
+    margin: 0 auto;
   }
 
   figcaption {
