@@ -1,5 +1,5 @@
 ---
-title: Bulletproofing your CMS
+title: Bulletproofing your Content Management System (CMS)
 date: "2023-06-15"
 description: "Help your future self by making sure your CMS can take anything clients throw at it."
 tags:

@@ -1,54 +1,60 @@
 .rte {
-  h2,
-  h3:not([class]),
-  h4 {
-    margin-top: 4rem;
+	h2,
+	h3:not([class]),
+	h4 {
+		margin-top: 4rem;
 
-    a:not([class]) {
-      text-decoration: none;
-      color: currentColor;
+		a:not([class]) {
+			text-decoration: none;
+			color: currentColor;
 
-      &:focus {
-        box-shadow: 0.125rem 0.125rem var(--color-link-hover-underline);
-        background-color: var(--color-link-hover-highlight);
-      }
-    }
-  }
+			&:focus {
+				box-shadow: 0.125rem 0.125rem var(--color-link-hover-underline);
+				background-color: var(--color-link-hover-highlight);
+			}
+		}
 
-  h2,
-  h3:not([class]),
-  h4 {
-    margin-bottom: 0.75rem;
-  }
+		a[href="#player"] {
+			text-decoration: underline;
+			text-underline-offset: 0.25em;
+		}
+	}
 
-  h2 {
-    line-height: 1.2;
-    color: var(--color-subheading);
-  }
+	h2,
+	h3:not([class]),
+	h4 {
+		margin-bottom: 0.75rem;
+	}
 
-  figure, blockquote {
-    margin: 3rem auto;
-  }
+	h2 {
+		line-height: 1.2;
+		color: var(--color-subheading);
+	}
 
-  img {
-    margin: 1.5rem auto;
-  }
+	figure,
+	blockquote {
+		margin: 3rem auto;
+	}
 
-  figure img {
-    margin: 0 auto;
-  }
+	img {
+		margin: 1.5rem auto;
+	}
 
-  figcaption {
-    font-size: 1rem;
-  }
+	figure img {
+		margin: 0 auto;
+	}
 
-  ol li::marker {
-    color: var(--color-heading-anchor);
-    font-family: var(--font-accent);
-    font-size: 1.5em;
-  }
+	figcaption {
+		font-size: 1rem;
+	}
 
-  li a {
-    @include highlight-link;
-  }
+	ol li::marker {
+		color: var(--color-heading-anchor);
+		font-family: var(--font-accent);
+		font-size: 1.5em;
+	}
+
+	li a {
+		@include highlight-link;
+	}
 }
