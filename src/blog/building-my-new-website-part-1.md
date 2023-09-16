@@ -1,7 +1,7 @@
 ---
 title: "Building my new website: An adventurer's log, part 1"
 date: "2023-09-16"
-description: "what the heck does will-change even do anyway"
+description: "Warning: it gets messy!"
 tags:
   - animation
   - css
