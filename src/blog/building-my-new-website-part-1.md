@@ -9,7 +9,6 @@ tags:
   - featured
 ---
 
-
 I’ve been getting the itch to redo my site for a while now. There’s nothing wrong with my current site per se, but I felt like my abilities have levelled up a bit beyond what is on display. Additionally, the thought of writing new case studies when I wasn’t going to be fully happy with the outcome proved to be a task so daunting that I never got around to writing them. Whoops. Finally, a lot of the copy and design aspects of my current site were created when I was a bit more aimless in my freelance career. Now that I have a stronger sense of what I’d like to focus on, it seemed like a good time to refresh both the brand and the copy.
 
 I know I wanted to do something with a lot more fun and flair, while still remaining accessible. I know a lot of designers feel ‘constrained’ by thinking accessibility, so I wanted to build something that showed that you can still build something fun and beautiful while thinking about accessibility. I have a deep love for pixel art and retro games, and felt with the View Transitions API coming out, I could experiment with building some kind of operating system like interface for my new site.
@@ -22,6 +21,10 @@ I am not a designer, and I have limited ability to use any design software to pr
 
 Because I liked my current site colors, I grabbed all my primary brand colors and shoved them into [this color scale generator](https://hihayk.github.io/scale/#2/2/50/80/94/67/20/14/a75293/167/82/147/white). I tinkered with it to make 2 lighter and darker tints/shades for each primary color I had, then I plugged everything into my all-time favorite, [Are My Colors Accessible](https://www.aremycolorsaccessible.com/palette) to make this monster color chart that I could reference to find accessible color combinations.
 
+<figure>
+  {% cloudinaryImage 'color-wheel.png', "A chart where every single possible combination is overlaid on top of each other, with the word 'Yup' or 'Nope' if the combination is accessible.", 980, 703, "(min-width: 62em) 38.25rem, 90vw", "lazy", "" %}
+</figure>
+
 I did a few font tryouts but settled on [W95FA](https://fontsarena.com/w95fa-by-alina-sava/) as my main font. I liked how legible it is compared to other pixel fonts, but I also knew that I probably needed to make a toggle to allow for a high-res font in case anyone struggles with reading it. After perusing [Modern Font Stacks](https://modernfontstacks.com/), I settled on the 'Humanist' font stack as a nice fallback font stack.
 
 I consulted the hivemind over in the [Array Discord](https://array.chat/) on sites with great about/services page, since that was an area of my site I felt was particularly lacking. Special shoutout to [Steven Woodson](https://stevenwoodson.com/) who gave me a list of references he consulted when he went through the process of rebranding recently. Having some sense of what the copy on each page looked like made it much easier to wireframe, I'm very much a fan of designing the site to fit the content you have and not the other way around. I ended up scribbling some very loose wireframes with good ol’ pen and paper.
@@ -31,7 +34,7 @@ Finally, onto the actual development!
 ## Day 1: Panic, in my office
 
 <figure>
-  {% cloudinaryImage 'personal-1.png', "Very barebones layout, there are some placeholder navigation icons, an unstyled start bar and a window with some homepage text.,", 704, 540, "(min-width: 62em) 38.25rem, 90vw", "lazy", "" %}
+  {% cloudinaryImage 'personal-1.png', "Very barebones layout, there are some placeholder navigation icons, an unstyled start bar and a window with some homepage text.", 704, 540, "(min-width: 62em) 38.25rem, 90vw", "lazy", "" %}
 </figure>
 
 - Decided to stream for my mentees
@@ -66,7 +69,7 @@ Finally, onto the actual development!
     <figcaption>Desktop progress</figcaption>
   </figure>
   <figure>
-    {% cloudinaryImage 'personal-3.png', "The same layout on mobile, where our two windows are stacked vertically.,",416, 768, "50vw", "lazy", "" %}
+    {% cloudinaryImage 'personal-3.png', "The same layout on mobile, where our two windows are stacked vertically.", 416, 768, "50vw", "lazy", "" %}
     <figcaption>Mobile progress</figcaption>
   </figure>
 </div>
@@ -79,3 +82,5 @@ Finally, onto the actual development!
 - I realized that I have inadvertently solved the start bar ‘Home’ design problem by breaking up each pages content into multiple windows as I can just have the list of windows titles, but this creates a lot of extra work if I want to support ‘minimizing’ a window. I wanted this to be possible as the original plan was to create some absolutely gorgeous pixel artwork for the background that hopefully people wanted to look at. Implementing this as planned meant creating some kind of global window store object that tracks the state of each window. I also agonized over ‘Close’ button, which I was going to treat as a ‘back button’, where closing the window would return to either the Home page or the parent page (ie. all blog posts if you are on a blog page, etc.) I then wondered if that’s going to be confusing UX, and realized I had no idea what to do with the ‘Close’ buttons on the homepage. Finally, in classic anxious form, I contemplated omitting this section completely as it was likely to be too confusing to read, but settled keeping it as sometimes Web Sites Are Pain and this log should reflect that.
 - Wanted to create a live link somewhere to gather some inital feedback, but realized I broke the default Astro blog template somewhere along the way.
 - I decide all of this is just way too much for a Saturday morning and notice that the kitchen goods supplies store is now open, time to make banana bread!
+
+<a href="/blog/building-my-new-website-part-2/">Read part two</a>
