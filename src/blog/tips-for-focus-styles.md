@@ -65,6 +65,15 @@ Sometimes, even default outlines may be unintentionally removed when the parent 
 
 ## Getting an outline to hug the element
 
+<div class="post-callout">
+  <h3 class="post-callout__title">
+    Note
+  </h3>
+  <p class="post-callout__text">
+    The following text about the outline not hugging the element is no longer true as of Firefox version 88, Chrome version 94 and Safari 16.4. If you need to support older browsers, considering follow the advice below, but otherwise, you're good to go!
+  </p>
+</div>
+
 Another reason why designers may request for the focus outline to be removed is because the default outline ignores rounded borders on elements. Thankfully, we aren't actually limited to using the outline property for custom focus styles! This issue can be solved by using box-shadow instead of outline to account for the border radius.
 
 {% cloudinaryImage 'focus-outline4.PNG', "Side by side of two focused rounded buttons, one using outline and the other with box shadow. The link with box shadow has the outline curving along the rounded corners.", 556, 158, "(min-width: 42em) 34.750em, 90vw", "lazy" %}
