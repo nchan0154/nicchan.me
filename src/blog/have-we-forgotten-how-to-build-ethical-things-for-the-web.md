@@ -16,7 +16,7 @@ So how did we end up here? To a casual observer, it may seem that somewhere alon
 
 But is that really the case? Every day, I get to work with people who do good work, who care about things like privacy, ethics and accessibility. We exist. We just are drowning, drowning in algorithmically-guarded walled gardens that are nothing more than quagmires of [enshittification](https://pluralistic.net/2023/01/21/potemkin-ai/), of AI-generated content, of [snake-oil solutions](https://overlayfactsheet.com/). It's like a walking into a jets pray of bullshit, so much so that even those with good intentions get easily overwhelmed.
 
-Though I try, my efforts rarely bear fruit, even with the most well-meaning of clients. And look, I get it, no on wants to be the tall poppy. It's hard enough to squeeze money from the internet-stone these days. Why take a stance on a tiny issue when your users don't even care? Your competitors certainly don't. I usually end up quietly acquiescing to whatever bad are made, praying no future discerning user will notice and think badly of me.
+Though I try, my efforts rarely bear fruit, even with the most well-meaning of clients. And look, I get it, no on wants to be the tall poppy. It's hard enough to squeeze money from the internet-stone these days. Why take a stance on a tiny issue when your users don't even care? Your competitors certainly don't. I usually end up quietly acquiescing to whatever demands are made, praying no future discerning user will notice and think badly of me.
 
 It's pretty clear to me that we can't rely on individual people to make a difference here. Unfortunately, large-scale, societal measures don't seem to work either. Remember GDPR? It was supposed to save (some of) us from invasive tracking by giving users the power to choose how their data was collected. Now, everyone just hates the clutter of cookie popups and there is an entire industry built around helping companies to comply with GDPR in a way that makes it as hard as possible for users to express their newfound rights. When big corporations like [Apple](https://brucelawson.co.uk/2024/apple-breaking-pwas-out-of-malicious-compliance/) spend a huge amount of time and resources actively fighting the idea of a better Internet, there doesn't feel like a lot a single Person-Who-Gives-a-Shit can do.
 
@@ -34,3 +34,8 @@ This was a short piece on a huge topic. Here are some recent posts I enjoyed tha
 - [Craig Abbott](https://www.craigabbott.co.uk/blog/stop-trying-to-recruit-unicorns-with-acorns/) sums up why we've gotten ourselves into this position from an accessibility perspective
 
 Thank you to my friend [Becky](https://beckyisj.substack.com/) for her thoughts on an initial draft of this piece.
+
+## Responses
+
+- [Hidde de Vries](https://hidde.blog/links/questioning-practices-for-a-more-ethical-web/) outlines specific ethical things we can be aware of [in this banger of an old post](https://hidde.blog/what-kind-of-ethics-do-front-end-developers-need/)
+- [Jeremy Keith](https://adactio.com/journal/20866) shares an anecdote and a talk recommendation I'll be looking out for
