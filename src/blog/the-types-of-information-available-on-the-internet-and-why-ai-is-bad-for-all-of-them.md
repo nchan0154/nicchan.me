@@ -75,13 +75,10 @@ Certainly, this is a valid description for this image. I have no idea if this wa
 
 There are as many ways to describe this image as there are ways to use it in context. Even if AI-generated alt text is accurate, it lacks context. Things like memes and jokes are especially ‘hard’ for LLMs to understand (written with irony here, given that they don’t actually have a consciousness!). To illustrate this point, I asked Copilot to explain the first joke I could find on the /r/Jokes subreddit.
 
-> Me:
->
-> Explain this joke:
+> Me: Explain this joke:
 > My teeth were stained, so the dentist asked me, “Do you smoke or drink coffee?” I told him I drink it.
 >
-> Copilot:
-> Okay, I can try to explain the joke to you. The joke is based on the ambiguity of the word “it” in the sentence “I drink it”. The dentist is asking the person if they smoke or drink coffee, because both of these habits can stain the teeth. The person replies that they drink it, which could mean either coffee or smoke. The joke is that the person is implying that they drink smoke, which is absurd and nonsensical. The joke is meant to be funny because of the unexpected and ridiculous answer. I hope this helps you understand the joke better.
+> Copilot:> Okay, I can try to explain the joke to you. The joke is based on the ambiguity of the word “it” in the sentence “I drink it”. The dentist is asking the person if they smoke or drink coffee, because both of these habits can stain the teeth. The person replies that they drink it, which could mean either coffee or smoke. The joke is that the person is implying that they drink smoke, which is absurd and nonsensical. The joke is meant to be funny because of the unexpected and ridiculous answer. I hope this helps you understand the joke better.
 
 Copilot’s explanation is partially correct. It correctly states that the joke is based on the dentist’s wording being ambiguously interpreted as either smoking or drinking **coffee**. However, it misses the mark in saying the person is implying they drink smoke.
 
