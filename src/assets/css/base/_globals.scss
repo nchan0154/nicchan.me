@@ -1,104 +1,110 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html,
 body {
-  min-height: 100%;
-  font-family: var(--font-base);
-  line-height: 1.5;
-  background-color: var(--color-bg);
-  color: var(--color-body-text);
+	min-height: 100%;
+	font-family: var(--font-base);
+	line-height: 1.5;
+	background-color: var(--color-bg);
+	color: var(--color-body-text);
 }
 
 ::selection {
-  background-color: var(--color-body-text);
-  color: var(--color-bg);
+	background-color: var(--color-body-text);
+	color: var(--color-bg);
 }
 
 input,
 textarea {
-  color: var(--color-input-color);
+	color: var(--color-input-color);
 }
 
 img {
-  max-width: 100%;
-  height: auto;
-  background-color: var(--color-image-fallback);
+	max-width: 100%;
+	height: auto;
+	background-color: var(--color-image-fallback);
 }
 
 p {
-  margin-top: 0;
+	margin: 0;
 
-  & + & {
-    margin-top: 1rem;
-  }
+	& + & {
+		margin-top: 1rem;
+	}
 }
 
 p a {
-  @include highlight-link;
+	@include highlight-link;
 }
 
 button * {
-  pointer-events: none;
+	pointer-events: none;
 }
 
 table {
-  border-collapse: collapse;
-  width: 100%;
-  @include box-shadow(var(--color-table-shadow));
+	border-collapse: collapse;
+	width: 100%;
+	@include box-shadow(var(--color-table-shadow));
 
-  th {
-    background-color: var(--color-table-header);
-  }
+	th {
+		background-color: var(--color-table-header);
+	}
 
-  th,
-  td {
-    line-height: 1.2;
-    text-align: left;
-    padding: 0.5rem;
-  }
+	th,
+	td {
+		line-height: 1.2;
+		text-align: left;
+		padding: 0.5rem;
+	}
 
-  .row--success td {
-    background-color: var(--color-table-success);
-  }
+	.row--success td {
+		background-color: var(--color-table-success);
+	}
 }
 
 pre,
 code {
-  background-color: var(--color-code-bg);
-  color: var(--color-code-text);
+	background-color: var(--color-code-bg);
+	color: var(--color-code-text);
 }
 
 pre {
-  width: 100%;
-  overflow: auto;
+	width: 100%;
+	overflow: auto;
 }
 
 code {
-  padding: 0.25rem;
+	padding: 0.25rem;
 }
 
 pre code {
-  display: block;
-  padding: 0.5rem 1rem;
+	display: block;
+	padding: 0.5rem 1rem;
 }
 
 dt {
-  font-weight: 700;
+	font-weight: 700;
 }
 
 ::-webkit-scrollbar {
-  width: 1rem;
+	width: 1rem;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-scrollbar-track);
+	background: var(--color-scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--color-scrollbar-thumb);
-  border-radius: 0;
+	background-color: var(--color-scrollbar-thumb);
+	border-radius: 0;
+}
+
+hr {
+	margin: 2.5rem 0;
+	border: none;
+	border-top: 0.0625rem solid var(--color-heading-accent);
 }
