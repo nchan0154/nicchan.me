@@ -1,7 +1,7 @@
 ---
 title: The types information available on the internet and why AI is bad for all of them
 date: "2024-02-20"
-description: "Help your future self by making sure your CMS can take anything clients throw at it."
+description: "Warning, the outlook is not positive."
 tags:
   - accessibility
   - thoughts

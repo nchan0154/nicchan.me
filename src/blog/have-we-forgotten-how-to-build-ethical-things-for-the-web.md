@@ -1,7 +1,7 @@
 ---
 title: Have we forgotten how to build ethical things for the web?
 date: "2024-02-09"
-description: "From code snippets to testing suites, this article rounds up a bunch of accessibility tooling"
+description: "Reflections on the arcane art of making good, ethical websites"
 tags:
   - thoughts
 ---
