@@ -110,3 +110,4 @@ Unfortunately, the cat (or the Bullshit Generator) is already out of the bag on 
 - This mastodon post by [Heather Buchel](https://hachyderm.io/@hbuchel/111938325310418356) is short, but apt.
 - Dave Rupert has [A dozen short thoughts about AI](https://daverupert.com/2024/02/robo-barf/)
 - I actually came across [this post by Joe Dolson about AI-generated alt text](https://www.joedolson.com/2023/06/accessibility-and-artificial-intelligence/) after I wrote the section on it, it adds a lot of valuable Wordpress development context.
+- [Andy Bell](https://piccalil.li/blog/a-global-documentation-platform/) digs into the problem of MDN
