@@ -1,6 +1,6 @@
 ---
 title: "Building my new website: An adventurer's log, part 3"
-date: "2024-02-21"
+date: "2024-03-06"
 description: "I refactor things, several times"
 tags:
   - animation
