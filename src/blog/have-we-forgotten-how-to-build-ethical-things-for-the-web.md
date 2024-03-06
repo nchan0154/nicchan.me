@@ -4,6 +4,7 @@ date: "2024-02-09"
 description: "Reflections on the arcane art of making good, ethical websites"
 tags:
   - thoughts
+  - featured
 ---
 
 I've worked on a few projects where values and ethics were a key part of the clients' mission. They weren't putting profits over everything, they were trying to deliver something that would ultimately help people. They were innovators in their respective spaces, and knew how to connect to their audiences. It was for these reasons that I wanted to work with them in the first place.
