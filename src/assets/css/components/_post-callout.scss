@@ -1,21 +1,25 @@
 .post-callout {
-  position: relative;
-  margin: 5rem 0 3rem;
-  background-color: var(--color-quote-background);
-  padding: 1.5rem;
-  font-size: 0.875em;
-  @include box-shadow(var(--color-quote-shadow));
+	position: relative;
+	margin: 3rem 0;
+	background-color: var(--color-quote-background);
+	padding: 1.5rem;
+	font-size: 0.875em;
+	@include box-shadow(var(--color-quote-shadow));
+
+	&:has(.post-callout__title) {
+		margin-top: 5rem;
+	}
 }
 
 .post-callout__title {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateY(-100%);
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translateY(-100%);
 }
 
 .post-callout__text {
-  &:last-child {
-    margin-bottom: 0;
-  }
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
