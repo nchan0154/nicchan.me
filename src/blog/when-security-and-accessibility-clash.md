@@ -55,7 +55,7 @@ The fact that these 2FA solutions often require the use of multiple devices can 
 
 ### Physical security keys
 
-Though physical security keys are the least popular method for 2FA, they can be very beneficial for accessibility. Instead of requiring users to memorize or input arbitrary strings, many of them work by allowing the user to push a button on the key itself. The [National Federation of the Blind has written a generally positive review](https://nfb.org/blog/physical-keys-your-digital-life-review-yubico-and-google-security-keys) of the technology, but it does note that there are some existing accessibility issues that may range from “somewhat annoying to showstopping”.
+Though physical security keys are the least popular method for 2FA, they can be very beneficial for accessibility. Instead of requiring users to memorize or input arbitrary strings, physical security keys work by allowing the user to push a button on the key itself. The [National Federation of the Blind has written a generally positive review](https://nfb.org/blog/physical-keys-your-digital-life-review-yubico-and-google-security-keys) of the technology, but it does note that there are some existing accessibility issues that may range from “somewhat annoying to showstopping”.
 
 With these devices, accessibility depends on a third-party, whose applications are not under your control. While these apps may generally be accessible, it is not unheard of for regressions to occur, even in applications by major companies.
 
@@ -63,13 +63,13 @@ Another drawback to this form of 2FA is the upfront cost. Although the cheapest 
 
 ### Biometrics
 
-One final form of 2FA is tied to a users’ biometrics. In these implementations, the application relies on the device’s built-in ability to collect biometric verification in order to confirm a user's identity. If you choose to utilize this form of 2FA, be lenient in what forms you accept. Fingerprints or facial recognition may be easier for users who can’t remember an arbitrary string, but they can be frustrating for users who are missing limbs, who have mobility issues, or have a facial appearance that is regarded as ‘non-standard’. I'm sure some of you may have had the experience of trying to have a video call with an elderly relative who struggles to get their whole face into the frame.
+One final form of 2FA is tied to a users’ biometrics. In these implementations, the application relies on the device’s built-in ability to collect biometric verification in order to confirm a user's identity. If you choose to utilize this form of 2FA, be lenient in what forms you accept. Fingerprints or facial recognition may be easier for users who can’t remember an arbitrary string, but they can be frustrating for users who are missing limbs, who have mobility issues, or have a facial appearance that is regarded as ‘non-standard’. Anyone who has had had the experience of trying to have a video call with an elderly relative who struggles to get their whole face into the frame will understand that some things that are perceived as trivial to some are very difficult for others, depending on their ability level.
 
 There is no universally perfect method for 2FA. The best thing that you as an application developer can do is allow for the user to choose their method of 2FA so that they can choose a method that works for them.
 
 ## Blocking keyboard events
 
-A blind web developer who is a customer at First Foundation Bank has informed me that the bank’s web app directly interferes with or obfuscates the output of a keyboard, making them unable to use a screen reader at all with the application. Even though this user is an expert screen reader user and a web developer, they have call in to complete any banking services.
+I had a enlightening conversation with a blind developer who banks at First Foundation Bank. They informed me that the bank’s web app directly interferes with or obfuscates the output of a keyboard, making them unable to use a screen reader at all with the application. Even though this user is an expert screen reader user and a web developer, they have call in to complete any banking services.
 
 From the outside, it's hard to know why First Foundation Bank implemented such a feature, but it could be possible that the bank thinks that preventing all keystrokes outside of designated inputs would prevent them from certain kinds of bad actors and security issues. It could also be the inadvertent result of a poorly crafted application that has not undergone screen-reader testing. Setting something like [`role="application"`](https://www.a11yproject.com/posts/how-to-use-application-role/) or `aria-hidden="true"` can easily cause an application to be completely broken or hidden for screen reader users. Either way, be careful about making drastic application-wide overrides of keyboard behavior.
 
